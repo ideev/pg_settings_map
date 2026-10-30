@@ -20,10 +20,10 @@ function convert(raw,parent=null,depth=0,branch=null,path='root'){
 convert(source);
 const byId=new Map(data.map(n=>[n.id,n]));
 const hiddenGroups=new Set();
-const nodeHeights=new Map();
+const nodeHeights=new Map(),nodeWidths=new Map();
 function measureNodes(){
  const probe=document.createElement('div');probe.style.cssText='position:absolute;left:-10000px;visibility:hidden';document.body.append(probe);
- for(const n of data){const el=document.createElement('div');el.className='node '+n.kind;const label=document.createElement('span');label.textContent=n.label;el.append(label);if(n.kind!=='parameter'){const toggle=document.createElement('span');toggle.className='toggle';toggle.textContent='+';el.append(toggle);}probe.append(el);nodeHeights.set(n.id,el.offsetHeight);el.remove();}probe.remove();
+ for(const n of data){const el=document.createElement('div');el.className='node '+n.kind;const label=document.createElement('span');label.textContent=n.label;el.append(label);if(n.kind!=='parameter'){const toggle=document.createElement('span');toggle.className='toggle';toggle.textContent='+';el.append(toggle);}else{const dot=document.createElement('span');dot.className='leaf-dot';el.prepend(dot);}probe.append(el);nodeHeights.set(n.id,el.offsetHeight);nodeWidths.set(n.id,el.offsetWidth);el.remove();}probe.remove();
 }
 const childMap=new Map(data.map(n=>[n.id,[]]));
 for(const n of data)if(n.parent)childMap.get(n.parent).push(n);
@@ -35,7 +35,7 @@ function layout(reset=false){
  const height=n=>n.collapsed||!children(n.id).length?(nodeHeights.get(n.id)+(n.kind==='parameter'?8:22)):Math.max(nodeHeights.get(n.id)+16,children(n.id).reduce((s,c)=>s+height(c),0));
  function place(n,depth,side,top){
   const h=height(n),off=offsets.get(n.id);
-  n.autoX=side*depth*370;n.autoY=top+(h-nodeHeights.get(n.id))/2;
+  n.side=side;n.autoX=side<0?nodeWidths.get('root')-depth*370-nodeWidths.get(n.id):depth*370;n.autoY=top+(h-nodeHeights.get(n.id))/2;
   n.x=n.autoX+off.x;n.y=n.autoY+off.y;
   if(!n.collapsed){let y=top;for(const c of children(n.id)){place(c,depth+1,side,y);y+=height(c);}}
  }
@@ -46,7 +46,7 @@ function layout(reset=false){
 html=html[:start]+model+html[end:]
 html=html.replace("return !n.parent||", "return !hiddenGroups.has(n.branch)&&(!n.parent||").replace("visible(byId.get(n.parent)));}", "visible(byId.get(n.parent))));}")
 html=html.replace("selected='work_mem'","selected='root'")
-html=html.replace("n.collapsed=!n.collapsed;render();","n.collapsed=!n.collapsed;layout();render();fit();")
+html=html.replace("n.collapsed=!n.collapsed;render();","n.collapsed=!n.collapsed;layout();render();select(n.id);focusBranch(n.id);")
 html=html.replace("b.textContent=n.collapsed?'+':'−';", "b.textContent=n.collapsed?'+':'−';b.title=`${descendants(n.id).filter(v=>v.kind==='parameter').length} параметров`;")
 html=html.replace("const fields=[['По умолчанию',n.default],['Минимум',n.min],['Максимум',n.max],['Контекст',n.context]];if(n.values)fields.push(['Допустимые значения',n.values]);", "const format=v=>v===null||v===undefined?'—':v===''?'(пустая строка)':String(v);const fields=[['Значение в файле (setting)',format(n.setting)],['По умолчанию (boot_val)',format(n.boot_val)],['Единицы измерения',format(n.unit)],['Минимум',format(n.min_val)],['Максимум',format(n.max_val)],['Контекст',format(n.context)],['Источник',format(n.source)],['Ожидает перезапуска',n.pending_restart===true?'Да':n.pending_restart===false?'Нет':'—']];if(n.enumvals)fields.push(['Допустимые значения',Array.isArray(n.enumvals)?n.enumvals.join(' · '):String(n.enumvals)]);if(n.extra_desc)add('p',n.extra_desc);")
 a=html.index("  add('div',({user:")
@@ -109,7 +109,7 @@ function closeDetails(){document.querySelector('#details').hidden=true;}
 function openDetails(id){select(id);document.querySelector('#details').hidden=false;}
 canvas.addEventListener('dblclick',e=>{
  const el=e.target.closest('.node');if(!el||e.target.closest('button'))return;
- const n=byId.get(el.dataset.id);if(n.kind==='parameter'){e.preventDefault();openDetails(n.id);}
+ const n=byId.get(el.dataset.id);e.preventDefault();if(n.kind==='parameter'){openDetails(n.id);}else if(children(n.id).length){n.collapsed=!n.collapsed;layout();render();select(n.id);focusBranch(n.id);}
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetails();});
 const groupsToggle=document.querySelector('#groups-toggle'),groupsPanel=document.querySelector('#groups-panel');
@@ -150,6 +150,63 @@ html=html.replace('</style>', """
 </style>""")
 
 html=html.replace("add('div','Паспорт узла','panel-label');", '')
+
+# Focus the opened branch rather than shrinking the whole map.
+html=html.replace('function fit(){', 'function fit(){stopCamera();')
+html=html.replace('const z=Math.max(.005,Math.min(2.5,zoom*factor));', 'stopCamera();const z=Math.max(.005,Math.min(2.5,zoom*factor));')
+html=html.replace("if(e.button!==0||e.target.closest('button'))return;", "if(e.button!==0||e.target.closest('button'))return;stopCamera();")
+html=html.replace("function reveal(id){let n=", "function reveal(id){stopCamera();let n=")
+html=html.replace("function closeDetails(){", r"""
+let cameraFrame=null;
+function stopCamera(){if(cameraFrame!==null){cancelAnimationFrame(cameraFrame);cameraFrame=null;}}
+function moveCamera(target){
+ stopCamera();
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches){zoom=target.zoom;pan={x:target.x,y:target.y};transform();return;}
+ const from={zoom,x:pan.x,y:pan.y},start=performance.now();
+ function step(now){
+  const t=Math.min(1,(now-start)/280),ease=1-Math.pow(1-t,3);
+  zoom=from.zoom+(target.zoom-from.zoom)*ease;
+  pan={x:from.x+(target.x-from.x)*ease,y:from.y+(target.y-from.y)*ease};transform();
+  cameraFrame=t<1?requestAnimationFrame(step):null;
+ }
+ cameraFrame=requestAnimationFrame(step);
+}
+function focusBranch(id){
+ const n=byId.get(id),ids=new Set([id,...(n.collapsed?[]:children(id).filter(visible).map(c=>c.id))]);
+ const els=[...nodes.children].filter(el=>ids.has(el.dataset.id));
+ const left=Math.min(...els.map(el=>byId.get(el.dataset.id).x)),right=Math.max(...els.map(el=>byId.get(el.dataset.id).x+el.offsetWidth));
+ const top=Math.min(...els.map(el=>byId.get(el.dataset.id).y)),bottom=Math.max(...els.map(el=>byId.get(el.dataset.id).y+el.offsetHeight));
+ const w=canvas.clientWidth,h=canvas.clientHeight;
+ // Keep text readable for long lists; the background can still be dragged.
+ const widthFit=Math.max(.005,(w-60)/(right-left)),heightFit=(h-100)/(bottom-top);
+ const z=n.collapsed?zoom:Math.min(1.15,widthFit,Math.max(.85,heightFit));
+ moveCamera({zoom:z,x:w/2-(left+right)/2*z,y:(h-40)/2-(top+bottom)/2*z});
+}
+function closeDetails(){""")
+
+# Mirror left-hand branch alignment while retaining actual top-left coordinates.
+html=html.replace("el.dataset.id=n.id;", "el.classList.toggle('left-branch',n.side===-1);el.dataset.id=n.id;")
+html=html.replace('</style>', '.node.left-branch{text-align:right;justify-content:flex-end}\n</style>')
+
+# Compact help, available to mouse, keyboard, and touch users.
+help_start=html.index('<div class="hint">')
+help_end=html.index('</div>',help_start)+len('</div>')
+html=html[:help_start]+'''<div class="help-wrap"><button id="help-button" type="button" aria-label="Как пользоваться картой" aria-describedby="help-tooltip" aria-controls="help-tooltip" aria-expanded="false">?</button><div id="help-tooltip" role="tooltip" hidden><div class="help-content"><strong>Как пользоваться картой</strong><ul><li>Тяните узел — его ветка следует за ним.</li><li>Тяните фон — карта перемещается.</li><li>Колесо и кнопки +/− меняют масштаб.</li><li>Двойной щелчок по группе или подгруппе раскрывает и сворачивает ветку. Кнопка +/− делает то же самое.</li><li>Двойной щелчок по параметру открывает справку; щелчок по пустому месту закрывает её.</li><li>Enter на параметре — справка, Escape — закрыть.</li></ul></div></div></div>'''+html[help_end:]
+html=html.replace('</style>', '''
+.bottom{justify-content:space-between}.help-wrap{position:relative;pointer-events:auto}#help-button{width:30px;height:30px;border:1px solid #c6d2ba;border-radius:50%;background:#fffefa;color:#637f48;font:18px Georgia,serif;box-shadow:0 2px 7px #29352e0a}#help-button:hover,#help-button[aria-expanded="true"]{background:#eaf0df;border-color:#8ca576}#help-tooltip{position:absolute;bottom:100%;left:0;width:300px;max-width:calc(100vw - 26px);padding-bottom:10px;color:#53634f;font-size:12px;line-height:1.6}#help-tooltip[hidden]{display:none}.help-content{background:#fffefa;border:1px solid #d9dfd2;border-radius:9px;padding:14px 16px;box-shadow:0 6px 24px #29352e18}.help-content strong{font-size:13px;font-weight:600}.help-content ul{padding-left:16px;margin:8px 0 0}.help-content li+li{margin-top:5px}
+</style>''')
+html=html.replace('</script>', r'''
+const helpButton=document.querySelector('#help-button'),helpTip=document.querySelector('#help-tooltip'),helpWrap=document.querySelector('.help-wrap');
+let helpPinned=false;
+function showHelp(open){helpTip.hidden=!open;helpButton.setAttribute('aria-expanded',String(open));}
+helpWrap.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch')showHelp(true);});
+helpWrap.addEventListener('pointerleave',()=>{if(!helpPinned&&document.activeElement!==helpButton)showHelp(false);});
+helpButton.addEventListener('focus',()=>showHelp(true));
+helpButton.addEventListener('blur',()=>{if(!helpPinned)showHelp(false);});
+helpButton.addEventListener('click',()=>{helpPinned=!helpPinned;showHelp(helpPinned);});
+document.addEventListener('pointerdown',e=>{if(!helpWrap.contains(e.target)){helpPinned=false;showHelp(false);}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){helpPinned=false;showHelp(false);}});
+</script>''')
 
 # The embedded JSON is data, never executable HTML. All visible fields use textContent.
 (root / 'pg_settings_full.html').write_text(html)
