@@ -208,6 +208,38 @@ document.addEventListener('pointerdown',e=>{if(!helpWrap.contains(e.target)){hel
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){helpPinned=false;showHelp(false);}});
 </script>''')
 
+# Article references are data; links are validated and rendered without HTML injection.
+html=html.replace('const palette={}, data=[];', r'''
+function blogLinks(n){
+ return Array.isArray(n.blog_links)?n.blog_links.filter(link=>{
+  if(!link||typeof link.title!=='string'||!link.title.trim()||typeof link.url!=='string')return false;
+  try{const u=new URL(link.url);return u.protocol==='https:'&&u.hostname==='thebuild.com'&&!u.username&&!u.password&&!u.port&&u.pathname.startsWith('/blog/');}catch{return false;}
+ }):[];
+}
+function leafMarker(n){
+ const dot=document.createElement('span');
+ dot.className=blogLinks(n).length?'blog-star':'leaf-dot';
+ if(blogLinks(n).length){dot.title='Есть статья в The Build';dot.setAttribute('role','img');dot.setAttribute('aria-label','Есть статья в The Build');}
+ return dot;
+}
+const palette={}, data=[];''')
+html=html.replace("const dot=document.createElement('span');dot.className='leaf-dot';el.prepend(dot);", 'el.prepend(leafMarker(n));')
+# Add references after all parameter descriptions, at the bottom of the card.
+html=html.replace("\n \n\n}", r'''
+ if(n.kind==='parameter'&&blogLinks(n).length){
+  const section=add('section','','blog-references');
+  const heading=document.createElement('h3');heading.textContent='Из блога The Build';section.append(heading);
+  for(const link of blogLinks(n)){
+   const a=document.createElement('a');a.href=link.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=link.title;
+   a.setAttribute('aria-label',link.title+' (открывается в новой вкладке)');section.append(a);
+  }
+ }
+}
+''')
+html=html.replace('</style>', '''
+.blog-star{display:inline-block;width:12px;height:12px;flex:0 0 12px;background:#bd1635;clip-path:polygon(50% 3.125%,61.875% 38.125%,96.875% 50%,61.875% 61.875%,50% 96.875%,38.125% 61.875%,3.125% 50%,38.125% 38.125%)}.blog-references{margin-top:16px;padding-top:12px;border-top:1px solid #e5e8de}.blog-references h3{font-size:11px;color:#7d8779;font-weight:normal;margin:0 0 8px}.blog-references a{display:block;font-size:12px;line-height:1.6;color:#9f1933;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}.blog-references a+a{margin-top:8px}.blog-references a:hover{color:#c51d42}
+</style>''')
+
 # The embedded JSON is data, never executable HTML. All visible fields use textContent.
 (root / 'pg_settings_full.html').write_text(html)
 print('Generated pg_settings_full.html')

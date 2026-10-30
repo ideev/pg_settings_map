@@ -1,0 +1,3974 @@
+{
+  "checked_on": "2026-10-30",
+  "source": "https://thebuild.com/blog/",
+  "archive_pages": 49,
+  "articles_checked": 484,
+  "series_articles": 192,
+  "linked_articles": 198,
+  "linked_parameters": 257,
+  "parameter_article_links": 322,
+  "method": "All archive pages and article bodies fetched. Series titles matched to exact parameter names; recovery_target, geqo and debug families expanded using article contents. Non-series mappings reviewed for substantive parameter coverage; incidental mentions excluded. Only parameters already in pg_settings.json are linked. Article text is not redistributed.",
+  "articles": [
+    {
+      "title": "All Your GUCs in a Row: restore_command",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-restore_command/",
+      "parameters": [
+        "restore_command"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: restart_after_crash",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-restart_after_crash/",
+      "parameters": [
+        "restart_after_crash"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: reserved_connections",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-reserved_connections/",
+      "parameters": [
+        "reserved_connections"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: remove_temp_files_after_crash",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-remove_temp_files_after_crash/",
+      "parameters": [
+        "remove_temp_files_after_crash"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: recursive_worktable_factor",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-recursive_worktable_factor/",
+      "parameters": [
+        "recursive_worktable_factor"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: the recovery_target parameters",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-the-recovery_target-parameters/",
+      "parameters": [
+        "recovery_target",
+        "recovery_target_action",
+        "recovery_target_inclusive",
+        "recovery_target_lsn",
+        "recovery_target_name",
+        "recovery_target_time",
+        "recovery_target_timeline",
+        "recovery_target_xid"
+      ],
+      "mapping_basis": "reviewed-family",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Binary read replicas in PostgreSQL, Part 3",
+      "url": "https://thebuild.com/blog/binary-read-replicas-in-postgresql-part-3/",
+      "parameters": [
+        "application_name",
+        "max_slot_wal_keep_size",
+        "primary_conninfo",
+        "primary_slot_name",
+        "restore_command",
+        "synchronous_commit",
+        "synchronous_standby_names",
+        "wal_log_hints"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: recovery_prefetch",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-recovery_prefetch/",
+      "parameters": [
+        "recovery_prefetch"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Binary read replicas in PostgreSQL, Part 2",
+      "url": "https://thebuild.com/blog/binary-read-replicas-in-postgresql-part-2/",
+      "parameters": [
+        "hot_standby_feedback",
+        "idle_in_transaction_session_timeout",
+        "max_standby_streaming_delay",
+        "recovery_min_apply_delay",
+        "statement_timeout"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: recovery_min_apply_delay",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-recovery_min_apply_delay/",
+      "parameters": [
+        "recovery_min_apply_delay"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Binary read replicas in PostgreSQL, Part 1",
+      "url": "https://thebuild.com/blog/binary-read-replicas-in-postgresql/",
+      "parameters": [
+        "hot_standby_feedback",
+        "max_slot_wal_keep_size",
+        "max_standby_archive_delay",
+        "max_standby_streaming_delay"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: recovery_init_sync_method",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-recovery_init_sync_method/",
+      "parameters": [
+        "recovery_init_sync_method"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: recovery_end_command",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-recovery_end_command/",
+      "parameters": [
+        "recovery_end_command"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: random_page_cost and seq_page_cost",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-random_page_cost-and-seq_page_cost/",
+      "parameters": [
+        "random_page_cost",
+        "seq_page_cost"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: quote_all_identifiers",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-quote_all_identifiers/",
+      "parameters": [
+        "quote_all_identifiers"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: primary_slot_name",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-primary_slot_name/",
+      "parameters": [
+        "primary_slot_name"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "A Parade of Horribles, in Serial Order",
+      "url": "https://thebuild.com/blog/a-parade-of-horribles-in-serial-order/",
+      "parameters": [
+        "default_transaction_isolation",
+        "max_pred_locks_per_page",
+        "max_pred_locks_per_relation",
+        "max_pred_locks_per_transaction"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: primary_conninfo",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-primary_conninfo/",
+      "parameters": [
+        "primary_conninfo"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: post_auth_delay and pre_auth_delay",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-post_auth_delay-and-pre_auth_delay/",
+      "parameters": [
+        "post_auth_delay",
+        "pre_auth_delay"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: port",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-port/",
+      "parameters": [
+        "port"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Patch Is Coming From Inside the House",
+      "url": "https://thebuild.com/blog/the-patch-is-coming-from-inside-the-house/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: plan_cache_mode",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-plan_cache_mode/",
+      "parameters": [
+        "plan_cache_mode"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: password_encryption",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-password_encryption/",
+      "parameters": [
+        "password_encryption"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: parallel_setup_cost and parallel_tuple_cost",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-parallel_setup_cost-and-parallel_tuple_cost/",
+      "parameters": [
+        "parallel_setup_cost",
+        "parallel_tuple_cost"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: parallel_leader_participation",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-parallel_leader_participation/",
+      "parameters": [
+        "parallel_leader_participation"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Portions Copyright",
+      "url": "https://thebuild.com/blog/portions-copyright/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: array_nulls (Special Update)",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-array_nulls-special-update/",
+      "parameters": [
+        "array_nulls"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The International Ice Patrol",
+      "url": "https://thebuild.com/blog/the-international-ice-patrol/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: oauth_validator_libraries",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-oauth_validator_libraries/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "oauth_validator_libraries"
+      ]
+    },
+    {
+      "title": "The Garden of Forking Paths",
+      "url": "https://thebuild.com/blog/the-garden-of-forking-paths/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: num_os_semaphores",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-num_os_semaphores/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "num_os_semaphores"
+      ]
+    },
+    {
+      "title": "The Deep End",
+      "url": "https://thebuild.com/blog/the-deep-end/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: notify_buffers",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-notify_buffers/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "notify_buffers"
+      ]
+    },
+    {
+      "title": "Everyone into the Pool",
+      "url": "https://thebuild.com/blog/everyone-into-the-pool/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Vector That Lied About Its Dimensions",
+      "url": "https://thebuild.com/blog/the-vector-that-lied-about-its-dimensions/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: multixact_member_buffers and multixact_offset_buffers",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-multixact_member_buffers-and-multixact_offset_buffers/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "multixact_member_buffers",
+        "multixact_offset_buffers"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: min_wal_size",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-min_wal_size/",
+      "parameters": [
+        "min_wal_size"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: min_parallel_index_scan_size and min_parallel_table_scan_size",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-min_parallel_index_scan_size-and-min_parallel_table_scan_size/",
+      "parameters": [
+        "min_parallel_index_scan_size",
+        "min_parallel_table_scan_size"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Nobody Patches the Pooler",
+      "url": "https://thebuild.com/blog/nobody-patches-the-pooler/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "OSS IP-law briefing: Friday, October 2, 2026",
+      "url": "https://thebuild.com/blog/oss-ip-law-briefing-friday-october-2-2026/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: md5_password_warnings",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-md5_password_warnings/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "md5_password_warnings"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: max_worker_processes",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_worker_processes/",
+      "parameters": [
+        "max_worker_processes"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_wal_size",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_wal_size/",
+      "parameters": [
+        "max_wal_size"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_wal_senders",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_wal_senders/",
+      "parameters": [
+        "max_wal_senders"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_sync_workers_per_subscription",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_sync_workers_per_subscription/",
+      "parameters": [
+        "max_sync_workers_per_subscription"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_standby_archive_delay and max_standby_streaming_delay",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_standby_archive_delay-and-max_standby_streaming_delay/",
+      "parameters": [
+        "max_standby_archive_delay",
+        "max_standby_streaming_delay"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_slot_wal_keep_size",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_slot_wal_keep_size/",
+      "parameters": [
+        "max_slot_wal_keep_size"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_replication_slots",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_replication_slots/",
+      "parameters": [
+        "max_replication_slots"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_prepared_transactions",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_prepared_transactions/",
+      "parameters": [
+        "max_prepared_transactions"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_pred_locks_per_transaction",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_pred_locks_per_transaction/",
+      "parameters": [
+        "max_pred_locks_per_transaction"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Shadow Knows",
+      "url": "https://thebuild.com/blog/the-shadow-knows/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_pred_locks_per_page and max_pred_locks_per_relation",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_pred_locks_per_page-and-max_pred_locks_per_relation/",
+      "parameters": [
+        "max_pred_locks_per_page",
+        "max_pred_locks_per_relation"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "GitHub Won a Case You Weren’t In",
+      "url": "https://thebuild.com/blog/github-won-a-case-you-werent-in/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_parallel_apply_workers_per_subscription",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_parallel_apply_workers_per_subscription/",
+      "parameters": [
+        "max_parallel_apply_workers_per_subscription"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_parallel_workers and max_parallel_workers_per_gather",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_parallel_workers-and-max_parallel_workers_per_gather/",
+      "parameters": [
+        "max_parallel_workers",
+        "max_parallel_workers_per_gather"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_parallel_maintenance_workers",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_parallel_maintenance_workers/",
+      "parameters": [
+        "max_parallel_maintenance_workers"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_notify_queue_pages",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_notify_queue_pages/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "max_notify_queue_pages"
+      ]
+    },
+    {
+      "title": "The Call Is Coming From Inside the Session",
+      "url": "https://thebuild.com/blog/the-call-is-coming-from-inside-the-session/",
+      "parameters": [
+        "default_transaction_read_only",
+        "statement_timeout"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_logical_replication_workers",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_logical_replication_workers/",
+      "parameters": [
+        "max_logical_replication_workers"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_locks_per_transaction",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_locks_per_transaction/",
+      "parameters": [
+        "max_locks_per_transaction"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "19th Nervous Breakdown",
+      "url": "https://thebuild.com/blog/19th-nervous-breakdown/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_index_keys",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_index_keys/",
+      "parameters": [
+        "max_index_keys"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_identifier_length",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_identifier_length/",
+      "parameters": [
+        "max_identifier_length"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_function_args",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_function_args/",
+      "parameters": [
+        "max_function_args"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_files_per_process",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_files_per_process/",
+      "parameters": [
+        "max_files_per_process"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_connections",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_connections/",
+      "parameters": [
+        "max_connections"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: max_active_replication_origins",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-max_active_replication_origins/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "max_active_replication_origins"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: maintenance_work_mem",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-maintenance_work_mem/",
+      "parameters": [
+        "maintenance_work_mem"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: maintenance_io_concurrency",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-maintenance_io_concurrency/",
+      "parameters": [
+        "maintenance_io_concurrency"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: logical_decoding_work_mem",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-logical_decoding_work_mem/",
+      "parameters": [
+        "logical_decoding_work_mem"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_parser_stats , log_planner_stats , log_executor_stats , and log_statement_stats",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-log_parser_stats-log_planner_stats-log_executor_stats-and-log_statement_stats/",
+      "parameters": [
+        "log_executor_stats",
+        "log_parser_stats",
+        "log_planner_stats",
+        "log_statement_stats"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_startup_progress_interval and log_recovery_conflict_waits",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-log_startup_progress_interval-and-log_recovery_conflict_waits/",
+      "parameters": [
+        "log_recovery_conflict_waits",
+        "log_startup_progress_interval"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_lock_waits and log_lock_failures",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-log_lock_waits-and-log_lock_failures/",
+      "parameters": [
+        "log_lock_waits"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "log_lock_failures"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: log_replication_commands",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-log_replication_commands/",
+      "parameters": [
+        "log_replication_commands"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_min_duration_sample , log_statement_sample_rate , and log_transaction_sample_rate",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-log_min_duration_sample-log_statement_sample_rate-and-log_transaction_sample_rate/",
+      "parameters": [
+        "log_min_duration_sample",
+        "log_statement_sample_rate",
+        "log_transaction_sample_rate"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_parameter_max_length and log_parameter_max_length_on_error",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-log_parameter_max_length-and-log_parameter_max_length_on_error/",
+      "parameters": [
+        "log_parameter_max_length",
+        "log_parameter_max_length_on_error"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_min_messages , log_min_error_statement , and log_error_verbosity",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-log_min_messages-log_min_error_statement-and-log_error_verbosity/",
+      "parameters": [
+        "log_error_verbosity",
+        "log_min_error_statement",
+        "log_min_messages"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_line_prefix and log_timezone",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-log_line_prefix-and-log_timezone/",
+      "parameters": [
+        "log_line_prefix",
+        "log_timezone"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_rotation_age , log_rotation_size , and log_truncate_on_rotation",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-log_rotation_age-log_rotation_size-and-log_truncate_on_rotation/",
+      "parameters": [
+        "log_rotation_age",
+        "log_rotation_size",
+        "log_truncate_on_rotation"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_directory , log_filename , and log_file_mode",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-log_directory-log_filename-and-log_file_mode/",
+      "parameters": [
+        "log_directory",
+        "log_file_mode",
+        "log_filename"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_destination and logging_collector",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-log_destination-and-logging_collector/",
+      "parameters": [
+        "log_destination",
+        "logging_collector"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_connections , log_disconnections , and log_hostname",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-logconnections-logdisconnections-and-loghostname/",
+      "parameters": [
+        "log_connections",
+        "log_disconnections",
+        "log_hostname"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: log_checkpoints , log_autovacuum_min_duration , and log_temp_files",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-logcheckpoints-logautovacuumminduration-and-logtempfiles/",
+      "parameters": [
+        "log_autovacuum_min_duration",
+        "log_checkpoints",
+        "log_temp_files"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Sixth Execution",
+      "url": "https://thebuild.com/blog/the-sixth-execution/",
+      "parameters": [
+        "plan_cache_mode"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: listen_addresses",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-listen_addresses/",
+      "parameters": [
+        "listen_addresses"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: lo_compat_privileges",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-lo_compat_privileges/",
+      "parameters": [
+        "lo_compat_privileges"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: local_preload_libraries",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-local_preload_libraries/",
+      "parameters": [
+        "local_preload_libraries"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The AGPL: Radioactive by Design",
+      "url": "https://thebuild.com/blog/the-agpl-radioactive-by-design/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: lock_timeout",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-lock_timeout/",
+      "parameters": [
+        "lock_timeout"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: krb_caseins_users and krb_server_keyfile",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-krb_caseins_users-and-krb_server_keyfile/",
+      "parameters": [
+        "krb_caseins_users",
+        "krb_server_keyfile"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: join_collapse_limit",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-joincollapselimit/",
+      "parameters": [
+        "join_collapse_limit"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "SB 1000: Everyone Is a Covered Provider Now",
+      "url": "https://thebuild.com/blog/sb-1000-everyone-is-a-covered-provider-now/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: jit_debugging_support , jit_dump_bitcode , and jit_profiling_support",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-jit_debugging_support-jit_dump_bitcode-and-jit_profiling_support/",
+      "parameters": [
+        "jit_debugging_support",
+        "jit_dump_bitcode",
+        "jit_profiling_support"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Sixteen Locks Ought to Be Enough for Anybody",
+      "url": "https://thebuild.com/blog/sixteen-locks-ought-to-be-enough-for-anybody/",
+      "parameters": [
+        "max_locks_per_transaction"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: jit_above_cost , jit_inline_above_cost , and jit_optimize_above_cost",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-jit_above_cost-jit_inline_above_cost-and-jit_optimize_above_cost/",
+      "parameters": [
+        "jit_above_cost",
+        "jit_inline_above_cost",
+        "jit_optimize_above_cost"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: jit_expressions and jit_tuple_deforming",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-jit_expressions-and-jit_tuple_deforming/",
+      "parameters": [
+        "jit_expressions",
+        "jit_tuple_deforming"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: jit and jit_provider",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-jit-and-jit_provider/",
+      "parameters": [
+        "jit",
+        "jit_provider"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: io_method and io_workers",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-io_method-and-io_workers/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "io_method",
+        "io_workers"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: io_max_concurrency",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-io_max_concurrency/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "io_max_concurrency"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: io_combine_limit and io_max_combine_limit",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-io_combine_limit-and-io_max_combine_limit/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "io_combine_limit",
+        "io_max_combine_limit"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: IntervalStyle",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-intervalstyle/",
+      "parameters": [
+        "IntervalStyle"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: integer_datetimes",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-integer_datetimes/",
+      "parameters": [
+        "integer_datetimes"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: in_hot_standby",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-in_hot_standby/",
+      "parameters": [
+        "in_hot_standby"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: ignore_system_indexes",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-ignore_system_indexes/",
+      "parameters": [
+        "ignore_system_indexes"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: ignore_invalid_pages",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-ignore_invalid_pages/",
+      "parameters": [
+        "ignore_invalid_pages"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: ignore_checksum_failure",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-ignore_checksum_failure/",
+      "parameters": [
+        "ignore_checksum_failure"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Ontogeny Recapitulates the Relcache",
+      "url": "https://thebuild.com/blog/ontogeny-recapitulates-the-relcache/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: idle_session_timeout",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-idle_session_timeout/",
+      "parameters": [
+        "idle_session_timeout"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: idle_replication_slot_timeout",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-idle_replication_slot_timeout/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "idle_replication_slot_timeout"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: idle_in_transaction_session_timeout",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-idle_in_transaction_session_timeout/",
+      "parameters": [
+        "idle_in_transaction_session_timeout"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: ident_file",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-identfile/",
+      "parameters": [
+        "ident_file"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: hot_standby_feedback",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-hot_standby_feedback/",
+      "parameters": [
+        "hot_standby_feedback"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: hot_standby",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-hot_standby/",
+      "parameters": [
+        "hot_standby"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: hba_file",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-hba_file/",
+      "parameters": [
+        "hba_file"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: hash_mem_multiplier",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-hash_mem_multiplier/",
+      "parameters": [
+        "hash_mem_multiplier"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: gss_accept_delegation",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-gss_accept_delegation/",
+      "parameters": [
+        "gss_accept_delegation"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: gin_fuzzy_search_limit",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-gin_fuzzy_search_limit/",
+      "parameters": [
+        "gin_fuzzy_search_limit"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: The geqo Family",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-the-geqo-family/",
+      "parameters": [
+        "geqo",
+        "geqo_effort",
+        "geqo_generations",
+        "geqo_pool_size",
+        "geqo_seed",
+        "geqo_selection_bias",
+        "geqo_threshold"
+      ],
+      "mapping_basis": "reviewed-family",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: full_page_writes",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-full_page_writes/",
+      "parameters": [
+        "full_page_writes"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: fsync",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-fsync/",
+      "parameters": [
+        "fsync"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: from_collapse_limit",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-from_collapse_limit/",
+      "parameters": [
+        "from_collapse_limit"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: file_extend_method",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-file_extend_method/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "file_extend_method"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: file_copy_method",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-file_copy_method/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "file_copy_method"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: extra_float_digits",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-extra_float_digits/",
+      "parameters": [
+        "extra_float_digits"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: external_pid_file",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-external_pid_file/",
+      "parameters": [
+        "external_pid_file"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: extension_control_path",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-extension_control_path/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "extension_control_path"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: exit_on_error",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-exit_on_error/",
+      "parameters": [
+        "exit_on_error"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: event_triggers",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-event_triggers/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "event_triggers"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: event_source",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-event_source/",
+      "parameters": [
+        "event_source"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: escape_string_warning",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-escape_string_warning/",
+      "parameters": [
+        "escape_string_warning"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_tidscan",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_tidscan/",
+      "parameters": [
+        "enable_tidscan"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "datadog-uwsgi-stats",
+      "url": "https://thebuild.com/blog/datadog-uwsgi-stats/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_sort",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_sort/",
+      "parameters": [
+        "enable_sort"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Chisel: A transactional, crash-safe embedded storage engine",
+      "url": "https://thebuild.com/blog/chisel-a-transactional-crash-safe-embedded-storage-engine/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_seqscan",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_seqscan/",
+      "parameters": [
+        "enable_seqscan"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_self_join_elimination",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_self_join_elimination/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "enable_self_join_elimination"
+      ]
+    },
+    {
+      "title": "The Version Number Is Not the Territory",
+      "url": "https://thebuild.com/blog/the-version-number-is-not-the-territory/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_presorted_aggregate",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_presorted_aggregate/",
+      "parameters": [
+        "enable_presorted_aggregate"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_partitionwise_join",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_partitionwise_join/",
+      "parameters": [
+        "enable_partitionwise_join"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_partitionwise_aggregate",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_partitionwise_aggregate/",
+      "parameters": [
+        "enable_partitionwise_aggregate"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_partition_pruning",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_partition_pruning/",
+      "parameters": [
+        "enable_partition_pruning"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_parallel_hash",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_parallel_hash/",
+      "parameters": [
+        "enable_parallel_hash"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_parallel_append",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_parallel_append/",
+      "parameters": [
+        "enable_parallel_append"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_nestloop",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_nestloop/",
+      "parameters": [
+        "enable_nestloop"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_mergejoin",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enablemergejoin/",
+      "parameters": [
+        "enable_mergejoin"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_material and enable_memoize",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_material-and-enable_memoize/",
+      "parameters": [
+        "enable_material",
+        "enable_memoize"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_indexonlyscan",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_indexonlyscan/",
+      "parameters": [
+        "enable_indexonlyscan"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_incremental_sort",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_incremental_sort/",
+      "parameters": [
+        "enable_incremental_sort"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_hashjoin",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_hashjoin/",
+      "parameters": [
+        "enable_hashjoin"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_hashagg",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enable_hashagg/",
+      "parameters": [
+        "enable_hashagg"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "coddpiece : Watch Relational Algebra Become SQL",
+      "url": "https://thebuild.com/blog/coddpiece-watch-relational-algebra-become-sql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_gathermerge",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enablegathermerge/",
+      "parameters": [
+        "enable_gathermerge"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "checked : Constraints That Outlive the Constructor",
+      "url": "https://thebuild.com/blog/checked-constraints-that-outlive-the-constructor/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_distinct_reordering and enable_group_by_reordering",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enabledistinctreordering-and-enablegroupbyreordering/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "enable_distinct_reordering",
+        "enable_group_by_reordering"
+      ]
+    },
+    {
+      "title": "cygnet : A small but fierce ORM",
+      "url": "https://thebuild.com/blog/cygnet-a-small-but-fierce-orm/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_indexscan and enable_bitmapscan",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enableindexscan-and-enablebitmapscan/",
+      "parameters": [
+        "enable_bitmapscan",
+        "enable_indexscan"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "poveglia : Quarantine Your Imports",
+      "url": "https://thebuild.com/blog/poveglia-quarantine-your-imports/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: enable_async_append",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-enableasyncappend/",
+      "parameters": [
+        "enable_async_append"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "django-pgware : The Undo Is the Hard Part",
+      "url": "https://thebuild.com/blog/django-pgware-the-undo-is-the-hard-part/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "waxsql : Wax Fruit for Your Query Planner",
+      "url": "https://thebuild.com/blog/waxsql-wax-fruit-for-your-query-planner/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: effective_io_concurrency",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-effectiveioconcurrency/",
+      "parameters": [
+        "effective_io_concurrency"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "skygrad : A Place and a Time, Rendered as Sky",
+      "url": "https://thebuild.com/blog/skygrad-a-place-and-a-time-rendered-as-sky/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: effective_cache_size",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-effectivecachesize/",
+      "parameters": [
+        "effective_cache_size"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: dynamic_shared_memory_type",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-dynamicsharedmemorytype/",
+      "parameters": [
+        "dynamic_shared_memory_type"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: dynamic_library_path",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-dynamiclibrarypath/",
+      "parameters": [
+        "dynamic_library_path"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: default_transaction_isolation and default_transaction_read_only",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-defaulttransactionisolation-and-defaulttransactionreadonly/",
+      "parameters": [
+        "default_transaction_isolation",
+        "default_transaction_read_only"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: default_transaction_deferrable",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-defaulttransactiondeferrable/",
+      "parameters": [
+        "default_transaction_deferrable"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: default_toast_compression",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-defaulttoastcompression/",
+      "parameters": [
+        "default_toast_compression"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: default_text_search_config",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-defaulttextsearchconfig/",
+      "parameters": [
+        "default_text_search_config"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: default_tablespace",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-defaulttablespace/",
+      "parameters": [
+        "default_tablespace"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: default_table_access_method",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-defaulttableaccessmethod/",
+      "parameters": [
+        "default_table_access_method"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: default_statistics_target",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-defaultstatisticstarget/",
+      "parameters": [
+        "default_statistics_target"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "How the Other Half Plans",
+      "url": "https://thebuild.com/blog/how-the-other-half-plans/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: the debug_* family",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-the-debug-family/",
+      "parameters": [
+        "debug_assertions",
+        "debug_discard_caches",
+        "debug_io_direct",
+        "debug_logical_replication_streaming",
+        "debug_parallel_query",
+        "debug_pretty_print",
+        "debug_print_parse",
+        "debug_print_plan",
+        "debug_print_rewritten"
+      ],
+      "mapping_basis": "reviewed-family",
+      "parameters_absent_from_dataset": [
+        "debug_copy_parse_plan_trees",
+        "debug_print_",
+        "debug_raw_expression_coverage_test",
+        "debug_write_read_parse_plan_trees"
+      ]
+    },
+    {
+      "title": "All Your GUCs in a Row: deadlock_timeout",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-deadlocktimeout/",
+      "parameters": [
+        "deadlock_timeout"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: DateStyle",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-datestyle/",
+      "parameters": [
+        "DateStyle"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "How the Other Half Counts",
+      "url": "https://thebuild.com/blog/how-the-other-half-counts/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: data_sync_retry",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-datasyncretry/",
+      "parameters": [
+        "data_sync_retry"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: data_directory_mode",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-datadirectorymode/",
+      "parameters": [
+        "data_directory_mode"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: data_directory",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-datadirectory/",
+      "parameters": [
+        "data_directory"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: data_checksums",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-datachecksums/",
+      "parameters": [
+        "data_checksums"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: cursor_tuple_fraction",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-cursortuplefraction/",
+      "parameters": [
+        "cursor_tuple_fraction"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: createrole_self_grant",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-createroleselfgrant/",
+      "parameters": [
+        "createrole_self_grant"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Managed Postgres, Examined: Azure Database for PostgreSQL Flexible Server",
+      "url": "https://thebuild.com/blog/managed-postgres-examined-azure-database-for-postgresql-flexible-server/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: cpu_index_tuple_cost , cpu_operator_cost , and cpu_tuple_cost",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-cpuindextuplecost-cpuoperatorcost-and-cputuplecost/",
+      "parameters": [
+        "cpu_index_tuple_cost",
+        "cpu_operator_cost",
+        "cpu_tuple_cost"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "SQL/PGQ in PostgreSQL 19: Graph Queries Without the Graph Database",
+      "url": "https://thebuild.com/blog/sqlpgq-in-postgresql-19-graph-queries-without-the-graph-database/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: constraint_exclusion",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-constraintexclusion/",
+      "parameters": [
+        "constraint_exclusion"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: config_file",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-configfile/",
+      "parameters": [
+        "config_file"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: compute_query_id",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-computequeryid/",
+      "parameters": [
+        "compute_query_id"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Open-Source TDE for PostgreSQL: What pg_tde Is, and Whether You Need It",
+      "url": "https://thebuild.com/blog/open-source-tde-for-postgresql-what-pgtde-is-and-whether-you-need-it/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: commit_timestamp_buffers",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-committimestampbuffers/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "commit_timestamp_buffers"
+      ]
+    },
+    {
+      "title": "Twenty Years, Three CVEs, One AI",
+      "url": "https://thebuild.com/blog/twenty-years-three-cves-one-ai/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: commit_delay and commit_siblings",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-commitdelay-and-commitsiblings/",
+      "parameters": [
+        "commit_delay",
+        "commit_siblings"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "REPACK CONCURRENTLY: pg_squeeze Gets a Promotion",
+      "url": "https://thebuild.com/blog/repack-concurrently-pgsqueeze-gets-a-promotion/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: cluster_name",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-clustername/",
+      "parameters": [
+        "cluster_name"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Managed Postgres, Examined: Google AlloyDB for PostgreSQL",
+      "url": "https://thebuild.com/blog/managed-postgres-examined-google-alloydb-for-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "What Else Is In There?",
+      "url": "https://thebuild.com/blog/what-else-is-in-there/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: client_min_messages",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-clientminmessages/",
+      "parameters": [
+        "client_min_messages"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: client_connection_check_interval",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-clientconnectioncheckinterval/",
+      "parameters": [
+        "client_connection_check_interval"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "A Correction: Snowflake Postgres Is Just Postgres",
+      "url": "https://thebuild.com/blog/a-correction-snowflake-postgres-is-just-postgres/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: client_encoding",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-clientencoding/",
+      "parameters": [
+        "client_encoding"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: checkpoint_flush_after and checkpoint_warning",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-checkpointflushafter-and-checkpointwarning/",
+      "parameters": [
+        "checkpoint_flush_after",
+        "checkpoint_warning"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "pgvector 0.8.2 and the Trouble With Parallel HNSW",
+      "url": "https://thebuild.com/blog/pgvector-082-and-the-trouble-with-parallel-hnsw/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: checkpoint_timeout and checkpoint_completion_target",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-checkpointtimeout-and-checkpointcompletiontarget/",
+      "parameters": [
+        "checkpoint_completion_target",
+        "checkpoint_timeout"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Patch Today: CVE-2026-6473",
+      "url": "https://thebuild.com/blog/patch-today-cve-2026-6473/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: check_function_bodies",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-checkfunctionbodies/",
+      "parameters": [
+        "check_function_bodies"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Table Access Methods Wake Up",
+      "url": "https://thebuild.com/blog/table-access-methods-wake-up/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: bytea_output",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-byteaoutput/",
+      "parameters": [
+        "bytea_output"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Patch PgBouncer Today",
+      "url": "https://thebuild.com/blog/patch-pgbouncer-today/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: bonjour and bonjour_name",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-bonjour-and-bonjourname/",
+      "parameters": [
+        "bonjour",
+        "bonjour_name"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL 19 Beta: The Four Features You’ll Actually Feel",
+      "url": "https://thebuild.com/blog/postgresql-19-beta-the-four-features-youll-actually-feel/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: block_size",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-blocksize/",
+      "parameters": [
+        "block_size"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: bgwriter_lru_maxpages and bgwriter_lru_multiplier",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-bgwriterlrumaxpages-and-bgwriterlrumultiplier/",
+      "parameters": [
+        "bgwriter_lru_maxpages",
+        "bgwriter_lru_multiplier"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: bgwriter_delay and bgwriter_flush_after",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-bgwriterdelay-and-bgwriterflushafter/",
+      "parameters": [
+        "bgwriter_delay",
+        "bgwriter_flush_after"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Two Decades, Two RCEs: What pgcrypto Has Been Doing Since 2005",
+      "url": "https://thebuild.com/blog/two-decades-two-rces-what-pgcrypto-has-been-doing-since-2005/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: backtrace_functions",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-backtracefunctions/",
+      "parameters": [
+        "backtrace_functions"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Eleven CVEs Walk Into a Release",
+      "url": "https://thebuild.com/blog/eleven-cves-walk-into-a-release/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PARTITION MERGE/SPLIT, Once More With Locking",
+      "url": "https://thebuild.com/blog/partition-mergesplit-once-more-with-locking/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: backslash_quote",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-backslashquote/",
+      "parameters": [
+        "backslash_quote"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Twenty Years in pgcrypto",
+      "url": "https://thebuild.com/blog/twenty-years-in-pgcrypto/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: backend_flush_after",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-backendflushafter/",
+      "parameters": [
+        "backend_flush_after"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Snowflake Postgres, Lakebase, HorizonDB: Picking the Lock-In You Want",
+      "url": "https://thebuild.com/blog/snowflake-postgres-lakebase-horizondb-picking-the-lock-in-you-want/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Managed Postgres, Examined: Google Cloud SQL for PostgreSQL",
+      "url": "https://thebuild.com/blog/managed-postgres-examined-google-cloud-sql-for-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: autovacuum_worker_slots",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-autovacuumworkerslots/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "autovacuum_worker_slots"
+      ]
+    },
+    {
+      "title": "The wal_level You Set Is Not the wal_level You Get",
+      "url": "https://thebuild.com/blog/the-wallevel-you-set-is-not-the-wallevel-you-get/",
+      "parameters": [
+        "wal_level"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: autovacuum_work_mem",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-autovacuumworkmem/",
+      "parameters": [
+        "autovacuum_work_mem"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: autovacuum_vacuum_scale_factor and autovacuum_vacuum_threshold",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-autovacuumvacuumscalefactor-and-autovacuumvacuumthreshold/",
+      "parameters": [
+        "autovacuum_vacuum_scale_factor",
+        "autovacuum_vacuum_threshold"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: autovacuum_vacuum_max_threshold",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-autovacuumvacuummaxthreshold/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "autovacuum_vacuum_max_threshold"
+      ]
+    },
+    {
+      "title": "A Field Guide to Alternative Storage Engines for PostgreSQL",
+      "url": "https://thebuild.com/blog/a-field-guide-to-alternative-storage-engines-for-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "pg_lake vs Lakebase: Two Very Different Things Called “Postgres + Lakehouse”",
+      "url": "https://thebuild.com/blog/pglake-vs-lakebase-two-very-different-things-called-postgres-lakehouse/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: autovacuum_vacuum_insert_scale_factor and autovacuum_vacuum_insert_threshold",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-autovacuumvacuuminsertscalefactor-and-autovacuumvacuuminsertthreshold/",
+      "parameters": [
+        "autovacuum_vacuum_insert_scale_factor",
+        "autovacuum_vacuum_insert_threshold"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Maintainer Is Not the Owner",
+      "url": "https://thebuild.com/blog/the-maintainer-is-not-the-owner/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Eight Bytes Is the Easy Part",
+      "url": "https://thebuild.com/blog/eight-bytes-is-the-easy-part/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: autovacuum_naptime , autovacuum_vacuum_cost_delay , autovacuum_vacuum_cost_limit",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-autovacuumnaptime-autovacuumvacuumcostdelay-autovacuumvacuumcostlimit/",
+      "parameters": [
+        "autovacuum_naptime",
+        "autovacuum_vacuum_cost_delay",
+        "autovacuum_vacuum_cost_limit"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Christophe’s Seven Rules of Disaster Reponse",
+      "url": "https://thebuild.com/blog/christophes-seven-rules-of-disaster-reponse/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "MultiXact Members at 64 Bits: One Less Wraparound to Worry About",
+      "url": "https://thebuild.com/blog/multixact-members-at-64-bits-one-less-wraparound-to-worry-about/",
+      "parameters": [
+        "autovacuum_multixact_freeze_max_age",
+        "vacuum_multixact_freeze_min_age",
+        "vacuum_multixact_freeze_table_age"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "What a Data Lake Actually Is (and why you probably don’t need one)",
+      "url": "https://thebuild.com/blog/what-a-data-lake-actually-is-and-why-you-probably-dont-need-one/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: autovacuum_multixact_freeze_max_age",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-autovacuummultixactfreezemaxage/",
+      "parameters": [
+        "autovacuum_multixact_freeze_max_age"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Managed Postgres, Examined: Amazon Aurora PostgreSQL",
+      "url": "https://thebuild.com/blog/managed-postgres-examined-amazon-aurora-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: autovacuum_max_workers",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-autovacuummaxworkers/",
+      "parameters": [
+        "autovacuum_max_workers"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Client Advisory: pgBouncer CVE-2025-12819",
+      "url": "https://thebuild.com/blog/client-advisory-pgbouncer-cve-2025-12819/",
+      "parameters": [
+        "search_path"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Failover Slots, Two Years On",
+      "url": "https://thebuild.com/blog/failover-slots-two-years-on/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PgQue: Two Snapshots and a Diff",
+      "url": "https://thebuild.com/blog/pgque-two-snapshots-and-a-diff/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: autovacuum_freeze_max_age",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-autovacuumfreezemaxage/",
+      "parameters": [
+        "autovacuum_freeze_max_age"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: autovacuum_analyze_scale_factor and autovacuum_analyze_threshold",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-autovacuumanalyzescalefactor-and-autovacuumanalyzethreshold/",
+      "parameters": [
+        "autovacuum_analyze_scale_factor",
+        "autovacuum_analyze_threshold"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "wal_sender_shutdown_timeout : Now Actually a Timeout",
+      "url": "https://thebuild.com/blog/walsendershutdowntimeout-now-actually-a-timeout/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: autovacuum",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-autovacuum/",
+      "parameters": [
+        "autovacuum"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Two Hundred and Twelve Things",
+      "url": "https://thebuild.com/blog/two-hundred-and-twelve-things/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "pgxbackup: Continuity Support for pgBackRest",
+      "url": "https://thebuild.com/blog/pgxbackup-continuity-support-for-pgbackrest/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: authentication_timeout",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-authentication_timeout/",
+      "parameters": [
+        "authentication_timeout"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "On pgvectorscale, and Hybrid Search Without an Elasticsearch Sidecar",
+      "url": "https://thebuild.com/blog/on-pgvectorscale-and-hybrid-search-without-an-elasticsearch-sidecar/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PHP Goes BSD",
+      "url": "https://thebuild.com/blog/php-goes-bsd/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "After pgBackRest",
+      "url": "https://thebuild.com/blog/after-pgbackrest/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: array_nulls",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-array_nulls/",
+      "parameters": [
+        "array_nulls"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "AIO Grows Up",
+      "url": "https://thebuild.com/blog/aio-grows-up/",
+      "parameters": [
+        "effective_io_concurrency",
+        "maintenance_io_concurrency"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "REPACK Moves In",
+      "url": "https://thebuild.com/blog/repack-moves-in/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Thaler Is Dead. The AI Copyright Argument Isn’t.",
+      "url": "https://thebuild.com/blog/thaler-is-dead-the-ai-copyright-argument-isnt/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: archive_timeout",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-archive_timeout/",
+      "parameters": [
+        "archive_timeout"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Managed Postgres, Examined: Amazon RDS for PostgreSQL",
+      "url": "https://thebuild.com/blog/managed-postgres-examined-amazon-rds-for-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Begun the Fork War has",
+      "url": "https://thebuild.com/blog/begun-the-fork-war-has/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Parallel Autovacuum: It’s Not About The CPU",
+      "url": "https://thebuild.com/blog/parallel-autovacuum/",
+      "parameters": [
+        "autovacuum_max_workers",
+        "max_parallel_workers",
+        "max_worker_processes"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Permissive by Choice, Permanent by Accident",
+      "url": "https://thebuild.com/blog/permissive-by-choice-permanent-by-accident/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: archive_mode",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-archive_mode/",
+      "parameters": [
+        "archive_mode"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Notice of Obsolescence",
+      "url": "https://thebuild.com/blog/notice-of-obsolescence/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Retail DDL Arrives, One Function at a Time",
+      "url": "https://thebuild.com/blog/retail-ddl-arrives-one-function-at-a-time/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Online Checksums Are Not Instant",
+      "url": "https://thebuild.com/blog/online-checksums-are-not-instant/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: archive_library",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-archive_library/",
+      "parameters": [
+        "archive_library"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: archive_command",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-archive_command/",
+      "parameters": [
+        "archive_command"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All your GUCs in a Row: archive_cleanup_command",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-archive_cleanup_command/",
+      "parameters": [
+        "archive_cleanup_command"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Postgres Goes to the Lake, Two Ways",
+      "url": "https://thebuild.com/blog/postgres-goes-to-the-lake-two-ways/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Huge Pages, End to End",
+      "url": "https://thebuild.com/blog/huge-pages-end-to-end/",
+      "parameters": [
+        "huge_page_size",
+        "huge_pages",
+        "shared_buffers",
+        "shared_memory_size_in_huge_pages"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All Your GUCs in a Row: application_name",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-application_name/",
+      "parameters": [
+        "application_name"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PREEMPT_NONE Is Dead; Your Postgres Probably Doesn’t Care",
+      "url": "https://thebuild.com/blog/preempt_none-is-dead-your-postgres-probably-doesnt-care/",
+      "parameters": [
+        "huge_pages",
+        "shared_buffers"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Async I/O in PostgreSQL 19: The Year After",
+      "url": "https://thebuild.com/blog/async-io-in-postgresql-19-the-year-after/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All your GUCs in a row: allow_system_table_mods",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-allow_system_table_mods/",
+      "parameters": [
+        "allow_system_table_mods"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Give Us Access, Already",
+      "url": "https://thebuild.com/blog/give-us-access-already/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All your GUCs in a row: allow_in_place_tablespaces",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-allow_in_place_tablespaces/",
+      "parameters": [
+        "allow_in_place_tablespaces"
+      ],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Hints, Part 3: Advice, Not Orders",
+      "url": "https://thebuild.com/blog/hints-part-3-advice-not-orders/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "All your GUCs in a row: allow_alter_system",
+      "url": "https://thebuild.com/blog/all-your-gucs-in-a-row-allow_alter_system/",
+      "parameters": [],
+      "mapping_basis": "series-title",
+      "parameters_absent_from_dataset": [
+        "allow_alter_system"
+      ]
+    },
+    {
+      "title": "Hints, Part 2: Features We Do Not Want",
+      "url": "https://thebuild.com/blog/hints-part-2-features-we-do-not-want/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Hints, Part 1: The State of the Art Everywhere But Here",
+      "url": "https://thebuild.com/blog/hints-part-1-the-state-of-the-art-everywhere-but-here/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "At last.",
+      "url": "https://thebuild.com/blog/at-last/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Lies, Damn Lies, and LLM Output.",
+      "url": "https://thebuild.com/blog/lies-damn-lies-and-llm-output/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Do not expose port 5432 to the public Internet",
+      "url": "https://thebuild.com/blog/do-not-expose-port-5432-to-the-public-internet/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "VACUUM (INDEX_CLEANUP OFF) Considered Harmful",
+      "url": "https://thebuild.com/blog/vacuum-index_cleanup-off-considered-harmful/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": ".pyc files and their discontents",
+      "url": "https://thebuild.com/blog/pyc-files-and-their-discontents/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Locale Cooking: Common Scenarios and Suggestions",
+      "url": "https://thebuild.com/blog/locale-cooking-common-scenarios-and-suggestions/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Talk Fast: The Speed of Various Collations",
+      "url": "https://thebuild.com/blog/talk-fast-the-speed-of-various-collations/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Doom That Came To PostgreSQL: When Collations Change",
+      "url": "https://thebuild.com/blog/the-doom-that-came-to-postgresql-when-collations-change/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Farm to TABLE: Local(e) Providers",
+      "url": "https://thebuild.com/blog/farm-to-table-locale-providers/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Speaking in Tongues: PostgreSQL and Character Encodings",
+      "url": "https://thebuild.com/blog/speaking-in-tongues-postgresql-and-character-encodings/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Gentlemen, this is a 🏈”: Glyphs, Encodings, Collations, and Locales",
+      "url": "https://thebuild.com/blog/postgresql-collations-1-gentlemen-this-is-a-football/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Checking Your Privileges, 2",
+      "url": "https://thebuild.com/blog/checking-your-privileges-2/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Checking Your Privileges",
+      "url": "https://thebuild.com/blog/checking-your-privileges/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Look It Up: Real-Life Database Indexing” at PgConf.NYC",
+      "url": "https://thebuild.com/blog/look-it-up-real-life-database-indexing-at-pgconf-nyc/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Don’t use ChatGPT to solve problems.",
+      "url": "https://thebuild.com/blog/dont-use-chatgpt-to-solve-problems/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Running PostgreSQL on two ports",
+      "url": "https://thebuild.com/blog/running-postgresql-on-two-ports/",
+      "parameters": [
+        "port"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Writing a Foreign Data Wrapper” at PGCon 2023",
+      "url": "https://thebuild.com/blog/writing-a-foreign-data-wrapper-at-pgcon-2023/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "A little more on max_wal_size",
+      "url": "https://thebuild.com/blog/a-little-more-on-max_wal_size/",
+      "parameters": [
+        "checkpoint_timeout",
+        "max_wal_size"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The importance of max_wal_size",
+      "url": "https://thebuild.com/blog/the-importance-of-max_wal_size/",
+      "parameters": [
+        "checkpoint_completion_target",
+        "checkpoint_timeout",
+        "max_wal_size"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Real-World Logical Replication” at Nordic PGDay 2023",
+      "url": "https://thebuild.com/blog/real-world-logical-replication-at-nordic-pgday-2023/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Database Antipatterns, and where to find them” at SCaLE 20x",
+      "url": "https://thebuild.com/blog/database-antipatterns-and-where-to-find-them-at-scale-20x/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Everything you know about setting work_mem is wrong.",
+      "url": "https://thebuild.com/blog/everything-you-know-about-setting-work_mem-is-wrong/",
+      "parameters": [
+        "work_mem"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Upcoming Live Presentations",
+      "url": "https://thebuild.com/blog/upcoming-live-presentations/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Workers of the World, Unite!",
+      "url": "https://thebuild.com/blog/workers-of-the-world-unite/",
+      "parameters": [
+        "max_logical_replication_workers",
+        "max_parallel_maintenance_workers",
+        "max_parallel_workers",
+        "max_parallel_workers_per_gather",
+        "max_worker_processes",
+        "work_mem"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "ALTER TABLE … SET WITHOUT OIDS big gotcha",
+      "url": "https://thebuild.com/blog/alter-table-set-without-oids-big-gotcha/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "UUIDs vs serials for keys",
+      "url": "https://thebuild.com/blog/uuids-vs-serials-for-keys/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Database Patterns and How to Find Them” at SCaLE 2023",
+      "url": "https://thebuild.com/blog/database-patterns-and-how-to-find-them-at-scale-2023/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Extreme PostgreSQL” at PgDay/MED",
+      "url": "https://thebuild.com/blog/extreme-postgresql-at-pgdaymed/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Xtreme PostgreSQL!",
+      "url": "https://thebuild.com/blog/xtreme-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Nordic PgDay 2023",
+      "url": "https://thebuild.com/blog/nordic-pgday-2023/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "A foreign key pathology to avoid",
+      "url": "https://thebuild.com/blog/a-foreign-key-pathology-to-avoid/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "OK, sometimes you can lock tables.",
+      "url": "https://thebuild.com/blog/ok-sometimes-you-can-lock-tables/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "How slow is DECIMAL, anyway?",
+      "url": "https://thebuild.com/blog/how-slow-is-decimal-anyway/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Why submit a paper to PgDay 2020?",
+      "url": "https://thebuild.com/blog/why-submit-a-paper-to-pgday-2020/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PgDaySF 2020!",
+      "url": "https://thebuild.com/blog/pgdaysf-2020/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Look It Up: Practical PostgreSQL Indexing” at Nordic PGDay 2019",
+      "url": "https://thebuild.com/blog/look-it-up-practical-postgresql-indexing-at-nordic-pgday-2019/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "What’s up with SET TRANSACTION SNAPSHOT?",
+      "url": "https://thebuild.com/blog/whats-up-with-set-transaction-snapshot/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Do not change autovacuum age settings",
+      "url": "https://thebuild.com/blog/do-not-change-autovacuum-age-settings/",
+      "parameters": [
+        "autovacuum_freeze_max_age",
+        "vacuum_freeze_table_age"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Breaking PostgreSQL at Scale” at FOSDEM 2019",
+      "url": "https://thebuild.com/blog/breaking-postgresql-at-scale-at-fosdem-2019/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Find the value of all database sequences",
+      "url": "https://thebuild.com/blog/find-the-value-of-all-database-sequences/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Securing PostgreSQL” at PDXPUG PostgreSQL Day 2018",
+      "url": "https://thebuild.com/blog/securing-postgresql-at-pdxpug-postgresql-day-2018/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "CHAR: What is it good for?",
+      "url": "https://thebuild.com/blog/char-what-is-it-good-for/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Don’t LOCK tables. Just don’t.",
+      "url": "https://thebuild.com/blog/dont-lock-tables-just-dont/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Three Steps to pg_rewind Happiness",
+      "url": "https://thebuild.com/blog/three-steps-to-pg_rewind-happiness/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Does anyone really know what time it is?",
+      "url": "https://thebuild.com/blog/does-anyone-really-know-what-time-it-is/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "One of those things: pgbouncer and self-signed certificates",
+      "url": "https://thebuild.com/blog/one-of-those-things-pgbouncer-and-self-signed-certificates/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "pg_rewind and checkpoints: caution!",
+      "url": "https://thebuild.com/blog/pg_rewind-and-checkpoints-caution/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "That Google Checksum Tool",
+      "url": "https://thebuild.com/blog/that-google-checksum-tool/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "One of those things: /tmp/pgpool_status",
+      "url": "https://thebuild.com/blog/one-of-those-things-tmppgpool_status/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL Replication at PerconaLive 2018",
+      "url": "https://thebuild.com/blog/postgresql-replication-at-perconalive-2018/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Change these: wal_level and wal_hint_bits",
+      "url": "https://thebuild.com/blog/change-these-wal_level-and-wal_hint_bits/",
+      "parameters": [
+        "wal_level",
+        "wal_log_hints"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Change these: Logging",
+      "url": "https://thebuild.com/blog/change-these-logging/",
+      "parameters": [
+        "log_autovacuum_min_duration",
+        "log_checkpoints",
+        "log_connections",
+        "log_destination",
+        "log_directory",
+        "log_disconnections",
+        "log_filename",
+        "log_lock_waits",
+        "log_min_duration_statement",
+        "log_rotation_age",
+        "log_rotation_size",
+        "log_statement",
+        "log_temp_files",
+        "logging_collector"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Change these: archive_mode and archive_command",
+      "url": "https://thebuild.com/blog/change-this-archive_mode-and-archive_command/",
+      "parameters": [
+        "archive_command",
+        "archive_mode"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Change This: wal_compression",
+      "url": "https://thebuild.com/blog/change-this-wal_compression/",
+      "parameters": [
+        "full_page_writes",
+        "wal_compression"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Mountpoints and the Single PostgreSQL Server",
+      "url": "https://thebuild.com/blog/mountpoints-and-the-single-postgresql-server/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Why PostgreSQL is Terrible? at Nordic PGDay",
+      "url": "https://thebuild.com/blog/why-postgresql-is-terrible-at-nordic-pgday/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "A Replication Cheat-Sheet",
+      "url": "https://thebuild.com/blog/a-replication-cheat-sheat/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Commitment Issues",
+      "url": "https://thebuild.com/blog/commitment-issues/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Streaming replication stopped? One more thing to check.",
+      "url": "https://thebuild.com/blog/streaming-replication-stopped-one-more-thing-to-check/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Humans do not have a primary key” at PGConf.EU",
+      "url": "https://thebuild.com/blog/663/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Humans do not have a primary key” at PGOpen SV",
+      "url": "https://thebuild.com/blog/humans-do-not-have-a-primary-key-at-pgopen-sv/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "A brief reminder about casting TIMESTAMPTZ",
+      "url": "https://thebuild.com/blog/a-brief-reminder-about-casting-timestamptz/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Blog Moved.",
+      "url": "https://thebuild.com/blog/blog-moved/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "shared_buffers is not a sensitive setting",
+      "url": "https://thebuild.com/blog/shared_buffers-is-not-a-sensitive-setting/",
+      "parameters": [
+        "shared_buffers"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Resetting the postgres user’s password",
+      "url": "https://thebuild.com/blog/resetting-the-postgres-users-password/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "A PostgreSQL Response to Uber",
+      "url": "https://thebuild.com/blog/a-postgresql-response-to-uber/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Corruption War Stories” from PGConf US 2017",
+      "url": "https://thebuild.com/blog/corruption-war-stories-from-pgconf-us-2017/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Django and PostgreSQL” from PGConf US 2017",
+      "url": "https://thebuild.com/blog/django-and-postgresql-from-pgconf-us-2017/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL When It’s Not Your Job",
+      "url": "https://thebuild.com/blog/postgresql-when-its-not-your-job/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Corruption War Stories at PGDay FOSDEM 2017",
+      "url": "https://thebuild.com/blog/corruption-war-stories-at-pgday-fosdem-2017/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Django: dictionary update sequence element #0 has length 1; 2 is required",
+      "url": "https://thebuild.com/blog/django-dictionary-update-sequence-element-0-has-length-1-2-is-required/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Estimates “stuck” at 200 rows?",
+      "url": "https://thebuild.com/blog/estimates-stuck-at-200-rows/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Django: Site matching query does not exist",
+      "url": "https://thebuild.com/blog/django-site-matching-query-does-not-exist/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Multi-Column Index of the Mysteries",
+      "url": "https://thebuild.com/blog/the-multi-column-index-of-the-mysteries/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "A Cheap and Cheerful Replication Check",
+      "url": "https://thebuild.com/blog/a-cheap-and-cheerful-replication-check/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Securing PostgreSQL at PGConf EU",
+      "url": "https://thebuild.com/blog/securing-postgresql-at-pgconf-eu/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Unclogging the VACUUM at PGConf EU",
+      "url": "https://thebuild.com/blog/unclogging-the-vacuum-at-pgconf-eu/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Recent Slides",
+      "url": "https://thebuild.com/blog/recent-slides/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Always Do This #5: The Elements of postgresql.conf Style",
+      "url": "https://thebuild.com/blog/always-do-this-5-the-elements-of-postgresql-conf-style/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Indexes Are Not Cheap",
+      "url": "https://thebuild.com/blog/indexes-are-not-cheap/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Django 1.8/1.9 and PostgreSQL: An Ever-Closer Union",
+      "url": "https://thebuild.com/blog/django-1-81-9-and-postgresql-an-ever-closer-union/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL High Availability, 2016 Edition",
+      "url": "https://thebuild.com/blog/postgresql-high-availability-2016-edition-2/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Always Do This #4: Put stats_temp_directory on a memory file system",
+      "url": "https://thebuild.com/blog/always-do-this-4-put-stats_temp_directory-on-a-memory-file-system/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL High Availability, 2016 Edition",
+      "url": "https://thebuild.com/blog/postgresql-high-availability-2016-edition/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "JSON Home Improvement at SCALE 14x",
+      "url": "https://thebuild.com/blog/json-home-improvement-at-scale-14x/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "A simple JSON difference function",
+      "url": "https://thebuild.com/blog/a-simple-json-difference-function/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Doing a bulk merge in PostgreSQL 9.5",
+      "url": "https://thebuild.com/blog/doing-a-bulk-merge-in-postgresql-9-5/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Always Do This #3: Log Lock Waits and Temp Files",
+      "url": "https://thebuild.com/blog/always-do-this-3-log-lock-waits-and-temp-files/",
+      "parameters": [
+        "deadlock_timeout",
+        "log_lock_waits",
+        "log_temp_files"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "January SFPUG: What’s New in PostgreSQL 9.5?",
+      "url": "https://thebuild.com/blog/january-sfpug-whats-new-in-postgresql-9-5/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Always Do This #2: ssl_renegotiation_limit = 0",
+      "url": "https://thebuild.com/blog/always-do-this-2-ssl_renegotiation_limit-0/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Always Do This #1: Create New Clusters with Checksums",
+      "url": "https://thebuild.com/blog/always-do-this-1-create-new-clusters-with-checksums/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“The PCI-Compliant Database” at PGConfSV",
+      "url": "https://thebuild.com/blog/the-pci-compliant-database-at-pgconfsv/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Don’t Assume PostgreSQL is Slow",
+      "url": "https://thebuild.com/blog/dont-assume-postgresql-is-slow/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "ProTip: Digital Ocean, Please Don’t Do This.",
+      "url": "https://thebuild.com/blog/protip-digital-ocean-please-dont-do-this/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "UUID vs BIGSERIAL for Primary Keys",
+      "url": "https://thebuild.com/blog/uuid-vs-bigserial-for-primary-keys/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Beyond the B-Tree: GIST and GIN Indexes",
+      "url": "https://thebuild.com/blog/beyond-the-b-tree-gist-and-gin-indexes/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Django 1.8 and PostgreSQL at Djangocon 2015",
+      "url": "https://thebuild.com/blog/django-1-8-and-postgresql-at-djangocon-2015/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL and JSON: 2015",
+      "url": "https://thebuild.com/blog/postgresql-and-json-2015/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Logical Decoding and JSON Talks at FOSDEM",
+      "url": "https://thebuild.com/blog/logical-decoding-and-json-talks-at-fosdem/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "When LIMIT attacks",
+      "url": "https://thebuild.com/blog/when-limit-attacks/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Be Very Afraid: Backup and Disaster Planning” at PGConf.EU",
+      "url": "https://thebuild.com/blog/be-very-afraid-backup-and-disaster-planning-at-pgconf-eu/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Finding and Repairing Database Corruption” at PGConf.EU",
+      "url": "https://thebuild.com/blog/finding-and-repairing-database-corruption-at-pgconf-eu/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Why I prefer Python to Java, in two code samples.",
+      "url": "https://thebuild.com/blog/why-i-prefer-python-to-java-in-two-code-samples/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Why I Resigned as Djangocon US 2014 Program Chair",
+      "url": "https://thebuild.com/blog/why-i-resigned-as-djangocon-us-2014-program-chair/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Djangocon 2014 US CFP Closes Soon",
+      "url": "https://thebuild.com/blog/djangocon-2014-us-cfp-closes-soon/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Djangocon US 2014 Call for Proposals is open!",
+      "url": "https://thebuild.com/blog/the-djangocon-us-2014-call-for-proposals-is-open/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“The Worst Day of Your Life” at Nordic PostgreSQL Day 2014",
+      "url": "https://thebuild.com/blog/the-worst-day-of-your-life-at-nordic-postgresql-day-2014/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Really, Really Fast Django” at Djangocon EU",
+      "url": "https://thebuild.com/blog/really-really-fast-django-at-djangocon-eu/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“The Worst Day of Your Life” at FOSDEM PgDay 2014",
+      "url": "https://thebuild.com/blog/the-worst-day-of-your-life-at-fosdem-pgday-2014/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“JSON in PostgreSQL” at SCALE 12x",
+      "url": "https://thebuild.com/blog/json-in-postgresql-at-scale-12x/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“PostgreSQL Proficiency for Python People” at PyCon 2014",
+      "url": "https://thebuild.com/blog/postgresql-proficiency-for-python-people-at-pycon-2014/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "django-pglocks 1.0.2 released",
+      "url": "https://thebuild.com/blog/django-pglocks-1-0-2-released/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Speaking at FOSDEM 2014",
+      "url": "https://thebuild.com/blog/speaking-at-fosdem-2014/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL Replication Bug",
+      "url": "https://thebuild.com/blog/postgresql-replication-bug/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "JSON vs hstore: Which will get you into a cool bar in the Mission?",
+      "url": "https://thebuild.com/blog/json-vs-hstore-which-will-get-you-into-a-cool-bar-in-the-mission/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL Advisory Locks in Django Made Easy",
+      "url": "https://thebuild.com/blog/postgresql-advisory-locks-in-django-made-easy/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL as a Schemaless Database",
+      "url": "https://thebuild.com/blog/postgresql-as-a-nosql-database/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "‘Rollback’ exception added to Xact",
+      "url": "https://thebuild.com/blog/rollback-exception-added-to-xact/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "DjangoCon US 2013 CFP is open",
+      "url": "https://thebuild.com/blog/djangocon-us-2013-cfp-is-open/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "psycopg2 2.5 released",
+      "url": "https://thebuild.com/blog/psycopg2-2-5-released/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Text Type… If That’s Your Real Name.",
+      "url": "https://thebuild.com/blog/the-text-type-if-thats-your-real-name/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL, Python and Squid at PyPgDay 2013",
+      "url": "https://thebuild.com/blog/postgresql-python-and-squid-at-pypgday-2013/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "You Cannot Recover From the Loss of a Tablespace",
+      "url": "https://thebuild.com/blog/you-cannot-recover-from-the-loss-of-a-tablespace/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Why you want WAL archiving as well as streaming replication",
+      "url": "https://thebuild.com/blog/why-you-want-wal-archiving-as-well-as-streaming-replication/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“PostgreSQL When It’s Not Your Job” at DjangoCon US",
+      "url": "https://thebuild.com/blog/postgresql-when-its-not-your-job-at-djangocon-us/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Amazon’s New I/O Offerings",
+      "url": "https://thebuild.com/blog/amazons-new-io-offerings/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "pgbadger",
+      "url": "https://thebuild.com/blog/pgbadger/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL When It’s Not Your Job at DjangoCon Europe",
+      "url": "https://thebuild.com/blog/postgresql-when-its-not-your-job-at-djangocon-europe/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "A nice, simple rule",
+      "url": "https://thebuild.com/blog/a-nice-simple-rule/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Running PostgreSQL on AWS",
+      "url": "https://thebuild.com/blog/running-postgresql-on-aws/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Of Pickups and Tractor-Trailers",
+      "url": "https://thebuild.com/blog/of-pickups-and-tractor-trailers/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Fixing the WWDC",
+      "url": "https://thebuild.com/blog/fixing-the-wwdc/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Two very cool things.",
+      "url": "https://thebuild.com/blog/two-very-cool-things/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Blah, Blah, Blah, First Half of 2012 Edition",
+      "url": "https://thebuild.com/blog/blah-blah-blah-first-half-of-2012-edition/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Elements of postgresql.conf Style",
+      "url": "https://thebuild.com/blog/the-elements-of-postgresql-conf-style/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Instagram’s Technology Stack",
+      "url": "https://thebuild.com/blog/instagrams-technology-stack/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "A Recipe for Django Transactions on PostgreSQL",
+      "url": "https://thebuild.com/blog/a-recipe-for-django-transactions-on-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL Performance When It’s Not Your Job",
+      "url": "https://thebuild.com/blog/postgresql-performance-when-its-not-your-job/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Sharding & IDs at Instagram”",
+      "url": "https://thebuild.com/blog/sharding-ids-at-instagram/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Cleaning up after your Bucardo goats",
+      "url": "https://thebuild.com/blog/cleaning-up-after-your-bucardo-goats/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Unbreaking Your Django Application",
+      "url": "https://thebuild.com/blog/unbreaking-your-django-application/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Life with Object-Relational Mappers",
+      "url": "https://thebuild.com/blog/life-with-object-relational-mappers/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Not Convenient.",
+      "url": "https://thebuild.com/blog/not-convenient/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "What It Means to Be In Business",
+      "url": "https://thebuild.com/blog/what-it-means-to-be-in-business/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Transaction-Level Advisory Locks in PostgreSQL 9.1",
+      "url": "https://thebuild.com/blog/transaction-level-advisory-locks-in-postgresql-9-1/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Concern Troll is Concerned: Verifone vs Square",
+      "url": "https://thebuild.com/blog/concern-troll-is-concerned-verifone-vs-square/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Django and PostgreSQL at PostgreSQL Conference East",
+      "url": "https://thebuild.com/blog/django-and-postgresql-at-postgresql-conference-east/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Anatomy of a Crushing”",
+      "url": "https://thebuild.com/blog/anatomy-of-a-crushing/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“10 Ways to Kill Performance”",
+      "url": "https://thebuild.com/blog/10-ways-to-kill-performanc/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“10 Easy Ways to Destroy Performance” at pgDay at SCALE-9X",
+      "url": "https://thebuild.com/blog/10-easy-ways-to-destroy-performance-scale-9x/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "“Django Development with PostgreSQL” at PostgreSQL Conference East",
+      "url": "https://thebuild.com/blog/django-postgresql-postgresql-conference-east/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "PostgreSQL for Servoy Developers",
+      "url": "https://thebuild.com/blog/postgresql-for-servoy-developers/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Nobody Here But Us Chickens: Google and Lies We Tell Ourselves",
+      "url": "https://thebuild.com/blog/nobody-here-but-us-chickens-google-and-lies-we-tell-ourselves/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Extra columns when doing .distinct() in a Django QuerySet",
+      "url": "https://thebuild.com/blog/extra-columns-when-doing-distinct-in-a-django-queryset/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Getting the ID of Related Objects in Django",
+      "url": "https://thebuild.com/blog/getting-the-id-of-related-objects-in-django/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Why I run qmail",
+      "url": "https://thebuild.com/blog/why-i-run-qmail/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Comparing NULLs Considered Silly",
+      "url": "https://thebuild.com/blog/comparing-nulls-considered-silly/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Using Server-Side PostgreSQL Cursors in Django",
+      "url": "https://thebuild.com/blog/using-server-side-postgresql-cursors-in-django/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Very Large Result Sets in Django using PostgreSQL",
+      "url": "https://thebuild.com/blog/very-large-result-sets-in-django-using-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Waiting for psycopg2.3: NamedTuples",
+      "url": "https://thebuild.com/blog/waiting-for-psycopg2-3-namedtuples/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Small PostgreSQL Installations and 9.0 Replication",
+      "url": "https://thebuild.com/blog/small-postgresql-installations-and-9-0-replication/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Users Want Functionality, Not Features",
+      "url": "https://thebuild.com/blog/users-want-functionality-not-features/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Things I Do Not Understand: “Web-Scale.”",
+      "url": "https://thebuild.com/blog/things-i-do-not-understand-web-scale/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Django and PostgreSQL “Idle In Transaction” Connections",
+      "url": "https://thebuild.com/blog/django-and-postgresql-idle-in-transaction-connections/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Python build problems on X OS 10.6 Snow Leopard?",
+      "url": "https://thebuild.com/blog/python-build-problems-on-x-os-10-6-snow-leopard/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "ORMs and Their Discontents: PGXPUG Day OSCON 2010 Presentation",
+      "url": "https://thebuild.com/blog/orms-and-their-discontents-2/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Introduction to PostgreSQL: Open Source Bridge 2010 Presentation",
+      "url": "https://thebuild.com/blog/introduction-to-postgresql-osb2010/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "SFPUG: Hot Standby and Streaming Replication",
+      "url": "https://thebuild.com/blog/sfpug-hot-standby-and-streaming-replication/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "On switching away from Core Data",
+      "url": "https://thebuild.com/blog/on-switching-away-from-core-data/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "SFPUG: Operator Exclusion Constraints",
+      "url": "https://thebuild.com/blog/sfpug-operator-exclusion-constraints/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "SFPUG: Continuent Tungsten with PostgreSQL",
+      "url": "https://thebuild.com/blog/sfpug-continuent-tungsten-with-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Django, PostgreSQL, and Autocommit",
+      "url": "https://thebuild.com/blog/django-postgresql-and-autocommit/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Django, PostgreSQL, and Transaction Management",
+      "url": "https://thebuild.com/blog/django-postgresql-and-transaction-management/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "ORMs and Their Discontents",
+      "url": "https://thebuild.com/blog/orms-and-their-discontents/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Git vs Mercurial",
+      "url": "https://thebuild.com/blog/git-vs-mercurial/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "WordPress to Django+PostgreSQL, Part 4: Configuring Apache, Django, PostgreSQL",
+      "url": "https://thebuild.com/blog/wordpress-to-djangopostgresql-part-4-configuring-apache-django-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "WordPress to Django+PostgreSQL, Part 3: Installing Apache, Python 2.6, psycopg2, and mod_wsgi",
+      "url": "https://thebuild.com/blog/wordpress-to-djangopostgresql-part-3-installing-apache-python-2-6-psycopg2-and-mod_wsgi/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "WordPress to Django+PostgreSQL: Part 2, Configuring PostgreSQL",
+      "url": "https://thebuild.com/blog/wordpress-to-djangopostgresql-part-2-configuring-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Mighty GUCS: A guide to the essential PostgreSQL settings you need to know",
+      "url": "https://thebuild.com/blog/the-mighty-gucs/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "WordPress to Django+PostgreSQL: Part 1, Installing PostgreSQL",
+      "url": "https://thebuild.com/blog/wordpress-to-djangopostgresql-part-1-installing-postgresql/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "WordPress to Django+PostgreSQL: Introduction",
+      "url": "https://thebuild.com/blog/wordpress-to-djangopostgresql-introduction/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Getting PostgreSQL 8.4 to only listen on Unix sockets",
+      "url": "https://thebuild.com/blog/getting-postgresql-8-4-to-only-listen-on-unix-sockets/",
+      "parameters": [
+        "listen_addresses"
+      ],
+      "mapping_basis": "reviewed-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Only NATURAL: JOIN clauses vs WHERE conditions",
+      "url": "https://thebuild.com/blog/only-natural-join-clauses-vs-where-conditions/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "SFPUG: Statistics and Postgres – How the Planner Sees Your Data",
+      "url": "https://thebuild.com/blog/sfpug-statistics-and-postgres/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Quote of the Day",
+      "url": "https://thebuild.com/blog/quote-of-the-day-3/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Quote of the Day",
+      "url": "https://thebuild.com/blog/quote-of-the-day-2/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "SFPUG: Windowing and Common Table Expressions",
+      "url": "https://thebuild.com/blog/sfpug-windowing-and-common-table-expressions/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Quote of the Day",
+      "url": "https://thebuild.com/blog/quote-of-the-day/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Resume Building",
+      "url": "https://thebuild.com/blog/resume-building/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Dot Dot Dot",
+      "url": "https://thebuild.com/blog/dot-dot-dot/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Which Side Are You On?",
+      "url": "https://thebuild.com/blog/blackleg/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "NULL By Mouth",
+      "url": "https://thebuild.com/blog/null-by-mouth/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Video available for PGDay SJC ‘09",
+      "url": "https://thebuild.com/blog/video-available-for-pgday-sjc-09/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Thrice-Great Hermes",
+      "url": "https://thebuild.com/blog/thrice-great-hermes/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Against Search",
+      "url": "https://thebuild.com/blog/against-search/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "What You Truly Possess",
+      "url": "https://thebuild.com/blog/what-you-truly-possess/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Death and the Server",
+      "url": "https://thebuild.com/blog/death-and-the-server/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Problem with “Beta”",
+      "url": "https://thebuild.com/blog/the-problem-with-beta/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "The Giant Firebreathing Lizard Was The First Clue",
+      "url": "https://thebuild.com/blog/giant-firebreathing-lizard/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "XML in the Real World",
+      "url": "https://thebuild.com/blog/xml-in-the-real-world/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Credit Card Processing with 4th Dimension",
+      "url": "https://thebuild.com/blog/credit-card-processing-with-4th-dimension/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Where’s the bouncer?",
+      "url": "https://thebuild.com/blog/wheres-the-bouncer/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    },
+    {
+      "title": "Home Again",
+      "url": "https://thebuild.com/blog/home-again/",
+      "parameters": [],
+      "mapping_basis": "not-a-parameter-article",
+      "parameters_absent_from_dataset": []
+    }
+  ]
+}
