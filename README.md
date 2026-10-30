@@ -68,7 +68,7 @@
 | --- | --- |
 | [pg_settings_full.html](pg_settings_full.html) | Основная автономная карта |
 | [pg_settings.json](pg_settings.json) | Данные параметров и внешние ссылки |
-| [index.html](index.html) | Первоначальная демонстрация с 12 параметрами; шаблон генератора |
+| [tools/templates/map.html](tools/templates/map.html) | Шаблон оформления и взаимодействий для генератора |
 | [tools/build_full_map.py](tools/build_full_map.py) | Генерация полной карты из JSON и шаблона |
 | [tools/apply_blog_links.py](tools/apply_blog_links.py) | Применение проверенного каталога статей |
 | [tools/apply_documentation_links.py](tools/apply_documentation_links.py) | Применение или обновление каталога документации |

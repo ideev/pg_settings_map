@@ -4,7 +4,7 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 source = json.loads((root / 'pg_settings.json').read_text())
-html = (root / 'index.html').read_text()
+html = (root / 'tools/templates/map.html').read_text()
 start = html.index('const palette=')
 end = html.index('const canvas=', start)
 model = r'''

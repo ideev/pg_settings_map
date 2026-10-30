@@ -14,35 +14,7 @@
 <script>
 'use strict';
 // Демонстрационная выборка PostgreSQL 17, без пользовательских и серверных значений.
-const palette={memory:'#8b9b49',wal:'#bc8560',query:'#7e96b0'};
-const data=[
-{id:'pg',label:'PostgreSQL',kind:'root',x:0,y:0},
-{id:'memory',parent:'pg',label:'Ресурсы и память',kind:'group',branch:'memory',x:-540,y:-275},
-{id:'buffers',parent:'memory',label:'Буферы',kind:'subgroup',branch:'memory',x:-870,y:-370},
-{id:'shared_buffers',parent:'buffers',label:'shared_buffers',kind:'parameter',branch:'memory',x:-1200,y:-410,type:'integer',default:'16384 × 8 kB (128 MB)',min:'16 × 8 kB',max:'1073741823 × 8 kB',context:'postmaster',description:'Объём памяти, выделяемый сервером для совместно используемых буферов данных.'},
-{id:'temp_buffers',parent:'buffers',label:'temp_buffers',kind:'parameter',branch:'memory',x:-1200,y:-330,type:'integer',default:'1024 × 8 kB (8 MB)',min:'100 × 8 kB',max:'1073741823 × 8 kB',context:'user',description:'Максимальный объём буферов для временных таблиц в каждом сеансе. Меняется только до первого использования временных таблиц.'},
-{id:'operations',parent:'memory',label:'Рабочая память',kind:'subgroup',branch:'memory',x:-870,y:-170},
-{id:'work_mem',parent:'operations',label:'work_mem',kind:'parameter',branch:'memory',x:-1200,y:-210,type:'integer',default:'4096 kB (4 MB)',min:'64 kB',max:'2147483647 kB',context:'user',description:'Базовый лимит памяти для отдельной операции сортировки или хеширования. Несколько операций и сеансов могут расходовать память одновременно.'},
-{id:'maintenance_work_mem',parent:'operations',label:'maintenance_work_mem',kind:'parameter',branch:'memory',x:-1200,y:-130,type:'integer',default:'65536 kB (64 MB)',min:'1024 kB',max:'2147483647 kB',context:'user',description:'Максимальный объём памяти для операций обслуживания: VACUUM, CREATE INDEX и других.'},
-{id:'wal',parent:'pg',label:'Журнал WAL',kind:'group',branch:'wal',x:450,y:-210},
-{id:'durability',parent:'wal',label:'Надёжность',kind:'subgroup',branch:'wal',x:800,y:-310},
-{id:'wal_level',parent:'durability',label:'wal_level',kind:'parameter',branch:'wal',x:1110,y:-350,type:'enum',default:'replica',min:'—',max:'—',values:'minimal · replica · logical',context:'postmaster',description:'Определяет объём информации, записываемой в WAL. Уровень logical добавляет сведения для логического декодирования.'},
-{id:'fsync',parent:'durability',label:'fsync',kind:'parameter',branch:'wal',x:1110,y:-270,type:'bool',default:'on',min:'—',max:'—',values:'on · off',context:'sighup',description:'Обеспечивает сброс изменений на постоянное хранилище. Отключение может привести к невосстановимому повреждению данных при сбое.'},
-{id:'checkpoints',parent:'wal',label:'Контрольные точки',kind:'subgroup',branch:'wal',x:800,y:-110},
-{id:'checkpoint_timeout',parent:'checkpoints',label:'checkpoint_timeout',kind:'parameter',branch:'wal',x:1110,y:-150,type:'integer',default:'300 s (5 min)',min:'30 s',max:'86400 s (1 day)',context:'sighup',description:'Максимальное время между автоматическими контрольными точками WAL.'},
-{id:'max_wal_size',parent:'checkpoints',label:'max_wal_size',kind:'parameter',branch:'wal',x:1110,y:-70,type:'integer',default:'1024 MB (1 GB)',min:'2 MB',max:'2147483647 MB',context:'sighup',description:'Мягкий предел объёма WAL, после которого запускается автоматическая контрольная точка. Фактический объём может превышать этот предел.'},
-{id:'query',parent:'pg',label:'Планирование запросов',kind:'group',branch:'query',x:430,y:240},
-{id:'costs',parent:'query',label:'Оценка стоимости',kind:'subgroup',branch:'query',x:800,y:140},
-{id:'seq_page_cost',parent:'costs',label:'seq_page_cost',kind:'parameter',branch:'query',x:1110,y:100,type:'real',default:'1',min:'0',max:'≈ 1.7976931348623157e+308',context:'user',description:'Оценка стоимости последовательного чтения одной страницы диска. Используется планировщиком в относительных единицах.'},
-{id:'random_page_cost',parent:'costs',label:'random_page_cost',kind:'parameter',branch:'query',x:1110,y:180,type:'real',default:'4',min:'0',max:'≈ 1.7976931348623157e+308',context:'user',description:'Оценка стоимости непоследовательного чтения страницы диска. Влияет на выбор индексного доступа.'},
-{id:'methods',parent:'query',label:'Методы планировщика',kind:'subgroup',branch:'query',x:800,y:340},
-{id:'enable_hashjoin',parent:'methods',label:'enable_hashjoin',kind:'parameter',branch:'query',x:1110,y:300,type:'bool',default:'on',min:'—',max:'—',values:'on · off',context:'user',description:'Разрешает планировщику использовать соединения по хешу.'},
-{id:'enable_nestloop',parent:'methods',label:'enable_nestloop',kind:'parameter',branch:'query',x:1110,y:380,type:'bool',default:'on',min:'—',max:'—',values:'on · off',context:'user',description:'Разрешает соединения вложенным циклом. Полностью исключить такой план невозможно; off лишь делает его менее предпочтительным.'}
-];
-data.forEach(n=>{n.x*=0.72;});
-const byId=new Map(data.map(n=>[n.id,n])), originals=data.map(n=>({id:n.id,x:n.x,y:n.y}));
-const children=id=>data.filter(n=>n.parent===id);
-const descendants=id=>children(id).flatMap(n=>[n,...descendants(n.id)]);
+const palette={}; // The generator inserts the complete data model here.
 const canvas=document.querySelector('#canvas'),world=document.querySelector('#world'),nodes=document.querySelector('#nodes'),edges=document.querySelector('#edges');
 let selected='work_mem', zoom=1, pan={x:0,y:0}, gesture=null;
 function visible(n){return !n.parent||(!byId.get(n.parent).collapsed&&visible(byId.get(n.parent)));}
