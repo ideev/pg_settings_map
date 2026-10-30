@@ -240,6 +240,30 @@ html=html.replace('</style>', '''
 .blog-star{display:inline-block;width:12px;height:12px;flex:0 0 12px;background:#bd1635;clip-path:polygon(50% 3.125%,61.875% 38.125%,96.875% 50%,61.875% 61.875%,50% 96.875%,38.125% 61.875%,3.125% 50%,38.125% 38.125%)}.blog-references{margin-top:16px;padding-top:12px;border-top:1px solid #e5e8de}.blog-references h3{font-size:11px;color:#7d8779;font-weight:normal;margin:0 0 8px}.blog-references a{display:block;font-size:12px;line-height:1.6;color:#9f1933;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}.blog-references a+a{margin-top:8px}.blog-references a:hover{color:#c51d42}
 </style>''')
 
+# Official documentation links are separate from blog references and add no marker.
+html=html.replace('function blogLinks(n){', r'''
+function documentationLink(n){
+ const link=n.documentation_link;
+ if(!link||typeof link.title!=='string'||!link.title.trim()||typeof link.url!=='string')return null;
+ try{
+  const u=new URL(link.url);
+  return u.protocol==='https:'&&u.hostname==='www.postgresql.org'&&!u.username&&!u.password&&!u.port&&u.pathname.startsWith('/docs/current/')&&u.pathname.endsWith('.html')&&u.hash?link:null;
+ }catch{return null;}
+}
+function blogLinks(n){''')
+html=html.replace(" if(n.kind==='parameter'&&blogLinks(n).length){", r'''
+ const documentation=n.kind==='parameter'?documentationLink(n):null;
+ if(documentation){
+  const section=add('section','','documentation-reference');
+  const heading=document.createElement('h3');heading.textContent='Документация PostgreSQL';section.append(heading);
+  const a=document.createElement('a');a.href=documentation.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=documentation.title;
+  a.setAttribute('aria-label',documentation.title+' (открывается в новой вкладке)');section.append(a);
+ }
+ if(n.kind==='parameter'&&blogLinks(n).length){''')
+html=html.replace('</style>', '''
+.documentation-reference{margin-top:16px;padding-top:12px;border-top:1px solid #e5e8de}.documentation-reference h3{font-size:11px;color:#7d8779;font-weight:normal;margin:0 0 8px}.documentation-reference a{display:block;font-size:12px;line-height:1.6;color:#336791;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}.documentation-reference a:hover{color:#214e75}
+</style>''')
+
 # The embedded JSON is data, never executable HTML. All visible fields use textContent.
 (root / 'pg_settings_full.html').write_text(html)
 print('Generated pg_settings_full.html')

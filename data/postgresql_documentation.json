@@ -1,0 +1,2257 @@
+{
+  "checked_on": "2026-10-30",
+  "source": "https://www.postgresql.org/docs/current/runtime-config.html",
+  "resolved_release_at_check": "18",
+  "pages_checked": [
+    "config-setting.html",
+    "runtime-config-client.html",
+    "runtime-config-compatible.html",
+    "runtime-config-connection.html",
+    "runtime-config-custom.html",
+    "runtime-config-developer.html",
+    "runtime-config-error-handling.html",
+    "runtime-config-file-locations.html",
+    "runtime-config-locks.html",
+    "runtime-config-logging.html",
+    "runtime-config-preset.html",
+    "runtime-config-query.html",
+    "runtime-config-replication.html",
+    "runtime-config-resource.html",
+    "runtime-config-short.html",
+    "runtime-config-statistics.html",
+    "runtime-config-vacuum.html",
+    "runtime-config-wal.html"
+  ],
+  "method": "Exact names in official parameter definitions; shared definition anchors retained. The ssl_ecdh_curve rename is explicitly documented under ssl_groups. URLs intentionally use /docs/current/.",
+  "linked_parameters": 358,
+  "links": {
+    "autovacuum": {
+      "title": "PostgreSQL: autovacuum",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM",
+      "documented_name": "autovacuum",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_analyze_scale_factor": {
+      "title": "PostgreSQL: autovacuum_analyze_scale_factor",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-ANALYZE-SCALE-FACTOR",
+      "documented_name": "autovacuum_analyze_scale_factor",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_analyze_threshold": {
+      "title": "PostgreSQL: autovacuum_analyze_threshold",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-ANALYZE-THRESHOLD",
+      "documented_name": "autovacuum_analyze_threshold",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_freeze_max_age": {
+      "title": "PostgreSQL: autovacuum_freeze_max_age",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-FREEZE-MAX-AGE",
+      "documented_name": "autovacuum_freeze_max_age",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_max_workers": {
+      "title": "PostgreSQL: autovacuum_max_workers",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-MAX-WORKERS",
+      "documented_name": "autovacuum_max_workers",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_multixact_freeze_max_age": {
+      "title": "PostgreSQL: autovacuum_multixact_freeze_max_age",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-MULTIXACT-FREEZE-MAX-AGE",
+      "documented_name": "autovacuum_multixact_freeze_max_age",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_naptime": {
+      "title": "PostgreSQL: autovacuum_naptime",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-NAPTIME",
+      "documented_name": "autovacuum_naptime",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_vacuum_cost_delay": {
+      "title": "PostgreSQL: autovacuum_vacuum_cost_delay",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-VACUUM-COST-DELAY",
+      "documented_name": "autovacuum_vacuum_cost_delay",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_vacuum_cost_limit": {
+      "title": "PostgreSQL: autovacuum_vacuum_cost_limit",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-VACUUM-COST-LIMIT",
+      "documented_name": "autovacuum_vacuum_cost_limit",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_vacuum_insert_scale_factor": {
+      "title": "PostgreSQL: autovacuum_vacuum_insert_scale_factor",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-VACUUM-INSERT-SCALE-FACTOR",
+      "documented_name": "autovacuum_vacuum_insert_scale_factor",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_vacuum_insert_threshold": {
+      "title": "PostgreSQL: autovacuum_vacuum_insert_threshold",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-VACUUM-INSERT-THRESHOLD",
+      "documented_name": "autovacuum_vacuum_insert_threshold",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_vacuum_scale_factor": {
+      "title": "PostgreSQL: autovacuum_vacuum_scale_factor",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-VACUUM-SCALE-FACTOR",
+      "documented_name": "autovacuum_vacuum_scale_factor",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_vacuum_threshold": {
+      "title": "PostgreSQL: autovacuum_vacuum_threshold",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-AUTOVACUUM-VACUUM-THRESHOLD",
+      "documented_name": "autovacuum_vacuum_threshold",
+      "match_type": "exact-definition"
+    },
+    "client_encoding": {
+      "title": "PostgreSQL: client_encoding",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-CLIENT-ENCODING",
+      "documented_name": "client_encoding",
+      "match_type": "exact-definition"
+    },
+    "DateStyle": {
+      "title": "PostgreSQL: DateStyle",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-DATESTYLE",
+      "documented_name": "DateStyle",
+      "match_type": "exact-definition"
+    },
+    "default_text_search_config": {
+      "title": "PostgreSQL: default_text_search_config",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-DEFAULT-TEXT-SEARCH-CONFIG",
+      "documented_name": "default_text_search_config",
+      "match_type": "exact-definition"
+    },
+    "extra_float_digits": {
+      "title": "PostgreSQL: extra_float_digits",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-EXTRA-FLOAT-DIGITS",
+      "documented_name": "extra_float_digits",
+      "match_type": "exact-definition"
+    },
+    "icu_validation_level": {
+      "title": "PostgreSQL: icu_validation_level",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-ICU-VALIDATION-LEVEL",
+      "documented_name": "icu_validation_level",
+      "match_type": "exact-definition"
+    },
+    "IntervalStyle": {
+      "title": "PostgreSQL: IntervalStyle",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-INTERVALSTYLE",
+      "documented_name": "IntervalStyle",
+      "match_type": "exact-definition"
+    },
+    "lc_messages": {
+      "title": "PostgreSQL: lc_messages",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-LC-MESSAGES",
+      "documented_name": "lc_messages",
+      "match_type": "exact-definition"
+    },
+    "lc_monetary": {
+      "title": "PostgreSQL: lc_monetary",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-LC-MONETARY",
+      "documented_name": "lc_monetary",
+      "match_type": "exact-definition"
+    },
+    "lc_numeric": {
+      "title": "PostgreSQL: lc_numeric",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-LC-NUMERIC",
+      "documented_name": "lc_numeric",
+      "match_type": "exact-definition"
+    },
+    "lc_time": {
+      "title": "PostgreSQL: lc_time",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-LC-TIME",
+      "documented_name": "lc_time",
+      "match_type": "exact-definition"
+    },
+    "TimeZone": {
+      "title": "PostgreSQL: TimeZone",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-TIMEZONE",
+      "documented_name": "TimeZone",
+      "match_type": "exact-definition"
+    },
+    "timezone_abbreviations": {
+      "title": "PostgreSQL: timezone_abbreviations",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-TIMEZONE-ABBREVIATIONS",
+      "documented_name": "timezone_abbreviations",
+      "match_type": "exact-definition"
+    },
+    "dynamic_library_path": {
+      "title": "PostgreSQL: dynamic_library_path",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-DYNAMIC-LIBRARY-PATH",
+      "documented_name": "dynamic_library_path",
+      "match_type": "exact-definition"
+    },
+    "gin_fuzzy_search_limit": {
+      "title": "PostgreSQL: gin_fuzzy_search_limit",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-GIN-FUZZY-SEARCH-LIMIT",
+      "documented_name": "gin_fuzzy_search_limit",
+      "match_type": "exact-definition"
+    },
+    "jit_provider": {
+      "title": "PostgreSQL: jit_provider",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-JIT-PROVIDER",
+      "documented_name": "jit_provider",
+      "match_type": "exact-definition"
+    },
+    "local_preload_libraries": {
+      "title": "PostgreSQL: local_preload_libraries",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-LOCAL-PRELOAD-LIBRARIES",
+      "documented_name": "local_preload_libraries",
+      "match_type": "exact-definition"
+    },
+    "session_preload_libraries": {
+      "title": "PostgreSQL: session_preload_libraries",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SESSION-PRELOAD-LIBRARIES",
+      "documented_name": "session_preload_libraries",
+      "match_type": "exact-definition"
+    },
+    "shared_preload_libraries": {
+      "title": "PostgreSQL: shared_preload_libraries",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES",
+      "documented_name": "shared_preload_libraries",
+      "match_type": "exact-definition"
+    },
+    "bytea_output": {
+      "title": "PostgreSQL: bytea_output",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-BYTEA-OUTPUT",
+      "documented_name": "bytea_output",
+      "match_type": "exact-definition"
+    },
+    "check_function_bodies": {
+      "title": "PostgreSQL: check_function_bodies",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-CHECK-FUNCTION-BODIES",
+      "documented_name": "check_function_bodies",
+      "match_type": "exact-definition"
+    },
+    "client_min_messages": {
+      "title": "PostgreSQL: client_min_messages",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-CLIENT-MIN-MESSAGES",
+      "documented_name": "client_min_messages",
+      "match_type": "exact-definition"
+    },
+    "createrole_self_grant": {
+      "title": "PostgreSQL: createrole_self_grant",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-CREATEROLE-SELF-GRANT",
+      "documented_name": "createrole_self_grant",
+      "match_type": "exact-definition"
+    },
+    "default_table_access_method": {
+      "title": "PostgreSQL: default_table_access_method",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-DEFAULT-TABLE-ACCESS-METHOD",
+      "documented_name": "default_table_access_method",
+      "match_type": "exact-definition"
+    },
+    "default_tablespace": {
+      "title": "PostgreSQL: default_tablespace",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-DEFAULT-TABLESPACE",
+      "documented_name": "default_tablespace",
+      "match_type": "exact-definition"
+    },
+    "default_toast_compression": {
+      "title": "PostgreSQL: default_toast_compression",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-DEFAULT-TOAST-COMPRESSION",
+      "documented_name": "default_toast_compression",
+      "match_type": "exact-definition"
+    },
+    "default_transaction_deferrable": {
+      "title": "PostgreSQL: default_transaction_deferrable",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-DEFAULT-TRANSACTION-DEFERRABLE",
+      "documented_name": "default_transaction_deferrable",
+      "match_type": "exact-definition"
+    },
+    "default_transaction_isolation": {
+      "title": "PostgreSQL: default_transaction_isolation",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-DEFAULT-TRANSACTION-ISOLATION",
+      "documented_name": "default_transaction_isolation",
+      "match_type": "exact-definition"
+    },
+    "default_transaction_read_only": {
+      "title": "PostgreSQL: default_transaction_read_only",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-DEFAULT-TRANSACTION-READ-ONLY",
+      "documented_name": "default_transaction_read_only",
+      "match_type": "exact-definition"
+    },
+    "gin_pending_list_limit": {
+      "title": "PostgreSQL: gin_pending_list_limit",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-GIN-PENDING-LIST-LIMIT",
+      "documented_name": "gin_pending_list_limit",
+      "match_type": "exact-definition"
+    },
+    "idle_in_transaction_session_timeout": {
+      "title": "PostgreSQL: idle_in_transaction_session_timeout",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-IDLE-IN-TRANSACTION-SESSION-TIMEOUT",
+      "documented_name": "idle_in_transaction_session_timeout",
+      "match_type": "exact-definition"
+    },
+    "idle_session_timeout": {
+      "title": "PostgreSQL: idle_session_timeout",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-IDLE-SESSION-TIMEOUT",
+      "documented_name": "idle_session_timeout",
+      "match_type": "exact-definition"
+    },
+    "lock_timeout": {
+      "title": "PostgreSQL: lock_timeout",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-LOCK-TIMEOUT",
+      "documented_name": "lock_timeout",
+      "match_type": "exact-definition"
+    },
+    "restrict_nonsystem_relation_kind": {
+      "title": "PostgreSQL: restrict_nonsystem_relation_kind",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-RESTRICT-NONSYSTEM-RELATION-KIND",
+      "documented_name": "restrict_nonsystem_relation_kind",
+      "match_type": "exact-definition"
+    },
+    "row_security": {
+      "title": "PostgreSQL: row_security",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-ROW-SECURITY",
+      "documented_name": "row_security",
+      "match_type": "exact-definition"
+    },
+    "search_path": {
+      "title": "PostgreSQL: search_path",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SEARCH-PATH",
+      "documented_name": "search_path",
+      "match_type": "exact-definition"
+    },
+    "session_replication_role": {
+      "title": "PostgreSQL: session_replication_role",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SESSION-REPLICATION-ROLE",
+      "documented_name": "session_replication_role",
+      "match_type": "exact-definition"
+    },
+    "statement_timeout": {
+      "title": "PostgreSQL: statement_timeout",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-STATEMENT-TIMEOUT",
+      "documented_name": "statement_timeout",
+      "match_type": "exact-definition"
+    },
+    "temp_tablespaces": {
+      "title": "PostgreSQL: temp_tablespaces",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-TEMP-TABLESPACES",
+      "documented_name": "temp_tablespaces",
+      "match_type": "exact-definition"
+    },
+    "transaction_deferrable": {
+      "title": "PostgreSQL: transaction_deferrable",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-TRANSACTION-DEFERRABLE",
+      "documented_name": "transaction_deferrable",
+      "match_type": "exact-definition"
+    },
+    "transaction_isolation": {
+      "title": "PostgreSQL: transaction_isolation",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-TRANSACTION-ISOLATION",
+      "documented_name": "transaction_isolation",
+      "match_type": "exact-definition"
+    },
+    "transaction_read_only": {
+      "title": "PostgreSQL: transaction_read_only",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-TRANSACTION-READ-ONLY",
+      "documented_name": "transaction_read_only",
+      "match_type": "exact-definition"
+    },
+    "vacuum_failsafe_age": {
+      "title": "PostgreSQL: vacuum_failsafe_age",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-VACUUM-FAILSAFE-AGE",
+      "documented_name": "vacuum_failsafe_age",
+      "match_type": "exact-definition"
+    },
+    "vacuum_freeze_min_age": {
+      "title": "PostgreSQL: vacuum_freeze_min_age",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-VACUUM-FREEZE-MIN-AGE",
+      "documented_name": "vacuum_freeze_min_age",
+      "match_type": "exact-definition"
+    },
+    "vacuum_freeze_table_age": {
+      "title": "PostgreSQL: vacuum_freeze_table_age",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-VACUUM-FREEZE-TABLE-AGE",
+      "documented_name": "vacuum_freeze_table_age",
+      "match_type": "exact-definition"
+    },
+    "vacuum_multixact_failsafe_age": {
+      "title": "PostgreSQL: vacuum_multixact_failsafe_age",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-VACUUM-MULTIXACT-FAILSAFE-AGE",
+      "documented_name": "vacuum_multixact_failsafe_age",
+      "match_type": "exact-definition"
+    },
+    "vacuum_multixact_freeze_min_age": {
+      "title": "PostgreSQL: vacuum_multixact_freeze_min_age",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-VACUUM-MULTIXACT-FREEZE-MIN-AGE",
+      "documented_name": "vacuum_multixact_freeze_min_age",
+      "match_type": "exact-definition"
+    },
+    "vacuum_multixact_freeze_table_age": {
+      "title": "PostgreSQL: vacuum_multixact_freeze_table_age",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-VACUUM-MULTIXACT-FREEZE-TABLE-AGE",
+      "documented_name": "vacuum_multixact_freeze_table_age",
+      "match_type": "exact-definition"
+    },
+    "xmlbinary": {
+      "title": "PostgreSQL: xmlbinary",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-XMLBINARY",
+      "documented_name": "xmlbinary",
+      "match_type": "exact-definition"
+    },
+    "xmloption": {
+      "title": "PostgreSQL: xmloption",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-XMLOPTION",
+      "documented_name": "xmloption",
+      "match_type": "exact-definition"
+    },
+    "authentication_timeout": {
+      "title": "PostgreSQL: authentication_timeout",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-AUTHENTICATION-TIMEOUT",
+      "documented_name": "authentication_timeout",
+      "match_type": "exact-definition"
+    },
+    "gss_accept_delegation": {
+      "title": "PostgreSQL: gss_accept_delegation",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-GSS-ACCEPT-DELEGATION",
+      "documented_name": "gss_accept_delegation",
+      "match_type": "exact-definition"
+    },
+    "krb_caseins_users": {
+      "title": "PostgreSQL: krb_caseins_users",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-KRB-CASEINS-USERS",
+      "documented_name": "krb_caseins_users",
+      "match_type": "exact-definition"
+    },
+    "krb_server_keyfile": {
+      "title": "PostgreSQL: krb_server_keyfile",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-KRB-SERVER-KEYFILE",
+      "documented_name": "krb_server_keyfile",
+      "match_type": "exact-definition"
+    },
+    "password_encryption": {
+      "title": "PostgreSQL: password_encryption",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-PASSWORD-ENCRYPTION",
+      "documented_name": "password_encryption",
+      "match_type": "exact-definition"
+    },
+    "scram_iterations": {
+      "title": "PostgreSQL: scram_iterations",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SCRAM-ITERATIONS",
+      "documented_name": "scram_iterations",
+      "match_type": "exact-definition"
+    },
+    "bonjour": {
+      "title": "PostgreSQL: bonjour",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-BONJOUR",
+      "documented_name": "bonjour",
+      "match_type": "exact-definition"
+    },
+    "bonjour_name": {
+      "title": "PostgreSQL: bonjour_name",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-BONJOUR-NAME",
+      "documented_name": "bonjour_name",
+      "match_type": "exact-definition"
+    },
+    "listen_addresses": {
+      "title": "PostgreSQL: listen_addresses",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-LISTEN-ADDRESSES",
+      "documented_name": "listen_addresses",
+      "match_type": "exact-definition"
+    },
+    "max_connections": {
+      "title": "PostgreSQL: max_connections",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-MAX-CONNECTIONS",
+      "documented_name": "max_connections",
+      "match_type": "exact-definition"
+    },
+    "port": {
+      "title": "PostgreSQL: port",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-PORT",
+      "documented_name": "port",
+      "match_type": "exact-definition"
+    },
+    "reserved_connections": {
+      "title": "PostgreSQL: reserved_connections",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-RESERVED-CONNECTIONS",
+      "documented_name": "reserved_connections",
+      "match_type": "exact-definition"
+    },
+    "superuser_reserved_connections": {
+      "title": "PostgreSQL: superuser_reserved_connections",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SUPERUSER-RESERVED-CONNECTIONS",
+      "documented_name": "superuser_reserved_connections",
+      "match_type": "exact-definition"
+    },
+    "unix_socket_directories": {
+      "title": "PostgreSQL: unix_socket_directories",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-UNIX-SOCKET-DIRECTORIES",
+      "documented_name": "unix_socket_directories",
+      "match_type": "exact-definition"
+    },
+    "unix_socket_group": {
+      "title": "PostgreSQL: unix_socket_group",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-UNIX-SOCKET-GROUP",
+      "documented_name": "unix_socket_group",
+      "match_type": "exact-definition"
+    },
+    "unix_socket_permissions": {
+      "title": "PostgreSQL: unix_socket_permissions",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-UNIX-SOCKET-PERMISSIONS",
+      "documented_name": "unix_socket_permissions",
+      "match_type": "exact-definition"
+    },
+    "ssl": {
+      "title": "PostgreSQL: ssl",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL",
+      "documented_name": "ssl",
+      "match_type": "exact-definition"
+    },
+    "ssl_ca_file": {
+      "title": "PostgreSQL: ssl_ca_file",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-CA-FILE",
+      "documented_name": "ssl_ca_file",
+      "match_type": "exact-definition"
+    },
+    "ssl_cert_file": {
+      "title": "PostgreSQL: ssl_cert_file",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-CERT-FILE",
+      "documented_name": "ssl_cert_file",
+      "match_type": "exact-definition"
+    },
+    "ssl_ciphers": {
+      "title": "PostgreSQL: ssl_ciphers",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-CIPHERS",
+      "documented_name": "ssl_ciphers",
+      "match_type": "exact-definition"
+    },
+    "ssl_crl_dir": {
+      "title": "PostgreSQL: ssl_crl_dir",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-CRL-DIR",
+      "documented_name": "ssl_crl_dir",
+      "match_type": "exact-definition"
+    },
+    "ssl_crl_file": {
+      "title": "PostgreSQL: ssl_crl_file",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-CRL-FILE",
+      "documented_name": "ssl_crl_file",
+      "match_type": "exact-definition"
+    },
+    "ssl_dh_params_file": {
+      "title": "PostgreSQL: ssl_dh_params_file",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-DH-PARAMS-FILE",
+      "documented_name": "ssl_dh_params_file",
+      "match_type": "exact-definition"
+    },
+    "ssl_ecdh_curve": {
+      "title": "PostgreSQL: ssl_groups (ранее ssl_ecdh_curve)",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-GROUPS",
+      "documented_name": "ssl_groups",
+      "match_type": "documented-rename"
+    },
+    "ssl_key_file": {
+      "title": "PostgreSQL: ssl_key_file",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-KEY-FILE",
+      "documented_name": "ssl_key_file",
+      "match_type": "exact-definition"
+    },
+    "ssl_max_protocol_version": {
+      "title": "PostgreSQL: ssl_max_protocol_version",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-MAX-PROTOCOL-VERSION",
+      "documented_name": "ssl_max_protocol_version",
+      "match_type": "exact-definition"
+    },
+    "ssl_min_protocol_version": {
+      "title": "PostgreSQL: ssl_min_protocol_version",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-MIN-PROTOCOL-VERSION",
+      "documented_name": "ssl_min_protocol_version",
+      "match_type": "exact-definition"
+    },
+    "ssl_passphrase_command": {
+      "title": "PostgreSQL: ssl_passphrase_command",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-PASSPHRASE-COMMAND",
+      "documented_name": "ssl_passphrase_command",
+      "match_type": "exact-definition"
+    },
+    "ssl_passphrase_command_supports_reload": {
+      "title": "PostgreSQL: ssl_passphrase_command_supports_reload",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-PASSPHRASE-COMMAND-SUPPORTS-RELOAD",
+      "documented_name": "ssl_passphrase_command_supports_reload",
+      "match_type": "exact-definition"
+    },
+    "ssl_prefer_server_ciphers": {
+      "title": "PostgreSQL: ssl_prefer_server_ciphers",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-SSL-PREFER-SERVER-CIPHERS",
+      "documented_name": "ssl_prefer_server_ciphers",
+      "match_type": "exact-definition"
+    },
+    "client_connection_check_interval": {
+      "title": "PostgreSQL: client_connection_check_interval",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-CLIENT-CONNECTION-CHECK-INTERVAL",
+      "documented_name": "client_connection_check_interval",
+      "match_type": "exact-definition"
+    },
+    "tcp_keepalives_count": {
+      "title": "PostgreSQL: tcp_keepalives_count",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-TCP-KEEPALIVES-COUNT",
+      "documented_name": "tcp_keepalives_count",
+      "match_type": "exact-definition"
+    },
+    "tcp_keepalives_idle": {
+      "title": "PostgreSQL: tcp_keepalives_idle",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-TCP-KEEPALIVES-IDLE",
+      "documented_name": "tcp_keepalives_idle",
+      "match_type": "exact-definition"
+    },
+    "tcp_keepalives_interval": {
+      "title": "PostgreSQL: tcp_keepalives_interval",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-TCP-KEEPALIVES-INTERVAL",
+      "documented_name": "tcp_keepalives_interval",
+      "match_type": "exact-definition"
+    },
+    "tcp_user_timeout": {
+      "title": "PostgreSQL: tcp_user_timeout",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-TCP-USER-TIMEOUT",
+      "documented_name": "tcp_user_timeout",
+      "match_type": "exact-definition"
+    },
+    "allow_in_place_tablespaces": {
+      "title": "PostgreSQL: allow_in_place_tablespaces",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-ALLOW-IN-PLACE-TABLESPACES",
+      "documented_name": "allow_in_place_tablespaces",
+      "match_type": "exact-definition"
+    },
+    "allow_system_table_mods": {
+      "title": "PostgreSQL: allow_system_table_mods",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-ALLOW-SYSTEM-TABLE-MODS",
+      "documented_name": "allow_system_table_mods",
+      "match_type": "exact-definition"
+    },
+    "backtrace_functions": {
+      "title": "PostgreSQL: backtrace_functions",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-BACKTRACE-FUNCTIONS",
+      "documented_name": "backtrace_functions",
+      "match_type": "exact-definition"
+    },
+    "debug_discard_caches": {
+      "title": "PostgreSQL: debug_discard_caches",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-DEBUG-DISCARD-CACHES",
+      "documented_name": "debug_discard_caches",
+      "match_type": "exact-definition"
+    },
+    "debug_io_direct": {
+      "title": "PostgreSQL: debug_io_direct",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-DEBUG-IO-DIRECT",
+      "documented_name": "debug_io_direct",
+      "match_type": "exact-definition"
+    },
+    "debug_logical_replication_streaming": {
+      "title": "PostgreSQL: debug_logical_replication_streaming",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-DEBUG-LOGICAL-REPLICATION-STREAMING",
+      "documented_name": "debug_logical_replication_streaming",
+      "match_type": "exact-definition"
+    },
+    "debug_parallel_query": {
+      "title": "PostgreSQL: debug_parallel_query",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-DEBUG-PARALLEL-QUERY",
+      "documented_name": "debug_parallel_query",
+      "match_type": "exact-definition"
+    },
+    "ignore_checksum_failure": {
+      "title": "PostgreSQL: ignore_checksum_failure",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-IGNORE-CHECKSUM-FAILURE",
+      "documented_name": "ignore_checksum_failure",
+      "match_type": "exact-definition"
+    },
+    "ignore_invalid_pages": {
+      "title": "PostgreSQL: ignore_invalid_pages",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-IGNORE-INVALID-PAGES",
+      "documented_name": "ignore_invalid_pages",
+      "match_type": "exact-definition"
+    },
+    "ignore_system_indexes": {
+      "title": "PostgreSQL: ignore_system_indexes",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-IGNORE-SYSTEM-INDEXES",
+      "documented_name": "ignore_system_indexes",
+      "match_type": "exact-definition"
+    },
+    "jit_debugging_support": {
+      "title": "PostgreSQL: jit_debugging_support",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-JIT-DEBUGGING-SUPPORT",
+      "documented_name": "jit_debugging_support",
+      "match_type": "exact-definition"
+    },
+    "jit_dump_bitcode": {
+      "title": "PostgreSQL: jit_dump_bitcode",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-JIT-DUMP-BITCODE",
+      "documented_name": "jit_dump_bitcode",
+      "match_type": "exact-definition"
+    },
+    "jit_expressions": {
+      "title": "PostgreSQL: jit_expressions",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-JIT-EXPRESSIONS",
+      "documented_name": "jit_expressions",
+      "match_type": "exact-definition"
+    },
+    "jit_profiling_support": {
+      "title": "PostgreSQL: jit_profiling_support",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-JIT-PROFILING-SUPPORT",
+      "documented_name": "jit_profiling_support",
+      "match_type": "exact-definition"
+    },
+    "jit_tuple_deforming": {
+      "title": "PostgreSQL: jit_tuple_deforming",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-JIT-TUPLE-DEFORMING",
+      "documented_name": "jit_tuple_deforming",
+      "match_type": "exact-definition"
+    },
+    "post_auth_delay": {
+      "title": "PostgreSQL: post_auth_delay",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-POST-AUTH-DELAY",
+      "documented_name": "post_auth_delay",
+      "match_type": "exact-definition"
+    },
+    "pre_auth_delay": {
+      "title": "PostgreSQL: pre_auth_delay",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-PRE-AUTH-DELAY",
+      "documented_name": "pre_auth_delay",
+      "match_type": "exact-definition"
+    },
+    "remove_temp_files_after_crash": {
+      "title": "PostgreSQL: remove_temp_files_after_crash",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-REMOVE-TEMP-FILES-AFTER-CRASH",
+      "documented_name": "remove_temp_files_after_crash",
+      "match_type": "exact-definition"
+    },
+    "send_abort_for_crash": {
+      "title": "PostgreSQL: send_abort_for_crash",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-SEND-ABORT-FOR-CRASH",
+      "documented_name": "send_abort_for_crash",
+      "match_type": "exact-definition"
+    },
+    "send_abort_for_kill": {
+      "title": "PostgreSQL: send_abort_for_kill",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-SEND-ABORT-FOR-KILL",
+      "documented_name": "send_abort_for_kill",
+      "match_type": "exact-definition"
+    },
+    "trace_notify": {
+      "title": "PostgreSQL: trace_notify",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-TRACE-NOTIFY",
+      "documented_name": "trace_notify",
+      "match_type": "exact-definition"
+    },
+    "trace_sort": {
+      "title": "PostgreSQL: trace_sort",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-TRACE-SORT",
+      "documented_name": "trace_sort",
+      "match_type": "exact-definition"
+    },
+    "wal_consistency_checking": {
+      "title": "PostgreSQL: wal_consistency_checking",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-WAL-CONSISTENCY-CHECKING",
+      "documented_name": "wal_consistency_checking",
+      "match_type": "exact-definition"
+    },
+    "zero_damaged_pages": {
+      "title": "PostgreSQL: zero_damaged_pages",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-developer.html#GUC-ZERO-DAMAGED-PAGES",
+      "documented_name": "zero_damaged_pages",
+      "match_type": "exact-definition"
+    },
+    "data_sync_retry": {
+      "title": "PostgreSQL: data_sync_retry",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-error-handling.html#GUC-DATA-SYNC-RETRY",
+      "documented_name": "data_sync_retry",
+      "match_type": "exact-definition"
+    },
+    "exit_on_error": {
+      "title": "PostgreSQL: exit_on_error",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-error-handling.html#GUC-EXIT-ON-ERROR",
+      "documented_name": "exit_on_error",
+      "match_type": "exact-definition"
+    },
+    "recovery_init_sync_method": {
+      "title": "PostgreSQL: recovery_init_sync_method",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-error-handling.html#GUC-RECOVERY-INIT-SYNC-METHOD",
+      "documented_name": "recovery_init_sync_method",
+      "match_type": "exact-definition"
+    },
+    "restart_after_crash": {
+      "title": "PostgreSQL: restart_after_crash",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-error-handling.html#GUC-RESTART-AFTER-CRASH",
+      "documented_name": "restart_after_crash",
+      "match_type": "exact-definition"
+    },
+    "config_file": {
+      "title": "PostgreSQL: config_file",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-file-locations.html#GUC-CONFIG-FILE",
+      "documented_name": "config_file",
+      "match_type": "exact-definition"
+    },
+    "data_directory": {
+      "title": "PostgreSQL: data_directory",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-file-locations.html#GUC-DATA-DIRECTORY",
+      "documented_name": "data_directory",
+      "match_type": "exact-definition"
+    },
+    "external_pid_file": {
+      "title": "PostgreSQL: external_pid_file",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-file-locations.html#GUC-EXTERNAL-PID-FILE",
+      "documented_name": "external_pid_file",
+      "match_type": "exact-definition"
+    },
+    "hba_file": {
+      "title": "PostgreSQL: hba_file",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-file-locations.html#GUC-HBA-FILE",
+      "documented_name": "hba_file",
+      "match_type": "exact-definition"
+    },
+    "ident_file": {
+      "title": "PostgreSQL: ident_file",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-file-locations.html#GUC-IDENT-FILE",
+      "documented_name": "ident_file",
+      "match_type": "exact-definition"
+    },
+    "deadlock_timeout": {
+      "title": "PostgreSQL: deadlock_timeout",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-locks.html#GUC-DEADLOCK-TIMEOUT",
+      "documented_name": "deadlock_timeout",
+      "match_type": "exact-definition"
+    },
+    "max_locks_per_transaction": {
+      "title": "PostgreSQL: max_locks_per_transaction",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-locks.html#GUC-MAX-LOCKS-PER-TRANSACTION",
+      "documented_name": "max_locks_per_transaction",
+      "match_type": "exact-definition"
+    },
+    "max_pred_locks_per_page": {
+      "title": "PostgreSQL: max_pred_locks_per_page",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-locks.html#GUC-MAX-PRED-LOCKS-PER-PAGE",
+      "documented_name": "max_pred_locks_per_page",
+      "match_type": "exact-definition"
+    },
+    "max_pred_locks_per_relation": {
+      "title": "PostgreSQL: max_pred_locks_per_relation",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-locks.html#GUC-MAX-PRED-LOCKS-PER-RELATION",
+      "documented_name": "max_pred_locks_per_relation",
+      "match_type": "exact-definition"
+    },
+    "max_pred_locks_per_transaction": {
+      "title": "PostgreSQL: max_pred_locks_per_transaction",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-locks.html#GUC-MAX-PRED-LOCKS-PER-TRANSACTION",
+      "documented_name": "max_pred_locks_per_transaction",
+      "match_type": "exact-definition"
+    },
+    "block_size": {
+      "title": "PostgreSQL: block_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-BLOCK-SIZE",
+      "documented_name": "block_size",
+      "match_type": "exact-definition"
+    },
+    "data_checksums": {
+      "title": "PostgreSQL: data_checksums",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-DATA-CHECKSUMS",
+      "documented_name": "data_checksums",
+      "match_type": "exact-definition"
+    },
+    "data_directory_mode": {
+      "title": "PostgreSQL: data_directory_mode",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-DATA-DIRECTORY-MODE",
+      "documented_name": "data_directory_mode",
+      "match_type": "exact-definition"
+    },
+    "debug_assertions": {
+      "title": "PostgreSQL: debug_assertions",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-DEBUG-ASSERTIONS",
+      "documented_name": "debug_assertions",
+      "match_type": "exact-definition"
+    },
+    "in_hot_standby": {
+      "title": "PostgreSQL: in_hot_standby",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-IN-HOT-STANDBY",
+      "documented_name": "in_hot_standby",
+      "match_type": "exact-definition"
+    },
+    "integer_datetimes": {
+      "title": "PostgreSQL: integer_datetimes",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-INTEGER-DATETIMES",
+      "documented_name": "integer_datetimes",
+      "match_type": "exact-definition"
+    },
+    "max_function_args": {
+      "title": "PostgreSQL: max_function_args",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-MAX-FUNCTION-ARGS",
+      "documented_name": "max_function_args",
+      "match_type": "exact-definition"
+    },
+    "max_identifier_length": {
+      "title": "PostgreSQL: max_identifier_length",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-MAX-IDENTIFIER-LENGTH",
+      "documented_name": "max_identifier_length",
+      "match_type": "exact-definition"
+    },
+    "max_index_keys": {
+      "title": "PostgreSQL: max_index_keys",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-MAX-INDEX-KEYS",
+      "documented_name": "max_index_keys",
+      "match_type": "exact-definition"
+    },
+    "segment_size": {
+      "title": "PostgreSQL: segment_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-SEGMENT-SIZE",
+      "documented_name": "segment_size",
+      "match_type": "exact-definition"
+    },
+    "server_encoding": {
+      "title": "PostgreSQL: server_encoding",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-SERVER-ENCODING",
+      "documented_name": "server_encoding",
+      "match_type": "exact-definition"
+    },
+    "server_version": {
+      "title": "PostgreSQL: server_version",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-SERVER-VERSION",
+      "documented_name": "server_version",
+      "match_type": "exact-definition"
+    },
+    "server_version_num": {
+      "title": "PostgreSQL: server_version_num",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-SERVER-VERSION-NUM",
+      "documented_name": "server_version_num",
+      "match_type": "exact-definition"
+    },
+    "shared_memory_size": {
+      "title": "PostgreSQL: shared_memory_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-SHARED-MEMORY-SIZE",
+      "documented_name": "shared_memory_size",
+      "match_type": "exact-definition"
+    },
+    "shared_memory_size_in_huge_pages": {
+      "title": "PostgreSQL: shared_memory_size_in_huge_pages",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-SHARED-MEMORY-SIZE-IN-HUGE-PAGES",
+      "documented_name": "shared_memory_size_in_huge_pages",
+      "match_type": "exact-definition"
+    },
+    "ssl_library": {
+      "title": "PostgreSQL: ssl_library",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-SSL-LIBRARY",
+      "documented_name": "ssl_library",
+      "match_type": "exact-definition"
+    },
+    "wal_block_size": {
+      "title": "PostgreSQL: wal_block_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-WAL-BLOCK-SIZE",
+      "documented_name": "wal_block_size",
+      "match_type": "exact-definition"
+    },
+    "wal_segment_size": {
+      "title": "PostgreSQL: wal_segment_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-preset.html#GUC-WAL-SEGMENT-SIZE",
+      "documented_name": "wal_segment_size",
+      "match_type": "exact-definition"
+    },
+    "geqo": {
+      "title": "PostgreSQL: geqo",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-GEQO",
+      "documented_name": "geqo",
+      "match_type": "exact-definition"
+    },
+    "geqo_effort": {
+      "title": "PostgreSQL: geqo_effort",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-GEQO-EFFORT",
+      "documented_name": "geqo_effort",
+      "match_type": "exact-definition"
+    },
+    "geqo_generations": {
+      "title": "PostgreSQL: geqo_generations",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-GEQO-GENERATIONS",
+      "documented_name": "geqo_generations",
+      "match_type": "exact-definition"
+    },
+    "geqo_pool_size": {
+      "title": "PostgreSQL: geqo_pool_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-GEQO-POOL-SIZE",
+      "documented_name": "geqo_pool_size",
+      "match_type": "exact-definition"
+    },
+    "geqo_seed": {
+      "title": "PostgreSQL: geqo_seed",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-GEQO-SEED",
+      "documented_name": "geqo_seed",
+      "match_type": "exact-definition"
+    },
+    "geqo_selection_bias": {
+      "title": "PostgreSQL: geqo_selection_bias",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-GEQO-SELECTION-BIAS",
+      "documented_name": "geqo_selection_bias",
+      "match_type": "exact-definition"
+    },
+    "geqo_threshold": {
+      "title": "PostgreSQL: geqo_threshold",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-GEQO-THRESHOLD",
+      "documented_name": "geqo_threshold",
+      "match_type": "exact-definition"
+    },
+    "constraint_exclusion": {
+      "title": "PostgreSQL: constraint_exclusion",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-CONSTRAINT-EXCLUSION",
+      "documented_name": "constraint_exclusion",
+      "match_type": "exact-definition"
+    },
+    "cursor_tuple_fraction": {
+      "title": "PostgreSQL: cursor_tuple_fraction",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-CURSOR-TUPLE-FRACTION",
+      "documented_name": "cursor_tuple_fraction",
+      "match_type": "exact-definition"
+    },
+    "default_statistics_target": {
+      "title": "PostgreSQL: default_statistics_target",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-DEFAULT-STATISTICS-TARGET",
+      "documented_name": "default_statistics_target",
+      "match_type": "exact-definition"
+    },
+    "from_collapse_limit": {
+      "title": "PostgreSQL: from_collapse_limit",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-FROM-COLLAPSE-LIMIT",
+      "documented_name": "from_collapse_limit",
+      "match_type": "exact-definition"
+    },
+    "jit": {
+      "title": "PostgreSQL: jit",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-JIT",
+      "documented_name": "jit",
+      "match_type": "exact-definition"
+    },
+    "join_collapse_limit": {
+      "title": "PostgreSQL: join_collapse_limit",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-JOIN-COLLAPSE-LIMIT",
+      "documented_name": "join_collapse_limit",
+      "match_type": "exact-definition"
+    },
+    "plan_cache_mode": {
+      "title": "PostgreSQL: plan_cache_mode",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-PLAN-CACHE-MODE",
+      "documented_name": "plan_cache_mode",
+      "match_type": "exact-definition"
+    },
+    "recursive_worktable_factor": {
+      "title": "PostgreSQL: recursive_worktable_factor",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-RECURSIVE-WORKTABLE-FACTOR",
+      "documented_name": "recursive_worktable_factor",
+      "match_type": "exact-definition"
+    },
+    "cpu_index_tuple_cost": {
+      "title": "PostgreSQL: cpu_index_tuple_cost",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-CPU-INDEX-TUPLE-COST",
+      "documented_name": "cpu_index_tuple_cost",
+      "match_type": "exact-definition"
+    },
+    "cpu_operator_cost": {
+      "title": "PostgreSQL: cpu_operator_cost",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-CPU-OPERATOR-COST",
+      "documented_name": "cpu_operator_cost",
+      "match_type": "exact-definition"
+    },
+    "cpu_tuple_cost": {
+      "title": "PostgreSQL: cpu_tuple_cost",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-CPU-TUPLE-COST",
+      "documented_name": "cpu_tuple_cost",
+      "match_type": "exact-definition"
+    },
+    "effective_cache_size": {
+      "title": "PostgreSQL: effective_cache_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-EFFECTIVE-CACHE-SIZE",
+      "documented_name": "effective_cache_size",
+      "match_type": "exact-definition"
+    },
+    "jit_above_cost": {
+      "title": "PostgreSQL: jit_above_cost",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-JIT-ABOVE-COST",
+      "documented_name": "jit_above_cost",
+      "match_type": "exact-definition"
+    },
+    "jit_inline_above_cost": {
+      "title": "PostgreSQL: jit_inline_above_cost",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-JIT-INLINE-ABOVE-COST",
+      "documented_name": "jit_inline_above_cost",
+      "match_type": "exact-definition"
+    },
+    "jit_optimize_above_cost": {
+      "title": "PostgreSQL: jit_optimize_above_cost",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-JIT-OPTIMIZE-ABOVE-COST",
+      "documented_name": "jit_optimize_above_cost",
+      "match_type": "exact-definition"
+    },
+    "min_parallel_index_scan_size": {
+      "title": "PostgreSQL: min_parallel_index_scan_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-MIN-PARALLEL-INDEX-SCAN-SIZE",
+      "documented_name": "min_parallel_index_scan_size",
+      "match_type": "exact-definition"
+    },
+    "min_parallel_table_scan_size": {
+      "title": "PostgreSQL: min_parallel_table_scan_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-MIN-PARALLEL-TABLE-SCAN-SIZE",
+      "documented_name": "min_parallel_table_scan_size",
+      "match_type": "exact-definition"
+    },
+    "parallel_setup_cost": {
+      "title": "PostgreSQL: parallel_setup_cost",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-PARALLEL-SETUP-COST",
+      "documented_name": "parallel_setup_cost",
+      "match_type": "exact-definition"
+    },
+    "parallel_tuple_cost": {
+      "title": "PostgreSQL: parallel_tuple_cost",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-PARALLEL-TUPLE-COST",
+      "documented_name": "parallel_tuple_cost",
+      "match_type": "exact-definition"
+    },
+    "random_page_cost": {
+      "title": "PostgreSQL: random_page_cost",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-RANDOM-PAGE-COST",
+      "documented_name": "random_page_cost",
+      "match_type": "exact-definition"
+    },
+    "seq_page_cost": {
+      "title": "PostgreSQL: seq_page_cost",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-SEQ-PAGE-COST",
+      "documented_name": "seq_page_cost",
+      "match_type": "exact-definition"
+    },
+    "enable_async_append": {
+      "title": "PostgreSQL: enable_async_append",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-ASYNC-APPEND",
+      "documented_name": "enable_async_append",
+      "match_type": "exact-definition"
+    },
+    "enable_bitmapscan": {
+      "title": "PostgreSQL: enable_bitmapscan",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-BITMAPSCAN",
+      "documented_name": "enable_bitmapscan",
+      "match_type": "exact-definition"
+    },
+    "enable_gathermerge": {
+      "title": "PostgreSQL: enable_gathermerge",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-GATHERMERGE",
+      "documented_name": "enable_gathermerge",
+      "match_type": "exact-definition"
+    },
+    "enable_hashagg": {
+      "title": "PostgreSQL: enable_hashagg",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-HASHAGG",
+      "documented_name": "enable_hashagg",
+      "match_type": "exact-definition"
+    },
+    "enable_hashjoin": {
+      "title": "PostgreSQL: enable_hashjoin",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-HASHJOIN",
+      "documented_name": "enable_hashjoin",
+      "match_type": "exact-definition"
+    },
+    "enable_incremental_sort": {
+      "title": "PostgreSQL: enable_incremental_sort",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-INCREMENTAL-SORT",
+      "documented_name": "enable_incremental_sort",
+      "match_type": "exact-definition"
+    },
+    "enable_indexonlyscan": {
+      "title": "PostgreSQL: enable_indexonlyscan",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-INDEXONLYSCAN",
+      "documented_name": "enable_indexonlyscan",
+      "match_type": "exact-definition"
+    },
+    "enable_indexscan": {
+      "title": "PostgreSQL: enable_indexscan",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-INDEXSCAN",
+      "documented_name": "enable_indexscan",
+      "match_type": "exact-definition"
+    },
+    "enable_material": {
+      "title": "PostgreSQL: enable_material",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-MATERIAL",
+      "documented_name": "enable_material",
+      "match_type": "exact-definition"
+    },
+    "enable_memoize": {
+      "title": "PostgreSQL: enable_memoize",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-MEMOIZE",
+      "documented_name": "enable_memoize",
+      "match_type": "exact-definition"
+    },
+    "enable_mergejoin": {
+      "title": "PostgreSQL: enable_mergejoin",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-MERGEJOIN",
+      "documented_name": "enable_mergejoin",
+      "match_type": "exact-definition"
+    },
+    "enable_nestloop": {
+      "title": "PostgreSQL: enable_nestloop",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-NESTLOOP",
+      "documented_name": "enable_nestloop",
+      "match_type": "exact-definition"
+    },
+    "enable_parallel_append": {
+      "title": "PostgreSQL: enable_parallel_append",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-PARALLEL-APPEND",
+      "documented_name": "enable_parallel_append",
+      "match_type": "exact-definition"
+    },
+    "enable_parallel_hash": {
+      "title": "PostgreSQL: enable_parallel_hash",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-PARALLEL-HASH",
+      "documented_name": "enable_parallel_hash",
+      "match_type": "exact-definition"
+    },
+    "enable_partition_pruning": {
+      "title": "PostgreSQL: enable_partition_pruning",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-PARTITION-PRUNING",
+      "documented_name": "enable_partition_pruning",
+      "match_type": "exact-definition"
+    },
+    "enable_partitionwise_aggregate": {
+      "title": "PostgreSQL: enable_partitionwise_aggregate",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-PARTITIONWISE-AGGREGATE",
+      "documented_name": "enable_partitionwise_aggregate",
+      "match_type": "exact-definition"
+    },
+    "enable_partitionwise_join": {
+      "title": "PostgreSQL: enable_partitionwise_join",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-PARTITIONWISE-JOIN",
+      "documented_name": "enable_partitionwise_join",
+      "match_type": "exact-definition"
+    },
+    "enable_presorted_aggregate": {
+      "title": "PostgreSQL: enable_presorted_aggregate",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-PRESORTED-AGGREGATE",
+      "documented_name": "enable_presorted_aggregate",
+      "match_type": "exact-definition"
+    },
+    "enable_seqscan": {
+      "title": "PostgreSQL: enable_seqscan",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-SEQSCAN",
+      "documented_name": "enable_seqscan",
+      "match_type": "exact-definition"
+    },
+    "enable_sort": {
+      "title": "PostgreSQL: enable_sort",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-SORT",
+      "documented_name": "enable_sort",
+      "match_type": "exact-definition"
+    },
+    "enable_tidscan": {
+      "title": "PostgreSQL: enable_tidscan",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-ENABLE-TIDSCAN",
+      "documented_name": "enable_tidscan",
+      "match_type": "exact-definition"
+    },
+    "synchronous_standby_names": {
+      "title": "PostgreSQL: synchronous_standby_names",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-SYNCHRONOUS-STANDBY-NAMES",
+      "documented_name": "synchronous_standby_names",
+      "match_type": "exact-definition"
+    },
+    "max_replication_slots": {
+      "title": "PostgreSQL: max_replication_slots",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-MAX-REPLICATION-SLOTS",
+      "documented_name": "max_replication_slots",
+      "match_type": "exact-definition"
+    },
+    "max_slot_wal_keep_size": {
+      "title": "PostgreSQL: max_slot_wal_keep_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-MAX-SLOT-WAL-KEEP-SIZE",
+      "documented_name": "max_slot_wal_keep_size",
+      "match_type": "exact-definition"
+    },
+    "max_wal_senders": {
+      "title": "PostgreSQL: max_wal_senders",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-MAX-WAL-SENDERS",
+      "documented_name": "max_wal_senders",
+      "match_type": "exact-definition"
+    },
+    "track_commit_timestamp": {
+      "title": "PostgreSQL: track_commit_timestamp",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-TRACK-COMMIT-TIMESTAMP",
+      "documented_name": "track_commit_timestamp",
+      "match_type": "exact-definition"
+    },
+    "wal_keep_size": {
+      "title": "PostgreSQL: wal_keep_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-WAL-KEEP-SIZE",
+      "documented_name": "wal_keep_size",
+      "match_type": "exact-definition"
+    },
+    "wal_sender_timeout": {
+      "title": "PostgreSQL: wal_sender_timeout",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-WAL-SENDER-TIMEOUT",
+      "documented_name": "wal_sender_timeout",
+      "match_type": "exact-definition"
+    },
+    "hot_standby": {
+      "title": "PostgreSQL: hot_standby",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-HOT-STANDBY",
+      "documented_name": "hot_standby",
+      "match_type": "exact-definition"
+    },
+    "hot_standby_feedback": {
+      "title": "PostgreSQL: hot_standby_feedback",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-HOT-STANDBY-FEEDBACK",
+      "documented_name": "hot_standby_feedback",
+      "match_type": "exact-definition"
+    },
+    "max_standby_archive_delay": {
+      "title": "PostgreSQL: max_standby_archive_delay",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-MAX-STANDBY-ARCHIVE-DELAY",
+      "documented_name": "max_standby_archive_delay",
+      "match_type": "exact-definition"
+    },
+    "max_standby_streaming_delay": {
+      "title": "PostgreSQL: max_standby_streaming_delay",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-MAX-STANDBY-STREAMING-DELAY",
+      "documented_name": "max_standby_streaming_delay",
+      "match_type": "exact-definition"
+    },
+    "primary_conninfo": {
+      "title": "PostgreSQL: primary_conninfo",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-PRIMARY-CONNINFO",
+      "documented_name": "primary_conninfo",
+      "match_type": "exact-definition"
+    },
+    "primary_slot_name": {
+      "title": "PostgreSQL: primary_slot_name",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-PRIMARY-SLOT-NAME",
+      "documented_name": "primary_slot_name",
+      "match_type": "exact-definition"
+    },
+    "recovery_min_apply_delay": {
+      "title": "PostgreSQL: recovery_min_apply_delay",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-RECOVERY-MIN-APPLY-DELAY",
+      "documented_name": "recovery_min_apply_delay",
+      "match_type": "exact-definition"
+    },
+    "wal_receiver_create_temp_slot": {
+      "title": "PostgreSQL: wal_receiver_create_temp_slot",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-WAL-RECEIVER-CREATE-TEMP-SLOT",
+      "documented_name": "wal_receiver_create_temp_slot",
+      "match_type": "exact-definition"
+    },
+    "wal_receiver_status_interval": {
+      "title": "PostgreSQL: wal_receiver_status_interval",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-WAL-RECEIVER-STATUS-INTERVAL",
+      "documented_name": "wal_receiver_status_interval",
+      "match_type": "exact-definition"
+    },
+    "wal_receiver_timeout": {
+      "title": "PostgreSQL: wal_receiver_timeout",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-WAL-RECEIVER-TIMEOUT",
+      "documented_name": "wal_receiver_timeout",
+      "match_type": "exact-definition"
+    },
+    "wal_retrieve_retry_interval": {
+      "title": "PostgreSQL: wal_retrieve_retry_interval",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-WAL-RETRIEVE-RETRY-INTERVAL",
+      "documented_name": "wal_retrieve_retry_interval",
+      "match_type": "exact-definition"
+    },
+    "max_logical_replication_workers": {
+      "title": "PostgreSQL: max_logical_replication_workers",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-MAX-LOGICAL-REPLICATION-WORKERS",
+      "documented_name": "max_logical_replication_workers",
+      "match_type": "exact-definition"
+    },
+    "max_parallel_apply_workers_per_subscription": {
+      "title": "PostgreSQL: max_parallel_apply_workers_per_subscription",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-MAX-PARALLEL-APPLY-WORKERS-PER-SUBSCRIPTION",
+      "documented_name": "max_parallel_apply_workers_per_subscription",
+      "match_type": "exact-definition"
+    },
+    "max_sync_workers_per_subscription": {
+      "title": "PostgreSQL: max_sync_workers_per_subscription",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-MAX-SYNC-WORKERS-PER-SUBSCRIPTION",
+      "documented_name": "max_sync_workers_per_subscription",
+      "match_type": "exact-definition"
+    },
+    "cluster_name": {
+      "title": "PostgreSQL: cluster_name",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-CLUSTER-NAME",
+      "documented_name": "cluster_name",
+      "match_type": "exact-definition"
+    },
+    "update_process_title": {
+      "title": "PostgreSQL: update_process_title",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-UPDATE-PROCESS-TITLE",
+      "documented_name": "update_process_title",
+      "match_type": "exact-definition"
+    },
+    "application_name": {
+      "title": "PostgreSQL: application_name",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-APPLICATION-NAME",
+      "documented_name": "application_name",
+      "match_type": "exact-definition"
+    },
+    "debug_pretty_print": {
+      "title": "PostgreSQL: debug_pretty_print",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-DEBUG-PRETTY-PRINT",
+      "documented_name": "debug_pretty_print",
+      "match_type": "exact-definition"
+    },
+    "debug_print_parse": {
+      "title": "PostgreSQL: debug_print_parse",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-DEBUG-PRINT-PARSE",
+      "documented_name": "debug_print_parse",
+      "match_type": "shared-definition"
+    },
+    "debug_print_plan": {
+      "title": "PostgreSQL: debug_print_plan",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-DEBUG-PRINT-PARSE",
+      "documented_name": "debug_print_plan",
+      "match_type": "shared-definition"
+    },
+    "debug_print_rewritten": {
+      "title": "PostgreSQL: debug_print_rewritten",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-DEBUG-PRINT-PARSE",
+      "documented_name": "debug_print_rewritten",
+      "match_type": "shared-definition"
+    },
+    "log_autovacuum_min_duration": {
+      "title": "PostgreSQL: log_autovacuum_min_duration",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-AUTOVACUUM-MIN-DURATION",
+      "documented_name": "log_autovacuum_min_duration",
+      "match_type": "exact-definition"
+    },
+    "log_checkpoints": {
+      "title": "PostgreSQL: log_checkpoints",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-CHECKPOINTS",
+      "documented_name": "log_checkpoints",
+      "match_type": "exact-definition"
+    },
+    "log_connections": {
+      "title": "PostgreSQL: log_connections",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-CONNECTIONS",
+      "documented_name": "log_connections",
+      "match_type": "exact-definition"
+    },
+    "log_disconnections": {
+      "title": "PostgreSQL: log_disconnections",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-DISCONNECTIONS",
+      "documented_name": "log_disconnections",
+      "match_type": "exact-definition"
+    },
+    "log_duration": {
+      "title": "PostgreSQL: log_duration",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-DURATION",
+      "documented_name": "log_duration",
+      "match_type": "exact-definition"
+    },
+    "log_error_verbosity": {
+      "title": "PostgreSQL: log_error_verbosity",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-ERROR-VERBOSITY",
+      "documented_name": "log_error_verbosity",
+      "match_type": "exact-definition"
+    },
+    "log_hostname": {
+      "title": "PostgreSQL: log_hostname",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-HOSTNAME",
+      "documented_name": "log_hostname",
+      "match_type": "exact-definition"
+    },
+    "log_line_prefix": {
+      "title": "PostgreSQL: log_line_prefix",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-LINE-PREFIX",
+      "documented_name": "log_line_prefix",
+      "match_type": "exact-definition"
+    },
+    "log_lock_waits": {
+      "title": "PostgreSQL: log_lock_waits",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-LOCK-WAITS",
+      "documented_name": "log_lock_waits",
+      "match_type": "exact-definition"
+    },
+    "log_parameter_max_length": {
+      "title": "PostgreSQL: log_parameter_max_length",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-PARAMETER-MAX-LENGTH",
+      "documented_name": "log_parameter_max_length",
+      "match_type": "exact-definition"
+    },
+    "log_parameter_max_length_on_error": {
+      "title": "PostgreSQL: log_parameter_max_length_on_error",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-PARAMETER-MAX-LENGTH-ON-ERROR",
+      "documented_name": "log_parameter_max_length_on_error",
+      "match_type": "exact-definition"
+    },
+    "log_recovery_conflict_waits": {
+      "title": "PostgreSQL: log_recovery_conflict_waits",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-RECOVERY-CONFLICT-WAITS",
+      "documented_name": "log_recovery_conflict_waits",
+      "match_type": "exact-definition"
+    },
+    "log_replication_commands": {
+      "title": "PostgreSQL: log_replication_commands",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-REPLICATION-COMMANDS",
+      "documented_name": "log_replication_commands",
+      "match_type": "exact-definition"
+    },
+    "log_statement": {
+      "title": "PostgreSQL: log_statement",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-STATEMENT",
+      "documented_name": "log_statement",
+      "match_type": "exact-definition"
+    },
+    "log_temp_files": {
+      "title": "PostgreSQL: log_temp_files",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-TEMP-FILES",
+      "documented_name": "log_temp_files",
+      "match_type": "exact-definition"
+    },
+    "log_timezone": {
+      "title": "PostgreSQL: log_timezone",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-TIMEZONE",
+      "documented_name": "log_timezone",
+      "match_type": "exact-definition"
+    },
+    "log_min_duration_sample": {
+      "title": "PostgreSQL: log_min_duration_sample",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-MIN-DURATION-SAMPLE",
+      "documented_name": "log_min_duration_sample",
+      "match_type": "exact-definition"
+    },
+    "log_min_duration_statement": {
+      "title": "PostgreSQL: log_min_duration_statement",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-MIN-DURATION-STATEMENT",
+      "documented_name": "log_min_duration_statement",
+      "match_type": "exact-definition"
+    },
+    "log_min_error_statement": {
+      "title": "PostgreSQL: log_min_error_statement",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-MIN-ERROR-STATEMENT",
+      "documented_name": "log_min_error_statement",
+      "match_type": "exact-definition"
+    },
+    "log_min_messages": {
+      "title": "PostgreSQL: log_min_messages",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-MIN-MESSAGES",
+      "documented_name": "log_min_messages",
+      "match_type": "exact-definition"
+    },
+    "log_startup_progress_interval": {
+      "title": "PostgreSQL: log_startup_progress_interval",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-STARTUP-PROGRESS-INTERVAL",
+      "documented_name": "log_startup_progress_interval",
+      "match_type": "exact-definition"
+    },
+    "log_statement_sample_rate": {
+      "title": "PostgreSQL: log_statement_sample_rate",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-STATEMENT-SAMPLE-RATE",
+      "documented_name": "log_statement_sample_rate",
+      "match_type": "exact-definition"
+    },
+    "log_transaction_sample_rate": {
+      "title": "PostgreSQL: log_transaction_sample_rate",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-TRANSACTION-SAMPLE-RATE",
+      "documented_name": "log_transaction_sample_rate",
+      "match_type": "exact-definition"
+    },
+    "event_source": {
+      "title": "PostgreSQL: event_source",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-EVENT-SOURCE",
+      "documented_name": "event_source",
+      "match_type": "exact-definition"
+    },
+    "log_destination": {
+      "title": "PostgreSQL: log_destination",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-DESTINATION",
+      "documented_name": "log_destination",
+      "match_type": "exact-definition"
+    },
+    "log_directory": {
+      "title": "PostgreSQL: log_directory",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-DIRECTORY",
+      "documented_name": "log_directory",
+      "match_type": "exact-definition"
+    },
+    "log_file_mode": {
+      "title": "PostgreSQL: log_file_mode",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-FILE-MODE",
+      "documented_name": "log_file_mode",
+      "match_type": "exact-definition"
+    },
+    "log_filename": {
+      "title": "PostgreSQL: log_filename",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-FILENAME",
+      "documented_name": "log_filename",
+      "match_type": "exact-definition"
+    },
+    "logging_collector": {
+      "title": "PostgreSQL: logging_collector",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOGGING-COLLECTOR",
+      "documented_name": "logging_collector",
+      "match_type": "exact-definition"
+    },
+    "log_rotation_age": {
+      "title": "PostgreSQL: log_rotation_age",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-ROTATION-AGE",
+      "documented_name": "log_rotation_age",
+      "match_type": "exact-definition"
+    },
+    "log_rotation_size": {
+      "title": "PostgreSQL: log_rotation_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-ROTATION-SIZE",
+      "documented_name": "log_rotation_size",
+      "match_type": "exact-definition"
+    },
+    "log_truncate_on_rotation": {
+      "title": "PostgreSQL: log_truncate_on_rotation",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-TRUNCATE-ON-ROTATION",
+      "documented_name": "log_truncate_on_rotation",
+      "match_type": "exact-definition"
+    },
+    "syslog_facility": {
+      "title": "PostgreSQL: syslog_facility",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-SYSLOG-FACILITY",
+      "documented_name": "syslog_facility",
+      "match_type": "exact-definition"
+    },
+    "syslog_ident": {
+      "title": "PostgreSQL: syslog_ident",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-SYSLOG-IDENT",
+      "documented_name": "syslog_ident",
+      "match_type": "exact-definition"
+    },
+    "syslog_sequence_numbers": {
+      "title": "PostgreSQL: syslog_sequence_numbers",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-SYSLOG-SEQUENCE-NUMBERS",
+      "documented_name": "syslog_sequence_numbers",
+      "match_type": "exact-definition"
+    },
+    "syslog_split_messages": {
+      "title": "PostgreSQL: syslog_split_messages",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-SYSLOG-SPLIT-MESSAGES",
+      "documented_name": "syslog_split_messages",
+      "match_type": "exact-definition"
+    },
+    "backend_flush_after": {
+      "title": "PostgreSQL: backend_flush_after",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-BACKEND-FLUSH-AFTER",
+      "documented_name": "backend_flush_after",
+      "match_type": "exact-definition"
+    },
+    "effective_io_concurrency": {
+      "title": "PostgreSQL: effective_io_concurrency",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-EFFECTIVE-IO-CONCURRENCY",
+      "documented_name": "effective_io_concurrency",
+      "match_type": "exact-definition"
+    },
+    "maintenance_io_concurrency": {
+      "title": "PostgreSQL: maintenance_io_concurrency",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAINTENANCE-IO-CONCURRENCY",
+      "documented_name": "maintenance_io_concurrency",
+      "match_type": "exact-definition"
+    },
+    "max_parallel_maintenance_workers": {
+      "title": "PostgreSQL: max_parallel_maintenance_workers",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAX-PARALLEL-MAINTENANCE-WORKERS",
+      "documented_name": "max_parallel_maintenance_workers",
+      "match_type": "exact-definition"
+    },
+    "max_parallel_workers": {
+      "title": "PostgreSQL: max_parallel_workers",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAX-PARALLEL-WORKERS",
+      "documented_name": "max_parallel_workers",
+      "match_type": "exact-definition"
+    },
+    "max_parallel_workers_per_gather": {
+      "title": "PostgreSQL: max_parallel_workers_per_gather",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAX-PARALLEL-WORKERS-PER-GATHER",
+      "documented_name": "max_parallel_workers_per_gather",
+      "match_type": "exact-definition"
+    },
+    "max_worker_processes": {
+      "title": "PostgreSQL: max_worker_processes",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAX-WORKER-PROCESSES",
+      "documented_name": "max_worker_processes",
+      "match_type": "exact-definition"
+    },
+    "parallel_leader_participation": {
+      "title": "PostgreSQL: parallel_leader_participation",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-PARALLEL-LEADER-PARTICIPATION",
+      "documented_name": "parallel_leader_participation",
+      "match_type": "exact-definition"
+    },
+    "bgwriter_delay": {
+      "title": "PostgreSQL: bgwriter_delay",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-BGWRITER-DELAY",
+      "documented_name": "bgwriter_delay",
+      "match_type": "exact-definition"
+    },
+    "bgwriter_flush_after": {
+      "title": "PostgreSQL: bgwriter_flush_after",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-BGWRITER-FLUSH-AFTER",
+      "documented_name": "bgwriter_flush_after",
+      "match_type": "exact-definition"
+    },
+    "bgwriter_lru_maxpages": {
+      "title": "PostgreSQL: bgwriter_lru_maxpages",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-BGWRITER-LRU-MAXPAGES",
+      "documented_name": "bgwriter_lru_maxpages",
+      "match_type": "exact-definition"
+    },
+    "bgwriter_lru_multiplier": {
+      "title": "PostgreSQL: bgwriter_lru_multiplier",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-BGWRITER-LRU-MULTIPLIER",
+      "documented_name": "bgwriter_lru_multiplier",
+      "match_type": "exact-definition"
+    },
+    "vacuum_cost_delay": {
+      "title": "PostgreSQL: vacuum_cost_delay",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-VACUUM-COST-DELAY",
+      "documented_name": "vacuum_cost_delay",
+      "match_type": "exact-definition"
+    },
+    "vacuum_cost_limit": {
+      "title": "PostgreSQL: vacuum_cost_limit",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-VACUUM-COST-LIMIT",
+      "documented_name": "vacuum_cost_limit",
+      "match_type": "exact-definition"
+    },
+    "vacuum_cost_page_dirty": {
+      "title": "PostgreSQL: vacuum_cost_page_dirty",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-VACUUM-COST-PAGE-DIRTY",
+      "documented_name": "vacuum_cost_page_dirty",
+      "match_type": "exact-definition"
+    },
+    "vacuum_cost_page_hit": {
+      "title": "PostgreSQL: vacuum_cost_page_hit",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-VACUUM-COST-PAGE-HIT",
+      "documented_name": "vacuum_cost_page_hit",
+      "match_type": "exact-definition"
+    },
+    "vacuum_cost_page_miss": {
+      "title": "PostgreSQL: vacuum_cost_page_miss",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-vacuum.html#GUC-VACUUM-COST-PAGE-MISS",
+      "documented_name": "vacuum_cost_page_miss",
+      "match_type": "exact-definition"
+    },
+    "temp_file_limit": {
+      "title": "PostgreSQL: temp_file_limit",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-TEMP-FILE-LIMIT",
+      "documented_name": "temp_file_limit",
+      "match_type": "exact-definition"
+    },
+    "max_files_per_process": {
+      "title": "PostgreSQL: max_files_per_process",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAX-FILES-PER-PROCESS",
+      "documented_name": "max_files_per_process",
+      "match_type": "exact-definition"
+    },
+    "autovacuum_work_mem": {
+      "title": "PostgreSQL: autovacuum_work_mem",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-AUTOVACUUM-WORK-MEM",
+      "documented_name": "autovacuum_work_mem",
+      "match_type": "exact-definition"
+    },
+    "dynamic_shared_memory_type": {
+      "title": "PostgreSQL: dynamic_shared_memory_type",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-DYNAMIC-SHARED-MEMORY-TYPE",
+      "documented_name": "dynamic_shared_memory_type",
+      "match_type": "exact-definition"
+    },
+    "hash_mem_multiplier": {
+      "title": "PostgreSQL: hash_mem_multiplier",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-HASH-MEM-MULTIPLIER",
+      "documented_name": "hash_mem_multiplier",
+      "match_type": "exact-definition"
+    },
+    "huge_pages": {
+      "title": "PostgreSQL: huge_pages",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-HUGE-PAGES",
+      "documented_name": "huge_pages",
+      "match_type": "exact-definition"
+    },
+    "huge_page_size": {
+      "title": "PostgreSQL: huge_page_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-HUGE-PAGE-SIZE",
+      "documented_name": "huge_page_size",
+      "match_type": "exact-definition"
+    },
+    "logical_decoding_work_mem": {
+      "title": "PostgreSQL: logical_decoding_work_mem",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-LOGICAL-DECODING-WORK-MEM",
+      "documented_name": "logical_decoding_work_mem",
+      "match_type": "exact-definition"
+    },
+    "maintenance_work_mem": {
+      "title": "PostgreSQL: maintenance_work_mem",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAINTENANCE-WORK-MEM",
+      "documented_name": "maintenance_work_mem",
+      "match_type": "exact-definition"
+    },
+    "max_prepared_transactions": {
+      "title": "PostgreSQL: max_prepared_transactions",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAX-PREPARED-TRANSACTIONS",
+      "documented_name": "max_prepared_transactions",
+      "match_type": "exact-definition"
+    },
+    "max_stack_depth": {
+      "title": "PostgreSQL: max_stack_depth",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAX-STACK-DEPTH",
+      "documented_name": "max_stack_depth",
+      "match_type": "exact-definition"
+    },
+    "min_dynamic_shared_memory": {
+      "title": "PostgreSQL: min_dynamic_shared_memory",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MIN-DYNAMIC-SHARED-MEMORY",
+      "documented_name": "min_dynamic_shared_memory",
+      "match_type": "exact-definition"
+    },
+    "shared_buffers": {
+      "title": "PostgreSQL: shared_buffers",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-SHARED-BUFFERS",
+      "documented_name": "shared_buffers",
+      "match_type": "exact-definition"
+    },
+    "shared_memory_type": {
+      "title": "PostgreSQL: shared_memory_type",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-SHARED-MEMORY-TYPE",
+      "documented_name": "shared_memory_type",
+      "match_type": "exact-definition"
+    },
+    "temp_buffers": {
+      "title": "PostgreSQL: temp_buffers",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-TEMP-BUFFERS",
+      "documented_name": "temp_buffers",
+      "match_type": "exact-definition"
+    },
+    "vacuum_buffer_usage_limit": {
+      "title": "PostgreSQL: vacuum_buffer_usage_limit",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-VACUUM-BUFFER-USAGE-LIMIT",
+      "documented_name": "vacuum_buffer_usage_limit",
+      "match_type": "exact-definition"
+    },
+    "work_mem": {
+      "title": "PostgreSQL: work_mem",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-WORK-MEM",
+      "documented_name": "work_mem",
+      "match_type": "exact-definition"
+    },
+    "stats_fetch_consistency": {
+      "title": "PostgreSQL: stats_fetch_consistency",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-STATS-FETCH-CONSISTENCY",
+      "documented_name": "stats_fetch_consistency",
+      "match_type": "exact-definition"
+    },
+    "track_activities": {
+      "title": "PostgreSQL: track_activities",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-TRACK-ACTIVITIES",
+      "documented_name": "track_activities",
+      "match_type": "exact-definition"
+    },
+    "track_activity_query_size": {
+      "title": "PostgreSQL: track_activity_query_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-TRACK-ACTIVITY-QUERY-SIZE",
+      "documented_name": "track_activity_query_size",
+      "match_type": "exact-definition"
+    },
+    "track_counts": {
+      "title": "PostgreSQL: track_counts",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-TRACK-COUNTS",
+      "documented_name": "track_counts",
+      "match_type": "exact-definition"
+    },
+    "track_functions": {
+      "title": "PostgreSQL: track_functions",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-TRACK-FUNCTIONS",
+      "documented_name": "track_functions",
+      "match_type": "exact-definition"
+    },
+    "track_io_timing": {
+      "title": "PostgreSQL: track_io_timing",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-TRACK-IO-TIMING",
+      "documented_name": "track_io_timing",
+      "match_type": "exact-definition"
+    },
+    "track_wal_io_timing": {
+      "title": "PostgreSQL: track_wal_io_timing",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-TRACK-WAL-IO-TIMING",
+      "documented_name": "track_wal_io_timing",
+      "match_type": "exact-definition"
+    },
+    "compute_query_id": {
+      "title": "PostgreSQL: compute_query_id",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-COMPUTE-QUERY-ID",
+      "documented_name": "compute_query_id",
+      "match_type": "exact-definition"
+    },
+    "log_executor_stats": {
+      "title": "PostgreSQL: log_executor_stats",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-LOG-STATEMENT-STATS",
+      "documented_name": "log_executor_stats",
+      "match_type": "shared-definition"
+    },
+    "log_parser_stats": {
+      "title": "PostgreSQL: log_parser_stats",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-LOG-STATEMENT-STATS",
+      "documented_name": "log_parser_stats",
+      "match_type": "shared-definition"
+    },
+    "log_planner_stats": {
+      "title": "PostgreSQL: log_planner_stats",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-LOG-STATEMENT-STATS",
+      "documented_name": "log_planner_stats",
+      "match_type": "shared-definition"
+    },
+    "log_statement_stats": {
+      "title": "PostgreSQL: log_statement_stats",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-statistics.html#GUC-LOG-STATEMENT-STATS",
+      "documented_name": "log_statement_stats",
+      "match_type": "shared-definition"
+    },
+    "transform_null_equals": {
+      "title": "PostgreSQL: transform_null_equals",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-compatible.html#GUC-TRANSFORM-NULL-EQUALS",
+      "documented_name": "transform_null_equals",
+      "match_type": "exact-definition"
+    },
+    "array_nulls": {
+      "title": "PostgreSQL: array_nulls",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-compatible.html#GUC-ARRAY-NULLS",
+      "documented_name": "array_nulls",
+      "match_type": "exact-definition"
+    },
+    "backslash_quote": {
+      "title": "PostgreSQL: backslash_quote",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-compatible.html#GUC-BACKSLASH-QUOTE",
+      "documented_name": "backslash_quote",
+      "match_type": "exact-definition"
+    },
+    "escape_string_warning": {
+      "title": "PostgreSQL: escape_string_warning",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-compatible.html#GUC-ESCAPE-STRING-WARNING",
+      "documented_name": "escape_string_warning",
+      "match_type": "exact-definition"
+    },
+    "lo_compat_privileges": {
+      "title": "PostgreSQL: lo_compat_privileges",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-compatible.html#GUC-LO-COMPAT-PRIVILEGES",
+      "documented_name": "lo_compat_privileges",
+      "match_type": "exact-definition"
+    },
+    "quote_all_identifiers": {
+      "title": "PostgreSQL: quote_all_identifiers",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-compatible.html#GUC-QUOTE-ALL-IDENTIFIERS",
+      "documented_name": "quote_all_identifiers",
+      "match_type": "exact-definition"
+    },
+    "standard_conforming_strings": {
+      "title": "PostgreSQL: standard_conforming_strings",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-compatible.html#GUC-STANDARD-CONFORMING-STRINGS",
+      "documented_name": "standard_conforming_strings",
+      "match_type": "exact-definition"
+    },
+    "synchronize_seqscans": {
+      "title": "PostgreSQL: synchronize_seqscans",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-compatible.html#GUC-SYNCHRONIZE-SEQSCANS",
+      "documented_name": "synchronize_seqscans",
+      "match_type": "exact-definition"
+    },
+    "archive_cleanup_command": {
+      "title": "PostgreSQL: archive_cleanup_command",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-ARCHIVE-CLEANUP-COMMAND",
+      "documented_name": "archive_cleanup_command",
+      "match_type": "exact-definition"
+    },
+    "recovery_end_command": {
+      "title": "PostgreSQL: recovery_end_command",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-RECOVERY-END-COMMAND",
+      "documented_name": "recovery_end_command",
+      "match_type": "exact-definition"
+    },
+    "restore_command": {
+      "title": "PostgreSQL: restore_command",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-RESTORE-COMMAND",
+      "documented_name": "restore_command",
+      "match_type": "exact-definition"
+    },
+    "archive_command": {
+      "title": "PostgreSQL: archive_command",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-ARCHIVE-COMMAND",
+      "documented_name": "archive_command",
+      "match_type": "exact-definition"
+    },
+    "archive_library": {
+      "title": "PostgreSQL: archive_library",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-ARCHIVE-LIBRARY",
+      "documented_name": "archive_library",
+      "match_type": "exact-definition"
+    },
+    "archive_mode": {
+      "title": "PostgreSQL: archive_mode",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-ARCHIVE-MODE",
+      "documented_name": "archive_mode",
+      "match_type": "exact-definition"
+    },
+    "archive_timeout": {
+      "title": "PostgreSQL: archive_timeout",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-ARCHIVE-TIMEOUT",
+      "documented_name": "archive_timeout",
+      "match_type": "exact-definition"
+    },
+    "checkpoint_completion_target": {
+      "title": "PostgreSQL: checkpoint_completion_target",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-CHECKPOINT-COMPLETION-TARGET",
+      "documented_name": "checkpoint_completion_target",
+      "match_type": "exact-definition"
+    },
+    "checkpoint_flush_after": {
+      "title": "PostgreSQL: checkpoint_flush_after",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-CHECKPOINT-FLUSH-AFTER",
+      "documented_name": "checkpoint_flush_after",
+      "match_type": "exact-definition"
+    },
+    "checkpoint_timeout": {
+      "title": "PostgreSQL: checkpoint_timeout",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-CHECKPOINT-TIMEOUT",
+      "documented_name": "checkpoint_timeout",
+      "match_type": "exact-definition"
+    },
+    "checkpoint_warning": {
+      "title": "PostgreSQL: checkpoint_warning",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-CHECKPOINT-WARNING",
+      "documented_name": "checkpoint_warning",
+      "match_type": "exact-definition"
+    },
+    "max_wal_size": {
+      "title": "PostgreSQL: max_wal_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-MAX-WAL-SIZE",
+      "documented_name": "max_wal_size",
+      "match_type": "exact-definition"
+    },
+    "min_wal_size": {
+      "title": "PostgreSQL: min_wal_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-MIN-WAL-SIZE",
+      "documented_name": "min_wal_size",
+      "match_type": "exact-definition"
+    },
+    "recovery_prefetch": {
+      "title": "PostgreSQL: recovery_prefetch",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-RECOVERY-PREFETCH",
+      "documented_name": "recovery_prefetch",
+      "match_type": "exact-definition"
+    },
+    "wal_decode_buffer_size": {
+      "title": "PostgreSQL: wal_decode_buffer_size",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-WAL-DECODE-BUFFER-SIZE",
+      "documented_name": "wal_decode_buffer_size",
+      "match_type": "exact-definition"
+    },
+    "recovery_target": {
+      "title": "PostgreSQL: recovery_target",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-RECOVERY-TARGET",
+      "documented_name": "recovery_target",
+      "match_type": "exact-definition"
+    },
+    "recovery_target_action": {
+      "title": "PostgreSQL: recovery_target_action",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-RECOVERY-TARGET-ACTION",
+      "documented_name": "recovery_target_action",
+      "match_type": "exact-definition"
+    },
+    "recovery_target_inclusive": {
+      "title": "PostgreSQL: recovery_target_inclusive",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-RECOVERY-TARGET-INCLUSIVE",
+      "documented_name": "recovery_target_inclusive",
+      "match_type": "exact-definition"
+    },
+    "recovery_target_lsn": {
+      "title": "PostgreSQL: recovery_target_lsn",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-RECOVERY-TARGET-LSN",
+      "documented_name": "recovery_target_lsn",
+      "match_type": "exact-definition"
+    },
+    "recovery_target_name": {
+      "title": "PostgreSQL: recovery_target_name",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-RECOVERY-TARGET-NAME",
+      "documented_name": "recovery_target_name",
+      "match_type": "exact-definition"
+    },
+    "recovery_target_time": {
+      "title": "PostgreSQL: recovery_target_time",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-RECOVERY-TARGET-TIME",
+      "documented_name": "recovery_target_time",
+      "match_type": "exact-definition"
+    },
+    "recovery_target_timeline": {
+      "title": "PostgreSQL: recovery_target_timeline",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-RECOVERY-TARGET-TIMELINE",
+      "documented_name": "recovery_target_timeline",
+      "match_type": "exact-definition"
+    },
+    "recovery_target_xid": {
+      "title": "PostgreSQL: recovery_target_xid",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-RECOVERY-TARGET-XID",
+      "documented_name": "recovery_target_xid",
+      "match_type": "exact-definition"
+    },
+    "commit_delay": {
+      "title": "PostgreSQL: commit_delay",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-COMMIT-DELAY",
+      "documented_name": "commit_delay",
+      "match_type": "exact-definition"
+    },
+    "commit_siblings": {
+      "title": "PostgreSQL: commit_siblings",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-COMMIT-SIBLINGS",
+      "documented_name": "commit_siblings",
+      "match_type": "exact-definition"
+    },
+    "fsync": {
+      "title": "PostgreSQL: fsync",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-FSYNC",
+      "documented_name": "fsync",
+      "match_type": "exact-definition"
+    },
+    "full_page_writes": {
+      "title": "PostgreSQL: full_page_writes",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-FULL-PAGE-WRITES",
+      "documented_name": "full_page_writes",
+      "match_type": "exact-definition"
+    },
+    "synchronous_commit": {
+      "title": "PostgreSQL: synchronous_commit",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT",
+      "documented_name": "synchronous_commit",
+      "match_type": "exact-definition"
+    },
+    "wal_buffers": {
+      "title": "PostgreSQL: wal_buffers",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-WAL-BUFFERS",
+      "documented_name": "wal_buffers",
+      "match_type": "exact-definition"
+    },
+    "wal_compression": {
+      "title": "PostgreSQL: wal_compression",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-WAL-COMPRESSION",
+      "documented_name": "wal_compression",
+      "match_type": "exact-definition"
+    },
+    "wal_init_zero": {
+      "title": "PostgreSQL: wal_init_zero",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-WAL-INIT-ZERO",
+      "documented_name": "wal_init_zero",
+      "match_type": "exact-definition"
+    },
+    "wal_level": {
+      "title": "PostgreSQL: wal_level",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-WAL-LEVEL",
+      "documented_name": "wal_level",
+      "match_type": "exact-definition"
+    },
+    "wal_log_hints": {
+      "title": "PostgreSQL: wal_log_hints",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-WAL-LOG-HINTS",
+      "documented_name": "wal_log_hints",
+      "match_type": "exact-definition"
+    },
+    "wal_recycle": {
+      "title": "PostgreSQL: wal_recycle",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-WAL-RECYCLE",
+      "documented_name": "wal_recycle",
+      "match_type": "exact-definition"
+    },
+    "wal_skip_threshold": {
+      "title": "PostgreSQL: wal_skip_threshold",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-WAL-SKIP-THRESHOLD",
+      "documented_name": "wal_skip_threshold",
+      "match_type": "exact-definition"
+    },
+    "wal_sync_method": {
+      "title": "PostgreSQL: wal_sync_method",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-WAL-SYNC-METHOD",
+      "documented_name": "wal_sync_method",
+      "match_type": "exact-definition"
+    },
+    "wal_writer_delay": {
+      "title": "PostgreSQL: wal_writer_delay",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-WAL-WRITER-DELAY",
+      "documented_name": "wal_writer_delay",
+      "match_type": "exact-definition"
+    },
+    "wal_writer_flush_after": {
+      "title": "PostgreSQL: wal_writer_flush_after",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-WAL-WRITER-FLUSH-AFTER",
+      "documented_name": "wal_writer_flush_after",
+      "match_type": "exact-definition"
+    }
+  },
+  "parameters_without_description": [
+    "autonomous_pool_capacity",
+    "autonomous_session_max_uses",
+    "backtrace_min_messages",
+    "db_user_namespace",
+    "dbalias",
+    "enable_backtrace",
+    "instance_name",
+    "integrity_checks",
+    "integrity_period",
+    "license_warning_gap",
+    "license_warning_period",
+    "log_checkpoint_progress",
+    "logon_jobs",
+    "mask_pg_version",
+    "mask_version_template",
+    "metrics_collector_path",
+    "old_snapshot_threshold",
+    "online_analyze.capacity_threshold",
+    "online_analyze.enable",
+    "online_analyze.exclude_tables",
+    "online_analyze.include_tables",
+    "online_analyze.local_tracking",
+    "online_analyze.lower_limit",
+    "online_analyze.min_interval",
+    "online_analyze.scale_factor",
+    "online_analyze.table_type",
+    "online_analyze.threshold",
+    "online_analyze.verbose",
+    "onlymem_buffers",
+    "optimized_snapshots",
+    "plantuner.disable_index",
+    "plantuner.enable_index",
+    "plantuner.fix_empty_table",
+    "plantuner.only_index",
+    "possible_buffers",
+    "qcdc_registry_size",
+    "qhb_backtrace_max_age",
+    "qhb_backtrace_max_count",
+    "qhb_cache_size",
+    "qhb_caching_while_scan",
+    "qhb_load_tzoffsets_cache_size_kb",
+    "qhb_metrics_cache_size",
+    "qhb_mq_map_size",
+    "qhb_onlymem_cache_size",
+    "qhb_os_monitoring",
+    "qhb_os_stat_period",
+    "qhb_plan_cache_size",
+    "qhb_possible_buffers_size",
+    "qhb_relopt_cache_size",
+    "qsched_log_rotation_adjustment_period",
+    "qsched_log_rotation_max_entries",
+    "qsched_log_rotation_max_lifetime",
+    "qsched_log_rotation_period",
+    "qsched_log_rotation_strategy",
+    "qsched_parallel_slaves",
+    "qss_encrypt_statistic",
+    "qss_mode",
+    "qss_shmem_size_cap",
+    "query_profiling",
+    "query_profiling_queue_size",
+    "query_stat_mem",
+    "queryid_auto_register",
+    "queryid_max_saved",
+    "queryid_update_threshold",
+    "resource_management",
+    "shared_buffers_partitions",
+    "trace_recovery_messages",
+    "use_possible_buffer",
+    "use_qhb_cache",
+    "use_qhb_onlymem_cache",
+    "wal_after_error_sleep_delay",
+    "wipe_file_on_delete",
+    "wipe_heaptuple_on_delete",
+    "wipe_memctx_on_free",
+    "wipe_xlog_on_free",
+    "with_mq_broker",
+    "with_qsched",
+    "xml_ignore_encoding"
+  ]
+}
