@@ -13,13 +13,15 @@ const palette={}, data=[];
 function convert(raw,parent=null,depth=0,branch=null,path='root'){
  const id=path,kind=depth===0?'root':raw.type==='parameter'?'parameter':depth===1?'group':'subgroup';
  if(depth===1){branch=id;palette[branch]=['#879a49','#b98260','#7695af','#a180a5','#57988d','#b79b48'][Object.keys(palette).length%6];}
- const n={...raw,id,parent,kind,branch,label:raw.name,type:raw.vartype,description:raw.short_desc,
+ const n={...raw,id,parent,kind,branch,label:depth===0?'QHB':raw.name,type:raw.vartype,description:raw.short_desc,
  collapsed:kind!=='root'&&kind!=='parameter',x:0,y:0,autoX:0,autoY:0};
  data.push(n);(raw.children||[]).forEach((v,i)=>convert(v,id,depth+1,branch,path+'/'+i));
 }
 convert(source);
 const byId=new Map(data.map(n=>[n.id,n]));
-const hiddenGroups=new Set();
+const defaultHiddenGroups=new Set(['Error Handling','Lock Management','QHB Options','Ungrouped','Developer Options']);
+const hiddenGroups=new Set(data.filter(n=>n.kind==='group'&&defaultHiddenGroups.has(n.label)).map(n=>n.id));
+function isHidden(n){return hiddenGroups.has(n.id)||(n.parent?isHidden(byId.get(n.parent)):false);}
 const nodeHeights=new Map(),nodeWidths=new Map();
 function measureNodes(){
  const probe=document.createElement('div');probe.style.cssText='position:absolute;left:-10000px;visibility:hidden';document.body.append(probe);
@@ -29,8 +31,56 @@ const childMap=new Map(data.map(n=>[n.id,[]]));
 for(const n of data)if(n.parent)childMap.get(n.parent).push(n);
 const children=id=>childMap.get(id)||[];
 const descendants=id=>children(id).flatMap(n=>[n,...descendants(n.id)]);
+// Names along the ancestry keep preferences stable when siblings are reordered.
+const stateKey='pg_settings_map.state.v1';
+const nodeKey=n=>JSON.stringify(n.parent?[...JSON.parse(nodeKey(byId.get(n.parent))),n.label]:[n.name]);
+const stateKeys=new Map(data.map(n=>[n.id,nodeKey(n)]));
+let stateReady=false,saveTimer;
+function currentState(){
+ const entries=data.map(n=>[stateKeys.get(n.id),{collapsed:n.collapsed,hidden:hiddenGroups.has(n.id),dx:n.x-n.autoX,dy:n.y-n.autoY}]);
+ return {version:1,nodes:Object.fromEntries(entries)};
+}
+function saveState(){
+ if(!stateReady)return;
+ clearTimeout(saveTimer);
+ try{localStorage.setItem(stateKey,JSON.stringify(currentState()));}catch{}
+}
+function scheduleSave(){if(stateReady){clearTimeout(saveTimer);saveTimer=setTimeout(saveState,150);}}
+function restoreState(){
+ let saved;
+ try{saved=JSON.parse(localStorage.getItem(stateKey));}catch{}
+ applyState(saved);
+}
+function applyState(saved){
+ const entries=saved?.version===1&&saved.nodes&&typeof saved.nodes==='object'?saved.nodes:{};
+ hiddenGroups.clear();
+ for(const n of data){
+  n.collapsed=n.kind!=='root'&&n.kind!=='parameter';
+  if(n.kind==='group'&&defaultHiddenGroups.has(n.label))hiddenGroups.add(n.id);
+ }
+ for(const n of data){
+  const entry=entries[stateKeys.get(n.id)];
+  if(!entry||typeof entry!=='object')continue;
+  if(typeof entry.collapsed==='boolean'&&n.kind!=='parameter')n.collapsed=entry.collapsed;
+  if(n.kind==='group'&&typeof entry.hidden==='boolean'){
+   if(entry.hidden)hiddenGroups.add(n.id);else hiddenGroups.delete(n.id);
+  }
+ }
+ layout(true);
+ for(const n of data){
+  const entry=entries[stateKeys.get(n.id)];
+  if(entry&&Number.isFinite(entry.dx)&&Number.isFinite(entry.dy)){
+   n.x+=entry.dx;n.y+=entry.dy;
+  }
+ }
+ for(const box of document.querySelectorAll('#group-list input'))box.checked=!hiddenGroups.has(box.dataset.group);
+ updateGroupCount();stateReady=true;
+}
+window.addEventListener('pagehide',saveState);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveState();});
 // Reflow visible branches; retain user offsets relative to the automatic layout.
 function layout(reset=false){
+ if(reset)for(const n of data){n.x=n.autoX;n.y=n.autoY;}
  const offsets=new Map(data.map(n=>[n.id,reset?{x:0,y:0}:{x:n.x-n.autoX,y:n.y-n.autoY}]));
  const height=n=>n.collapsed||!children(n.id).length?(nodeHeights.get(n.id)+(n.kind==='parameter'?8:22)):Math.max(nodeHeights.get(n.id)+16,children(n.id).reduce((s,c)=>s+height(c),0));
  function place(n,depth,side,top){
@@ -44,7 +94,7 @@ function layout(reset=false){
 }
 '''.replace('__DATA__',json.dumps(source,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c').replace('\u2028','\\u2028').replace('\u2029','\\u2029'))
 html=html[:start]+model+html[end:]
-html=html.replace("return !n.parent||", "return !hiddenGroups.has(n.branch)&&(!n.parent||").replace("visible(byId.get(n.parent)));}", "visible(byId.get(n.parent))));}")
+html=html.replace("return !n.parent||", "return !hiddenGroups.has(n.id)&&(!n.parent||").replace("visible(byId.get(n.parent)));}", "visible(byId.get(n.parent))));}")
 html=html.replace("selected='work_mem'","selected='root'")
 html=html.replace("n.collapsed=!n.collapsed;render();","n.collapsed=!n.collapsed;layout();render();select(n.id);focusBranch(n.id);")
 html=html.replace("b.textContent=n.collapsed?'+':'−';", "b.textContent=n.collapsed?'+':'−';b.title=`${descendants(n.id).filter(v=>v.kind==='parameter').length} параметров`;")
@@ -64,33 +114,33 @@ html=html.replace("data.forEach(n=>n.collapsed=false);render();fit();", "data.fo
 html=html.replace("for(const p of originals)Object.assign(byId.get(p.id),p,{collapsed:false});render();fit();", "data.forEach(n=>n.collapsed=n.kind!=='root'&&n.kind!=='parameter');layout(true);select('root');render();fit();")
 html=html.replace('new ResizeObserver(fit).observe(canvas);render();showDetails();fit();',r'''
 const search=document.querySelector('#search'),results=document.querySelector('#results');
-function reveal(id){let n=byId.get(id);while(n.parent){n=byId.get(n.parent);n.collapsed=false;}layout();render();select(id);const target=byId.get(id);zoom=1;pan={x:canvas.clientWidth/2-target.x-140,y:canvas.clientHeight/2-target.y};transform();results.replaceChildren();document.querySelector(`[data-id="${id}"]`).focus({preventScroll:true});}
+function reveal(id){const branch=byId.get(id).branch;if(branch){hiddenGroups.delete(branch);const box=document.querySelector(`#group-list input[data-group="${branch}"]`);if(box)box.checked=true;updateGroupCount();}let n=byId.get(id);while(n.parent){n=byId.get(n.parent);n.collapsed=false;}layout();render();select(id);const target=byId.get(id);zoom=1;pan={x:canvas.clientWidth/2-target.x-140,y:canvas.clientHeight/2-target.y};transform();results.replaceChildren();document.querySelector(`[data-id="${id}"]`).focus({preventScroll:true});}
 search.addEventListener('input',()=>{
  results.replaceChildren();const q=search.value.trim().toLowerCase();if(!q)return;
- const matches=data.filter(n=>!hiddenGroups.has(n.branch)&&n.label.toLowerCase().includes(q));
+ const matches=data.filter(n=>n.label.toLowerCase().includes(q));
  const count=document.createElement('div');count.className='search-count';count.textContent=`Найдено: ${matches.length}${matches.length>30?' · показаны первые 30':''}`;results.append(count);
  for(const n of matches.slice(0,30)){const b=document.createElement('button');b.type='button';b.textContent=n.label;b.onclick=()=>reveal(n.id);results.append(b);}
 });
 search.addEventListener('keydown',e=>{if(e.key==='Escape'){results.replaceChildren();search.value='';}if(e.key==='Enter')results.querySelector('button')?.click();});
 document.querySelector('#collapse').onclick=()=>{data.forEach(n=>n.collapsed=n.kind!=='root'&&n.kind!=='parameter');layout();render();fit();};
 const groupList=document.querySelector('#group-list');
-function updateGroupCount(){document.querySelector('#group-count').textContent=`${children('root').length-hiddenGroups.size} / ${children('root').length}`;}
+function updateGroupCount(){document.querySelector('#group-count').textContent=`${children('root').filter(n=>!hiddenGroups.has(n.id)).length} / ${children('root').length}`;}
 for(const n of children('root')){
  const label=document.createElement('label'),box=document.createElement('input'),text=document.createElement('span');
  box.type='checkbox';box.checked=true;box.dataset.group=n.id;text.textContent=n.label;label.append(box,text);groupList.append(label);
  box.addEventListener('change',()=>{
   if(box.checked)hiddenGroups.delete(n.id);else hiddenGroups.add(n.id);
-  if(hiddenGroups.has(byId.get(selected).branch))select('root');
+  if(isHidden(byId.get(selected)))select('root');
   layout();render();fit();updateGroupCount();search.dispatchEvent(new Event('input'));
  });
 }
-updateGroupCount();measureNodes();layout(true);new ResizeObserver(fit).observe(canvas);render();showDetails();fit();
+updateGroupCount();measureNodes();restoreState();new ResizeObserver(fit).observe(canvas);render();showDetails();fit();
 ''')
 html=html.replace('<title>pg_settings_map · живая карта PostgreSQL</title>', '<title>pg_settings_map · полная карта из JSON</title>')
 html=html.replace('Визуальный прототип · 01', '436 параметров · данные из JSON')
 html=html.replace('Всё связано с деталями.', 'Карта параметров PostgreSQL')
 html=html.replace('<button id="expand">', '<button id="collapse">Свернуть всё</button><button id="expand">')
-html=html.replace('<div class="topbar">','<div class="search-box"><label for="search">Найти узел</label><input id="search" type="search" placeholder="Например, work_mem" autocomplete="off"><div id="results" aria-live="polite"></div></div><div class="topbar">')
+html=html.replace('<div class="topbar">','<div class="search-box"><label for="search">Поиск параметра</label><input id="search" type="search" placeholder="Например, work_mem" autocomplete="off"><div id="results" aria-live="polite"></div></div><div class="topbar">')
 html=html.replace('<main class="layout">','<main class="layout"><aside class="groups-panel" aria-label="Видимость групп"><details open><summary>Группы <span id="group-count"></span></summary><p>Отметьте ветки, которые нужны на карте.</p><div id="group-list"></div></details></aside>')
 html=html.replace('</style>', '''
 .node{max-width:310px;white-space:normal;width:max-content;min-height:38px}.node.group{font-size:17px;max-width:280px}.node.subgroup{font-size:15px;max-width:280px}.node.parameter{font-size:14px;overflow-wrap:anywhere;min-height:30px;padding:6px 11px 4px}.node .toggle{margin-left:4px}.node.root{white-space:nowrap}.search-box{position:absolute;top:94px;left:23px;z-index:5;width:270px;background:#fffefa;border:1px solid #dce1d8;border-radius:7px;padding:9px 12px}.search-box label{font-size:10px;display:block;color:#7d8779;margin-bottom:5px}.search-box input{border:0;background:transparent;width:100%;font:13px Arial;color:#29352e;padding:3px 0;outline-offset:3px}#results{max-height:280px;overflow:auto}#results button{display:block;width:100%;text-align:left;background:transparent;border:0;border-top:1px solid #e8eadf;padding:9px 2px;font:12px monospace;overflow-wrap:anywhere;color:#43533f}#results button:hover{background:#edf2e4}.search-count{font-size:11px;color:#7d8779;padding:9px 0}.topbar .toolbar{max-width:370px}@media(max-width:800px){.search-box{left:13px;top:119px;width:225px}.topbar .toolbar{max-width:170px}}
@@ -250,8 +300,23 @@ function documentationLink(n){
   return u.protocol==='https:'&&u.hostname==='www.postgresql.org'&&!u.username&&!u.password&&!u.port&&u.pathname.startsWith('/docs/current/')&&u.pathname.endsWith('.html')&&u.hash?link:null;
  }catch{return null;}
 }
+function qhbDocumentationLink(n){
+ const link=n.qhb_documentation_link;
+ if(!link||typeof link.title!=='string'||!link.title.trim()||typeof link.url!=='string')return null;
+ try{
+  const u=new URL(link.url);
+  return u.protocol==='https:'&&u.hostname==='repo.quantom.info'&&!u.username&&!u.password&&!u.port&&u.pathname.startsWith('/qhb/std-1/doc/1.5.3/ru/')&&u.pathname.endsWith('.html')&&u.hash?link:null;
+ }catch{return null;}
+}
 function blogLinks(n){''')
 html=html.replace(" if(n.kind==='parameter'&&blogLinks(n).length){", r'''
+ const qhbDocumentation=n.kind==='parameter'?qhbDocumentationLink(n):null;
+ if(qhbDocumentation){
+  const section=add('section','','documentation-reference qhb-documentation-reference');
+  const heading=document.createElement('h3');heading.textContent='Документация QHB';section.append(heading);
+  const a=document.createElement('a');a.href=qhbDocumentation.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=qhbDocumentation.title;
+  a.setAttribute('aria-label',qhbDocumentation.title+' (открывается в новой вкладке)');section.append(a);
+ }
  const documentation=n.kind==='parameter'?documentationLink(n):null;
  if(documentation){
   const section=add('section','','documentation-reference');
@@ -262,6 +327,49 @@ html=html.replace(" if(n.kind==='parameter'&&blogLinks(n).length){", r'''
  if(n.kind==='parameter'&&blogLinks(n).length){''')
 html=html.replace('</style>', '''
 .documentation-reference{margin-top:16px;padding-top:12px;border-top:1px solid #e5e8de}.documentation-reference h3{font-size:11px;color:#7d8779;font-weight:normal;margin:0 0 8px}.documentation-reference a{display:block;font-size:12px;line-height:1.6;color:#336791;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}.documentation-reference a:hover{color:#214e75}
+</style>''')
+
+html=html.replace('<button id="reset">', '<button id="export-state">Экспорт</button><button id="import-state">Импорт</button><input id="state-file" type="file" accept=".json,application/json" hidden><button id="reset">')
+html=html.replace('</header>', '</header><div id="state-status" role="status" hidden></div>')
+html=html.replace('</style>', '#state-status{padding:8px 18px;background:#edf2e4;font-size:12px;flex-shrink:0}#state-status[data-error="true"]{background:#fbe9e7;color:#942e24}</style>')
+html=html.replace('</script>', r'''
+const stateFile=document.querySelector('#state-file'),stateStatus=document.querySelector('#state-status');
+function reportState(message,error=false){
+ stateStatus.textContent=message;stateStatus.dataset.error=String(error);stateStatus.hidden=false;
+}
+function validateState(value){
+ if(!value||value.version!==1||!value.nodes||typeof value.nodes!=='object'||Array.isArray(value.nodes))throw new Error('Неверный формат или версия файла настроек.');
+ const knownKeys=new Set(stateKeys.values());let matches=0;
+ for(const [key,entry] of Object.entries(value.nodes)){
+  if(!entry||typeof entry!=='object'||Array.isArray(entry)||typeof entry.collapsed!=='boolean'||typeof entry.hidden!=='boolean'||!Number.isFinite(entry.dx)||!Number.isFinite(entry.dy))throw new Error('В файле некорректные настройки узлов.');
+  if(knownKeys.has(key))matches++;
+ }
+ if(!matches)throw new Error('В файле нет настроек для узлов этой карты.');
+ return value;
+}
+document.querySelector('#export-state').onclick=()=>{
+ const url=URL.createObjectURL(new Blob([JSON.stringify(currentState(),null,2)+'\n'],{type:'application/json'}));
+ const link=document.createElement('a');link.href=url;link.download='pg_settings_map.json';document.body.append(link);link.click();link.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+ reportState('Настройки экспортированы в pg_settings_map.json.');
+};
+document.querySelector('#import-state').onclick=()=>stateFile.click();
+stateFile.onchange=async()=>{
+ const file=stateFile.files[0];if(!file)return;
+ try{
+  if(file.size>2*1024*1024)throw new Error('Файл настроек слишком большой (максимум 2 МБ).');
+  const saved=validateState(JSON.parse(await file.text()));
+  applyState(saved);select('root');closeDetails();render();fit();
+  search.value='';results.replaceChildren();saveState();
+  reportState('Настройки импортированы и применены.');
+ }catch(error){reportState(error instanceof SyntaxError?'Не удалось прочитать JSON. Выберите файл экспорта настроек.':error.message,true);}
+ finally{stateFile.value='';}
+};
+</script>''')
+
+# Keep action buttons on a single row; narrow viewports can scroll the row.
+html=html.replace('</style>', '''
+.header-controls .toolbar{flex-wrap:nowrap;justify-content:flex-start;min-width:0;overflow-x:auto;max-width:100%;padding:4px;scrollbar-width:thin}.header-controls .toolbar button{flex-shrink:0;font-size:11px;padding:7px 8px}.header-controls{gap:10px}.header-controls .search-box{flex-basis:180px;min-width:140px}@media(max-width:1100px){.header-controls{flex-wrap:nowrap}}@media(max-width:700px){.header-controls{flex-wrap:wrap}.header-controls .search-box{flex:1 1 100%}.header-controls .toolbar{width:100%}}
 </style>''')
 
 # The embedded JSON is data, never executable HTML. All visible fields use textContent.

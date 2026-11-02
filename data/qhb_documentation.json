@@ -1,0 +1,2601 @@
+{
+  "checked_on": "2026-11-02",
+  "source": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config.html",
+  "release": "1.5.3",
+  "pages_checked": [
+    "Configuration/monitoring/monitoring-qhb.html",
+    "Configuration/qbackup.html",
+    "Configuration/resource-groups.html",
+    "Configuration/runtime-config.html",
+    "Configuration/runtime-config/runtime-config-autovacuum.html",
+    "Configuration/runtime-config/runtime-config-client.html",
+    "Configuration/runtime-config/runtime-config-compatible.html",
+    "Configuration/runtime-config/runtime-config-connection.html",
+    "Configuration/runtime-config/runtime-config-custom.html",
+    "Configuration/runtime-config/runtime-config-developer.html",
+    "Configuration/runtime-config/runtime-config-error-handling.html",
+    "Configuration/runtime-config/runtime-config-file-locations.html",
+    "Configuration/runtime-config/runtime-config-locks.html",
+    "Configuration/runtime-config/runtime-config-logging.html",
+    "Configuration/runtime-config/runtime-config-preset.html",
+    "Configuration/runtime-config/runtime-config-qhb.html",
+    "Configuration/runtime-config/runtime-config-query.html",
+    "Configuration/runtime-config/runtime-config-replication.html",
+    "Configuration/runtime-config/runtime-config-resource.html",
+    "Configuration/runtime-config/runtime-config-setting.html",
+    "Configuration/runtime-config/runtime-config-short.html",
+    "Configuration/runtime-config/runtime-config-statistics.html",
+    "Configuration/runtime-config/runtime-config-wal.html",
+    "Internal/metricsd.html",
+    "Internal/profile.html",
+    "Internal/qhb-plan-cache.html",
+    "Internal/qhb_queryid.html",
+    "Internal/qsched.html",
+    "SQL/autonomous-transactions.html"
+  ],
+  "method": "Exact names in parameter headings, plus reviewed configuration sections outside the chapter. Actual HTML anchors verified. First heading used for duplicate definitions.",
+  "duplicate_definitions": {
+    "shared_buffers_partitions": [
+      "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#shared_buffers_partitions-integer",
+      "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#shared_buffers_partitions-integer-1"
+    ],
+    "max_replication_slots": [
+      "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#max_replication_slots-integer",
+      "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#max_replication_slots-integer-1"
+    ]
+  },
+  "linked_parameters": 420,
+  "links": {
+    "DateStyle": {
+      "title": "QHB 1.5.3: DateStyle",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#datestyle-string",
+      "documented_name": "DateStyle",
+      "match_type": "exact-heading"
+    },
+    "IntervalStyle": {
+      "title": "QHB 1.5.3: IntervalStyle",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#intervalstyle-enum",
+      "documented_name": "IntervalStyle",
+      "match_type": "exact-heading"
+    },
+    "TimeZone": {
+      "title": "QHB 1.5.3: TimeZone",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#timezone-string",
+      "documented_name": "TimeZone",
+      "match_type": "exact-heading"
+    },
+    "allow_in_place_tablespaces": {
+      "title": "QHB 1.5.3: allow_in_place_tablespaces",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#allow_in_place_tablespaces-boolean",
+      "documented_name": "allow_in_place_tablespaces",
+      "match_type": "exact-heading"
+    },
+    "allow_system_table_mods": {
+      "title": "QHB 1.5.3: allow_system_table_mods",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#allow_system_table_mods-boolean",
+      "documented_name": "allow_system_table_mods",
+      "match_type": "exact-heading"
+    },
+    "application_name": {
+      "title": "QHB 1.5.3: application_name",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#application_name-string",
+      "documented_name": "application_name",
+      "match_type": "exact-heading"
+    },
+    "archive_cleanup_command": {
+      "title": "QHB 1.5.3: archive_cleanup_command",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#archive_cleanup_command-string",
+      "documented_name": "archive_cleanup_command",
+      "match_type": "exact-heading"
+    },
+    "archive_command": {
+      "title": "QHB 1.5.3: archive_command",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#archive_command-string",
+      "documented_name": "archive_command",
+      "match_type": "exact-heading"
+    },
+    "archive_library": {
+      "title": "QHB 1.5.3: archive_library",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#archive_library-string",
+      "documented_name": "archive_library",
+      "match_type": "exact-heading"
+    },
+    "archive_mode": {
+      "title": "QHB 1.5.3: archive_mode",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#archive_mode-enum",
+      "documented_name": "archive_mode",
+      "match_type": "exact-heading"
+    },
+    "archive_timeout": {
+      "title": "QHB 1.5.3: archive_timeout",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#archive_timeout-integer",
+      "documented_name": "archive_timeout",
+      "match_type": "exact-heading"
+    },
+    "array_nulls": {
+      "title": "QHB 1.5.3: array_nulls",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-compatible.html#array_nulls-boolean",
+      "documented_name": "array_nulls",
+      "match_type": "exact-heading"
+    },
+    "authentication_timeout": {
+      "title": "QHB 1.5.3: authentication_timeout",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#authentication_timeout-integer",
+      "documented_name": "authentication_timeout",
+      "match_type": "exact-heading"
+    },
+    "autonomous_pool_capacity": {
+      "title": "QHB 1.5.3: autonomous_pool_capacity",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/SQL/autonomous-transactions.html#%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+      "documented_name": "autonomous_pool_capacity",
+      "match_type": "reviewed-configuration-section"
+    },
+    "autonomous_session_max_uses": {
+      "title": "QHB 1.5.3: autonomous_session_max_uses",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/SQL/autonomous-transactions.html#%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+      "documented_name": "autonomous_session_max_uses",
+      "match_type": "reviewed-configuration-section"
+    },
+    "autovacuum": {
+      "title": "QHB 1.5.3: autovacuum",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum-boolean",
+      "documented_name": "autovacuum",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_analyze_scale_factor": {
+      "title": "QHB 1.5.3: autovacuum_analyze_scale_factor",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_analyze_scale_factor-floating-point",
+      "documented_name": "autovacuum_analyze_scale_factor",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_analyze_threshold": {
+      "title": "QHB 1.5.3: autovacuum_analyze_threshold",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_analyze_threshold-integer",
+      "documented_name": "autovacuum_analyze_threshold",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_freeze_max_age": {
+      "title": "QHB 1.5.3: autovacuum_freeze_max_age",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_freeze_max_age-integer",
+      "documented_name": "autovacuum_freeze_max_age",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_max_workers": {
+      "title": "QHB 1.5.3: autovacuum_max_workers",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_max_workers-integer",
+      "documented_name": "autovacuum_max_workers",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_multixact_freeze_max_age": {
+      "title": "QHB 1.5.3: autovacuum_multixact_freeze_max_age",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_multixact_freeze_max_age-integer",
+      "documented_name": "autovacuum_multixact_freeze_max_age",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_naptime": {
+      "title": "QHB 1.5.3: autovacuum_naptime",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_naptime-integer",
+      "documented_name": "autovacuum_naptime",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_vacuum_cost_delay": {
+      "title": "QHB 1.5.3: autovacuum_vacuum_cost_delay",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_vacuum_cost_delay-floating-point",
+      "documented_name": "autovacuum_vacuum_cost_delay",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_vacuum_cost_limit": {
+      "title": "QHB 1.5.3: autovacuum_vacuum_cost_limit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_vacuum_cost_limit-integer",
+      "documented_name": "autovacuum_vacuum_cost_limit",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_vacuum_insert_scale_factor": {
+      "title": "QHB 1.5.3: autovacuum_vacuum_insert_scale_factor",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_vacuum_insert_scale_factor-floating-point",
+      "documented_name": "autovacuum_vacuum_insert_scale_factor",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_vacuum_insert_threshold": {
+      "title": "QHB 1.5.3: autovacuum_vacuum_insert_threshold",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_vacuum_insert_threshold-integer",
+      "documented_name": "autovacuum_vacuum_insert_threshold",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_vacuum_scale_factor": {
+      "title": "QHB 1.5.3: autovacuum_vacuum_scale_factor",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_vacuum_scale_factor-floating-point",
+      "documented_name": "autovacuum_vacuum_scale_factor",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_vacuum_threshold": {
+      "title": "QHB 1.5.3: autovacuum_vacuum_threshold",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-autovacuum.html#autovacuum_vacuum_threshold-integer",
+      "documented_name": "autovacuum_vacuum_threshold",
+      "match_type": "exact-heading"
+    },
+    "autovacuum_work_mem": {
+      "title": "QHB 1.5.3: autovacuum_work_mem",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#autovacuum_work_mem-integer",
+      "documented_name": "autovacuum_work_mem",
+      "match_type": "exact-heading"
+    },
+    "backend_flush_after": {
+      "title": "QHB 1.5.3: backend_flush_after",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#backend_flush_after-integer",
+      "documented_name": "backend_flush_after",
+      "match_type": "exact-heading"
+    },
+    "backslash_quote": {
+      "title": "QHB 1.5.3: backslash_quote",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-compatible.html#backslash_quote-enum",
+      "documented_name": "backslash_quote",
+      "match_type": "exact-heading"
+    },
+    "backtrace_functions": {
+      "title": "QHB 1.5.3: backtrace_functions",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#backtrace_functions-string",
+      "documented_name": "backtrace_functions",
+      "match_type": "exact-heading"
+    },
+    "bgwriter_delay": {
+      "title": "QHB 1.5.3: bgwriter_delay",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#bgwriter_delay-integer",
+      "documented_name": "bgwriter_delay",
+      "match_type": "exact-heading"
+    },
+    "bgwriter_flush_after": {
+      "title": "QHB 1.5.3: bgwriter_flush_after",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#bgwriter_flush_after-integer",
+      "documented_name": "bgwriter_flush_after",
+      "match_type": "exact-heading"
+    },
+    "bgwriter_lru_maxpages": {
+      "title": "QHB 1.5.3: bgwriter_lru_maxpages",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#bgwriter_lru_maxpages-integer",
+      "documented_name": "bgwriter_lru_maxpages",
+      "match_type": "exact-heading"
+    },
+    "bgwriter_lru_multiplier": {
+      "title": "QHB 1.5.3: bgwriter_lru_multiplier",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#bgwriter_lru_multiplier-floating-point",
+      "documented_name": "bgwriter_lru_multiplier",
+      "match_type": "exact-heading"
+    },
+    "block_size": {
+      "title": "QHB 1.5.3: block_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#block_size-integer",
+      "documented_name": "block_size",
+      "match_type": "exact-heading"
+    },
+    "bonjour": {
+      "title": "QHB 1.5.3: bonjour",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#bonjour-boolean",
+      "documented_name": "bonjour",
+      "match_type": "exact-heading"
+    },
+    "bonjour_name": {
+      "title": "QHB 1.5.3: bonjour_name",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#bonjour_name-string",
+      "documented_name": "bonjour_name",
+      "match_type": "exact-heading"
+    },
+    "bytea_output": {
+      "title": "QHB 1.5.3: bytea_output",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#bytea_output-enum",
+      "documented_name": "bytea_output",
+      "match_type": "exact-heading"
+    },
+    "check_function_bodies": {
+      "title": "QHB 1.5.3: check_function_bodies",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#check_function_bodies-boolean",
+      "documented_name": "check_function_bodies",
+      "match_type": "exact-heading"
+    },
+    "checkpoint_completion_target": {
+      "title": "QHB 1.5.3: checkpoint_completion_target",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#checkpoint_completion_target-floating-point",
+      "documented_name": "checkpoint_completion_target",
+      "match_type": "exact-heading"
+    },
+    "checkpoint_flush_after": {
+      "title": "QHB 1.5.3: checkpoint_flush_after",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#checkpoint_flush_after-integer",
+      "documented_name": "checkpoint_flush_after",
+      "match_type": "exact-heading"
+    },
+    "checkpoint_timeout": {
+      "title": "QHB 1.5.3: checkpoint_timeout",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#checkpoint_timeout-integer",
+      "documented_name": "checkpoint_timeout",
+      "match_type": "exact-heading"
+    },
+    "checkpoint_warning": {
+      "title": "QHB 1.5.3: checkpoint_warning",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#checkpoint_warning-integer",
+      "documented_name": "checkpoint_warning",
+      "match_type": "exact-heading"
+    },
+    "client_connection_check_interval": {
+      "title": "QHB 1.5.3: client_connection_check_interval",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#client_connection_check_interval-integer",
+      "documented_name": "client_connection_check_interval",
+      "match_type": "exact-heading"
+    },
+    "client_encoding": {
+      "title": "QHB 1.5.3: client_encoding",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#client_encoding-string",
+      "documented_name": "client_encoding",
+      "match_type": "exact-heading"
+    },
+    "client_min_messages": {
+      "title": "QHB 1.5.3: client_min_messages",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#client_min_messages-enum",
+      "documented_name": "client_min_messages",
+      "match_type": "exact-heading"
+    },
+    "commit_delay": {
+      "title": "QHB 1.5.3: commit_delay",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#commit_delay-integer",
+      "documented_name": "commit_delay",
+      "match_type": "exact-heading"
+    },
+    "commit_siblings": {
+      "title": "QHB 1.5.3: commit_siblings",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#commit_siblings-integer",
+      "documented_name": "commit_siblings",
+      "match_type": "exact-heading"
+    },
+    "compute_query_id": {
+      "title": "QHB 1.5.3: compute_query_id",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#compute_query_id-enum",
+      "documented_name": "compute_query_id",
+      "match_type": "exact-heading"
+    },
+    "config_file": {
+      "title": "QHB 1.5.3: config_file",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-file-locations.html#config_file-string",
+      "documented_name": "config_file",
+      "match_type": "exact-heading"
+    },
+    "constraint_exclusion": {
+      "title": "QHB 1.5.3: constraint_exclusion",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#constraint_exclusion-enum",
+      "documented_name": "constraint_exclusion",
+      "match_type": "exact-heading"
+    },
+    "cpu_index_tuple_cost": {
+      "title": "QHB 1.5.3: cpu_index_tuple_cost",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#cpu_index_tuple_cost-floating-point",
+      "documented_name": "cpu_index_tuple_cost",
+      "match_type": "exact-heading"
+    },
+    "cpu_operator_cost": {
+      "title": "QHB 1.5.3: cpu_operator_cost",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#cpu_operator_cost-floating-point",
+      "documented_name": "cpu_operator_cost",
+      "match_type": "exact-heading"
+    },
+    "cpu_tuple_cost": {
+      "title": "QHB 1.5.3: cpu_tuple_cost",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#cpu_tuple_cost-floating-point",
+      "documented_name": "cpu_tuple_cost",
+      "match_type": "exact-heading"
+    },
+    "createrole_self_grant": {
+      "title": "QHB 1.5.3: createrole_self_grant",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#createrole_self_grant-string",
+      "documented_name": "createrole_self_grant",
+      "match_type": "exact-heading"
+    },
+    "cursor_tuple_fraction": {
+      "title": "QHB 1.5.3: cursor_tuple_fraction",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#cursor_tuple_fraction-floating-point",
+      "documented_name": "cursor_tuple_fraction",
+      "match_type": "exact-heading"
+    },
+    "data_checksums": {
+      "title": "QHB 1.5.3: data_checksums",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#data_checksums-boolean",
+      "documented_name": "data_checksums",
+      "match_type": "exact-heading"
+    },
+    "data_directory": {
+      "title": "QHB 1.5.3: data_directory",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-file-locations.html#data_directory-string",
+      "documented_name": "data_directory",
+      "match_type": "exact-heading"
+    },
+    "data_directory_mode": {
+      "title": "QHB 1.5.3: data_directory_mode",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#data_directory_mode-integer",
+      "documented_name": "data_directory_mode",
+      "match_type": "exact-heading"
+    },
+    "data_sync_retry": {
+      "title": "QHB 1.5.3: data_sync_retry",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-error-handling.html#data_sync_retry-boolean",
+      "documented_name": "data_sync_retry",
+      "match_type": "exact-heading"
+    },
+    "db_user_namespace": {
+      "title": "QHB 1.5.3: db_user_namespace",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#db_user_namespace-boolean",
+      "documented_name": "db_user_namespace",
+      "match_type": "exact-heading"
+    },
+    "deadlock_timeout": {
+      "title": "QHB 1.5.3: deadlock_timeout",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-locks.html#deadlock_timeout-integer",
+      "documented_name": "deadlock_timeout",
+      "match_type": "exact-heading"
+    },
+    "debug_assertions": {
+      "title": "QHB 1.5.3: debug_assertions",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#debug_assertions-boolean",
+      "documented_name": "debug_assertions",
+      "match_type": "exact-heading"
+    },
+    "debug_discard_caches": {
+      "title": "QHB 1.5.3: debug_discard_caches",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#debug_discard_caches-integer",
+      "documented_name": "debug_discard_caches",
+      "match_type": "exact-heading"
+    },
+    "debug_io_direct": {
+      "title": "QHB 1.5.3: debug_io_direct",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#debug_io_direct-string",
+      "documented_name": "debug_io_direct",
+      "match_type": "exact-heading"
+    },
+    "debug_logical_replication_streaming": {
+      "title": "QHB 1.5.3: debug_logical_replication_streaming",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#debug_logical_replication_streaming-enum",
+      "documented_name": "debug_logical_replication_streaming",
+      "match_type": "exact-heading"
+    },
+    "debug_parallel_query": {
+      "title": "QHB 1.5.3: debug_parallel_query",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#debug_parallel_query-enum",
+      "documented_name": "debug_parallel_query",
+      "match_type": "exact-heading"
+    },
+    "debug_pretty_print": {
+      "title": "QHB 1.5.3: debug_pretty_print",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#debug_pretty_print-boolean",
+      "documented_name": "debug_pretty_print",
+      "match_type": "exact-heading"
+    },
+    "debug_print_parse": {
+      "title": "QHB 1.5.3: debug_print_parse",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#debug_print_parse-boolean",
+      "documented_name": "debug_print_parse",
+      "match_type": "exact-heading"
+    },
+    "debug_print_plan": {
+      "title": "QHB 1.5.3: debug_print_plan",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#debug_print_plan-boolean",
+      "documented_name": "debug_print_plan",
+      "match_type": "exact-heading"
+    },
+    "debug_print_rewritten": {
+      "title": "QHB 1.5.3: debug_print_rewritten",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#debug_print_rewritten-boolean",
+      "documented_name": "debug_print_rewritten",
+      "match_type": "exact-heading"
+    },
+    "default_statistics_target": {
+      "title": "QHB 1.5.3: default_statistics_target",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#default_statistics_target-integer",
+      "documented_name": "default_statistics_target",
+      "match_type": "exact-heading"
+    },
+    "default_table_access_method": {
+      "title": "QHB 1.5.3: default_table_access_method",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#default_table_access_method-string",
+      "documented_name": "default_table_access_method",
+      "match_type": "exact-heading"
+    },
+    "default_tablespace": {
+      "title": "QHB 1.5.3: default_tablespace",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#default_tablespace-string",
+      "documented_name": "default_tablespace",
+      "match_type": "exact-heading"
+    },
+    "default_text_search_config": {
+      "title": "QHB 1.5.3: default_text_search_config",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#default_text_search_config-string",
+      "documented_name": "default_text_search_config",
+      "match_type": "exact-heading"
+    },
+    "default_toast_compression": {
+      "title": "QHB 1.5.3: default_toast_compression",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#default_toast_compression-enum",
+      "documented_name": "default_toast_compression",
+      "match_type": "exact-heading"
+    },
+    "default_transaction_deferrable": {
+      "title": "QHB 1.5.3: default_transaction_deferrable",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#default_transaction_deferrable-boolean",
+      "documented_name": "default_transaction_deferrable",
+      "match_type": "exact-heading"
+    },
+    "default_transaction_isolation": {
+      "title": "QHB 1.5.3: default_transaction_isolation",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#default_transaction_isolation-enum",
+      "documented_name": "default_transaction_isolation",
+      "match_type": "exact-heading"
+    },
+    "default_transaction_read_only": {
+      "title": "QHB 1.5.3: default_transaction_read_only",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#default_transaction_read_only-boolean",
+      "documented_name": "default_transaction_read_only",
+      "match_type": "exact-heading"
+    },
+    "dynamic_library_path": {
+      "title": "QHB 1.5.3: dynamic_library_path",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#dynamic_library_path-string",
+      "documented_name": "dynamic_library_path",
+      "match_type": "exact-heading"
+    },
+    "dynamic_shared_memory_type": {
+      "title": "QHB 1.5.3: dynamic_shared_memory_type",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#dynamic_shared_memory_type-enum",
+      "documented_name": "dynamic_shared_memory_type",
+      "match_type": "exact-heading"
+    },
+    "effective_cache_size": {
+      "title": "QHB 1.5.3: effective_cache_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#effective_cache_size-integer",
+      "documented_name": "effective_cache_size",
+      "match_type": "exact-heading"
+    },
+    "effective_io_concurrency": {
+      "title": "QHB 1.5.3: effective_io_concurrency",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#effective_io_concurrency-integer",
+      "documented_name": "effective_io_concurrency",
+      "match_type": "exact-heading"
+    },
+    "enable_async_append": {
+      "title": "QHB 1.5.3: enable_async_append",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_async_append-boolean",
+      "documented_name": "enable_async_append",
+      "match_type": "exact-heading"
+    },
+    "enable_backtrace": {
+      "title": "QHB 1.5.3: enable_backtrace",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#enable_backtrace-boolean",
+      "documented_name": "enable_backtrace",
+      "match_type": "exact-heading"
+    },
+    "enable_bitmapscan": {
+      "title": "QHB 1.5.3: enable_bitmapscan",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_bitmapscan-boolean",
+      "documented_name": "enable_bitmapscan",
+      "match_type": "exact-heading"
+    },
+    "enable_gathermerge": {
+      "title": "QHB 1.5.3: enable_gathermerge",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_gathermerge-boolean",
+      "documented_name": "enable_gathermerge",
+      "match_type": "exact-heading"
+    },
+    "enable_hashagg": {
+      "title": "QHB 1.5.3: enable_hashagg",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_hashagg-boolean",
+      "documented_name": "enable_hashagg",
+      "match_type": "exact-heading"
+    },
+    "enable_hashjoin": {
+      "title": "QHB 1.5.3: enable_hashjoin",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_hashjoin-boolean",
+      "documented_name": "enable_hashjoin",
+      "match_type": "exact-heading"
+    },
+    "enable_incremental_sort": {
+      "title": "QHB 1.5.3: enable_incremental_sort",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_incremental_sort-boolean",
+      "documented_name": "enable_incremental_sort",
+      "match_type": "exact-heading"
+    },
+    "enable_indexonlyscan": {
+      "title": "QHB 1.5.3: enable_indexonlyscan",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_indexonlyscan-boolean",
+      "documented_name": "enable_indexonlyscan",
+      "match_type": "exact-heading"
+    },
+    "enable_indexscan": {
+      "title": "QHB 1.5.3: enable_indexscan",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_indexscan-boolean",
+      "documented_name": "enable_indexscan",
+      "match_type": "exact-heading"
+    },
+    "enable_material": {
+      "title": "QHB 1.5.3: enable_material",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_material-boolean",
+      "documented_name": "enable_material",
+      "match_type": "exact-heading"
+    },
+    "enable_memoize": {
+      "title": "QHB 1.5.3: enable_memoize",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_memoize-boolean",
+      "documented_name": "enable_memoize",
+      "match_type": "exact-heading"
+    },
+    "enable_mergejoin": {
+      "title": "QHB 1.5.3: enable_mergejoin",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_mergejoin-boolean",
+      "documented_name": "enable_mergejoin",
+      "match_type": "exact-heading"
+    },
+    "enable_nestloop": {
+      "title": "QHB 1.5.3: enable_nestloop",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_nestloop-boolean",
+      "documented_name": "enable_nestloop",
+      "match_type": "exact-heading"
+    },
+    "enable_parallel_append": {
+      "title": "QHB 1.5.3: enable_parallel_append",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_parallel_append-boolean",
+      "documented_name": "enable_parallel_append",
+      "match_type": "exact-heading"
+    },
+    "enable_parallel_hash": {
+      "title": "QHB 1.5.3: enable_parallel_hash",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_parallel_hash-boolean",
+      "documented_name": "enable_parallel_hash",
+      "match_type": "exact-heading"
+    },
+    "enable_partition_pruning": {
+      "title": "QHB 1.5.3: enable_partition_pruning",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_partition_pruning-boolean",
+      "documented_name": "enable_partition_pruning",
+      "match_type": "exact-heading"
+    },
+    "enable_partitionwise_aggregate": {
+      "title": "QHB 1.5.3: enable_partitionwise_aggregate",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_partitionwise_aggregate-boolean",
+      "documented_name": "enable_partitionwise_aggregate",
+      "match_type": "exact-heading"
+    },
+    "enable_partitionwise_join": {
+      "title": "QHB 1.5.3: enable_partitionwise_join",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_partitionwise_join-boolean",
+      "documented_name": "enable_partitionwise_join",
+      "match_type": "exact-heading"
+    },
+    "enable_presorted_aggregate": {
+      "title": "QHB 1.5.3: enable_presorted_aggregate",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_presorted_aggregate-boolean",
+      "documented_name": "enable_presorted_aggregate",
+      "match_type": "exact-heading"
+    },
+    "enable_seqscan": {
+      "title": "QHB 1.5.3: enable_seqscan",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_seqscan-boolean",
+      "documented_name": "enable_seqscan",
+      "match_type": "exact-heading"
+    },
+    "enable_sort": {
+      "title": "QHB 1.5.3: enable_sort",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_sort-boolean",
+      "documented_name": "enable_sort",
+      "match_type": "exact-heading"
+    },
+    "enable_tidscan": {
+      "title": "QHB 1.5.3: enable_tidscan",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#enable_tidscan-boolean",
+      "documented_name": "enable_tidscan",
+      "match_type": "exact-heading"
+    },
+    "escape_string_warning": {
+      "title": "QHB 1.5.3: escape_string_warning",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-compatible.html#escape_string_warning-boolean",
+      "documented_name": "escape_string_warning",
+      "match_type": "exact-heading"
+    },
+    "event_source": {
+      "title": "QHB 1.5.3: event_source",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#event_source-string",
+      "documented_name": "event_source",
+      "match_type": "exact-heading"
+    },
+    "exit_on_error": {
+      "title": "QHB 1.5.3: exit_on_error",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-error-handling.html#exit_on_error-boolean",
+      "documented_name": "exit_on_error",
+      "match_type": "exact-heading"
+    },
+    "external_pid_file": {
+      "title": "QHB 1.5.3: external_pid_file",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-file-locations.html#external_pid_file-string",
+      "documented_name": "external_pid_file",
+      "match_type": "exact-heading"
+    },
+    "extra_float_digits": {
+      "title": "QHB 1.5.3: extra_float_digits",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#extra_float_digits-integer",
+      "documented_name": "extra_float_digits",
+      "match_type": "exact-heading"
+    },
+    "from_collapse_limit": {
+      "title": "QHB 1.5.3: from_collapse_limit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#from_collapse_limit-integer",
+      "documented_name": "from_collapse_limit",
+      "match_type": "exact-heading"
+    },
+    "fsync": {
+      "title": "QHB 1.5.3: fsync",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#fsync-boolean",
+      "documented_name": "fsync",
+      "match_type": "exact-heading"
+    },
+    "full_page_writes": {
+      "title": "QHB 1.5.3: full_page_writes",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#full_page_writes-boolean",
+      "documented_name": "full_page_writes",
+      "match_type": "exact-heading"
+    },
+    "geqo": {
+      "title": "QHB 1.5.3: geqo",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#geqo-boolean",
+      "documented_name": "geqo",
+      "match_type": "exact-heading"
+    },
+    "geqo_effort": {
+      "title": "QHB 1.5.3: geqo_effort",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#geqo_effort-integer",
+      "documented_name": "geqo_effort",
+      "match_type": "exact-heading"
+    },
+    "geqo_generations": {
+      "title": "QHB 1.5.3: geqo_generations",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#geqo_generations-integer",
+      "documented_name": "geqo_generations",
+      "match_type": "exact-heading"
+    },
+    "geqo_pool_size": {
+      "title": "QHB 1.5.3: geqo_pool_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#geqo_pool_size-integer",
+      "documented_name": "geqo_pool_size",
+      "match_type": "exact-heading"
+    },
+    "geqo_seed": {
+      "title": "QHB 1.5.3: geqo_seed",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#geqo_seed-floating-point",
+      "documented_name": "geqo_seed",
+      "match_type": "exact-heading"
+    },
+    "geqo_selection_bias": {
+      "title": "QHB 1.5.3: geqo_selection_bias",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#geqo_selection_bias-floating-point",
+      "documented_name": "geqo_selection_bias",
+      "match_type": "exact-heading"
+    },
+    "geqo_threshold": {
+      "title": "QHB 1.5.3: geqo_threshold",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#geqo_threshold-integer",
+      "documented_name": "geqo_threshold",
+      "match_type": "exact-heading"
+    },
+    "gin_fuzzy_search_limit": {
+      "title": "QHB 1.5.3: gin_fuzzy_search_limit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#gin_fuzzy_search_limit-integer",
+      "documented_name": "gin_fuzzy_search_limit",
+      "match_type": "exact-heading"
+    },
+    "gin_pending_list_limit": {
+      "title": "QHB 1.5.3: gin_pending_list_limit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#gin_pending_list_limit-integer",
+      "documented_name": "gin_pending_list_limit",
+      "match_type": "exact-heading"
+    },
+    "gss_accept_delegation": {
+      "title": "QHB 1.5.3: gss_accept_delegation",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#gss_accept_delegation-boolean",
+      "documented_name": "gss_accept_delegation",
+      "match_type": "exact-heading"
+    },
+    "hash_mem_multiplier": {
+      "title": "QHB 1.5.3: hash_mem_multiplier",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#hash_mem_multiplier-floating-point",
+      "documented_name": "hash_mem_multiplier",
+      "match_type": "exact-heading"
+    },
+    "hba_file": {
+      "title": "QHB 1.5.3: hba_file",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-file-locations.html#hba_file-string",
+      "documented_name": "hba_file",
+      "match_type": "exact-heading"
+    },
+    "hot_standby": {
+      "title": "QHB 1.5.3: hot_standby",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#hot_standby-boolean",
+      "documented_name": "hot_standby",
+      "match_type": "exact-heading"
+    },
+    "hot_standby_feedback": {
+      "title": "QHB 1.5.3: hot_standby_feedback",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#hot_standby_feedback-boolean",
+      "documented_name": "hot_standby_feedback",
+      "match_type": "exact-heading"
+    },
+    "huge_page_size": {
+      "title": "QHB 1.5.3: huge_page_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#huge_page_size-integer",
+      "documented_name": "huge_page_size",
+      "match_type": "exact-heading"
+    },
+    "huge_pages": {
+      "title": "QHB 1.5.3: huge_pages",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#huge_pages-enum",
+      "documented_name": "huge_pages",
+      "match_type": "exact-heading"
+    },
+    "icu_validation_level": {
+      "title": "QHB 1.5.3: icu_validation_level",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#icu_validation_level-enum",
+      "documented_name": "icu_validation_level",
+      "match_type": "exact-heading"
+    },
+    "ident_file": {
+      "title": "QHB 1.5.3: ident_file",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-file-locations.html#ident_file-string",
+      "documented_name": "ident_file",
+      "match_type": "exact-heading"
+    },
+    "idle_in_transaction_session_timeout": {
+      "title": "QHB 1.5.3: idle_in_transaction_session_timeout",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#idle_in_transaction_session_timeout-integer",
+      "documented_name": "idle_in_transaction_session_timeout",
+      "match_type": "exact-heading"
+    },
+    "idle_session_timeout": {
+      "title": "QHB 1.5.3: idle_session_timeout",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#idle_session_timeout-integer",
+      "documented_name": "idle_session_timeout",
+      "match_type": "exact-heading"
+    },
+    "ignore_checksum_failure": {
+      "title": "QHB 1.5.3: ignore_checksum_failure",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#ignore_checksum_failure-boolean",
+      "documented_name": "ignore_checksum_failure",
+      "match_type": "exact-heading"
+    },
+    "ignore_invalid_pages": {
+      "title": "QHB 1.5.3: ignore_invalid_pages",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#ignore_invalid_pages-boolean",
+      "documented_name": "ignore_invalid_pages",
+      "match_type": "exact-heading"
+    },
+    "ignore_system_indexes": {
+      "title": "QHB 1.5.3: ignore_system_indexes",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#ignore_system_indexes-boolean",
+      "documented_name": "ignore_system_indexes",
+      "match_type": "exact-heading"
+    },
+    "in_hot_standby": {
+      "title": "QHB 1.5.3: in_hot_standby",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#in_hot_standby-boolean",
+      "documented_name": "in_hot_standby",
+      "match_type": "exact-heading"
+    },
+    "instance_name": {
+      "title": "QHB 1.5.3: instance_name",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#instance_name-string",
+      "documented_name": "instance_name",
+      "match_type": "exact-heading"
+    },
+    "integer_datetimes": {
+      "title": "QHB 1.5.3: integer_datetimes",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#integer_datetimes-boolean",
+      "documented_name": "integer_datetimes",
+      "match_type": "exact-heading"
+    },
+    "integrity_checks": {
+      "title": "QHB 1.5.3: integrity_checks",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#integrity_checks-bool",
+      "documented_name": "integrity_checks",
+      "match_type": "exact-heading"
+    },
+    "integrity_period": {
+      "title": "QHB 1.5.3: integrity_period",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#integrity_period-string",
+      "documented_name": "integrity_period",
+      "match_type": "exact-heading"
+    },
+    "jit": {
+      "title": "QHB 1.5.3: jit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#jit-boolean",
+      "documented_name": "jit",
+      "match_type": "exact-heading"
+    },
+    "jit_above_cost": {
+      "title": "QHB 1.5.3: jit_above_cost",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#jit_above_cost-floating-point",
+      "documented_name": "jit_above_cost",
+      "match_type": "exact-heading"
+    },
+    "jit_debugging_support": {
+      "title": "QHB 1.5.3: jit_debugging_support",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#jit_debugging_support-boolean",
+      "documented_name": "jit_debugging_support",
+      "match_type": "exact-heading"
+    },
+    "jit_dump_bitcode": {
+      "title": "QHB 1.5.3: jit_dump_bitcode",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#jit_dump_bitcode-boolean",
+      "documented_name": "jit_dump_bitcode",
+      "match_type": "exact-heading"
+    },
+    "jit_expressions": {
+      "title": "QHB 1.5.3: jit_expressions",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#jit_expressions-boolean",
+      "documented_name": "jit_expressions",
+      "match_type": "exact-heading"
+    },
+    "jit_inline_above_cost": {
+      "title": "QHB 1.5.3: jit_inline_above_cost",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#jit_inline_above_cost-floating-point",
+      "documented_name": "jit_inline_above_cost",
+      "match_type": "exact-heading"
+    },
+    "jit_optimize_above_cost": {
+      "title": "QHB 1.5.3: jit_optimize_above_cost",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#jit_optimize_above_cost-floating-point",
+      "documented_name": "jit_optimize_above_cost",
+      "match_type": "exact-heading"
+    },
+    "jit_profiling_support": {
+      "title": "QHB 1.5.3: jit_profiling_support",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#jit_profiling_support-boolean",
+      "documented_name": "jit_profiling_support",
+      "match_type": "exact-heading"
+    },
+    "jit_provider": {
+      "title": "QHB 1.5.3: jit_provider",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#jit_provider-string",
+      "documented_name": "jit_provider",
+      "match_type": "exact-heading"
+    },
+    "jit_tuple_deforming": {
+      "title": "QHB 1.5.3: jit_tuple_deforming",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#jit_tuple_deforming-boolean",
+      "documented_name": "jit_tuple_deforming",
+      "match_type": "exact-heading"
+    },
+    "join_collapse_limit": {
+      "title": "QHB 1.5.3: join_collapse_limit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#join_collapse_limit-integer",
+      "documented_name": "join_collapse_limit",
+      "match_type": "exact-heading"
+    },
+    "krb_caseins_users": {
+      "title": "QHB 1.5.3: krb_caseins_users",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#krb_caseins_users-boolean",
+      "documented_name": "krb_caseins_users",
+      "match_type": "exact-heading"
+    },
+    "krb_server_keyfile": {
+      "title": "QHB 1.5.3: krb_server_keyfile",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#krb_server_keyfile-string",
+      "documented_name": "krb_server_keyfile",
+      "match_type": "exact-heading"
+    },
+    "lc_messages": {
+      "title": "QHB 1.5.3: lc_messages",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#lc_messages-string",
+      "documented_name": "lc_messages",
+      "match_type": "exact-heading"
+    },
+    "lc_monetary": {
+      "title": "QHB 1.5.3: lc_monetary",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#lc_monetary-string",
+      "documented_name": "lc_monetary",
+      "match_type": "exact-heading"
+    },
+    "lc_numeric": {
+      "title": "QHB 1.5.3: lc_numeric",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#lc_numeric-string",
+      "documented_name": "lc_numeric",
+      "match_type": "exact-heading"
+    },
+    "lc_time": {
+      "title": "QHB 1.5.3: lc_time",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#lc_time-string",
+      "documented_name": "lc_time",
+      "match_type": "exact-heading"
+    },
+    "listen_addresses": {
+      "title": "QHB 1.5.3: listen_addresses",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#listen_addresses-string",
+      "documented_name": "listen_addresses",
+      "match_type": "exact-heading"
+    },
+    "lo_compat_privileges": {
+      "title": "QHB 1.5.3: lo_compat_privileges",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-compatible.html#lo_compat_privileges-boolean",
+      "documented_name": "lo_compat_privileges",
+      "match_type": "exact-heading"
+    },
+    "local_preload_libraries": {
+      "title": "QHB 1.5.3: local_preload_libraries",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#local_preload_libraries-string",
+      "documented_name": "local_preload_libraries",
+      "match_type": "exact-heading"
+    },
+    "lock_timeout": {
+      "title": "QHB 1.5.3: lock_timeout",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#lock_timeout-integer",
+      "documented_name": "lock_timeout",
+      "match_type": "exact-heading"
+    },
+    "log_autovacuum_min_duration": {
+      "title": "QHB 1.5.3: log_autovacuum_min_duration",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_autovacuum_min_duration-integer",
+      "documented_name": "log_autovacuum_min_duration",
+      "match_type": "exact-heading"
+    },
+    "log_checkpoints": {
+      "title": "QHB 1.5.3: log_checkpoints",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_checkpoints-boolean",
+      "documented_name": "log_checkpoints",
+      "match_type": "exact-heading"
+    },
+    "log_connections": {
+      "title": "QHB 1.5.3: log_connections",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_connections-boolean",
+      "documented_name": "log_connections",
+      "match_type": "exact-heading"
+    },
+    "log_destination": {
+      "title": "QHB 1.5.3: log_destination",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_destination-string",
+      "documented_name": "log_destination",
+      "match_type": "exact-heading"
+    },
+    "log_directory": {
+      "title": "QHB 1.5.3: log_directory",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_directory-string",
+      "documented_name": "log_directory",
+      "match_type": "exact-heading"
+    },
+    "log_disconnections": {
+      "title": "QHB 1.5.3: log_disconnections",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_disconnections-boolean",
+      "documented_name": "log_disconnections",
+      "match_type": "exact-heading"
+    },
+    "log_duration": {
+      "title": "QHB 1.5.3: log_duration",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_duration-boolean",
+      "documented_name": "log_duration",
+      "match_type": "exact-heading"
+    },
+    "log_error_verbosity": {
+      "title": "QHB 1.5.3: log_error_verbosity",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_error_verbosity-enum",
+      "documented_name": "log_error_verbosity",
+      "match_type": "exact-heading"
+    },
+    "log_executor_stats": {
+      "title": "QHB 1.5.3: log_executor_stats",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#log_executor_stats-boolean",
+      "documented_name": "log_executor_stats",
+      "match_type": "exact-heading"
+    },
+    "log_file_mode": {
+      "title": "QHB 1.5.3: log_file_mode",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_file_mode-integer",
+      "documented_name": "log_file_mode",
+      "match_type": "exact-heading"
+    },
+    "log_filename": {
+      "title": "QHB 1.5.3: log_filename",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_filename-string",
+      "documented_name": "log_filename",
+      "match_type": "exact-heading"
+    },
+    "log_hostname": {
+      "title": "QHB 1.5.3: log_hostname",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_hostname-boolean",
+      "documented_name": "log_hostname",
+      "match_type": "exact-heading"
+    },
+    "log_line_prefix": {
+      "title": "QHB 1.5.3: log_line_prefix",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_line_prefix-string",
+      "documented_name": "log_line_prefix",
+      "match_type": "exact-heading"
+    },
+    "log_lock_waits": {
+      "title": "QHB 1.5.3: log_lock_waits",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_lock_waits-boolean",
+      "documented_name": "log_lock_waits",
+      "match_type": "exact-heading"
+    },
+    "log_min_duration_sample": {
+      "title": "QHB 1.5.3: log_min_duration_sample",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_min_duration_sample-integer",
+      "documented_name": "log_min_duration_sample",
+      "match_type": "exact-heading"
+    },
+    "log_min_duration_statement": {
+      "title": "QHB 1.5.3: log_min_duration_statement",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_min_duration_statement-integer",
+      "documented_name": "log_min_duration_statement",
+      "match_type": "exact-heading"
+    },
+    "log_min_error_statement": {
+      "title": "QHB 1.5.3: log_min_error_statement",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_min_error_statement-enum",
+      "documented_name": "log_min_error_statement",
+      "match_type": "exact-heading"
+    },
+    "log_min_messages": {
+      "title": "QHB 1.5.3: log_min_messages",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_min_messages-enum",
+      "documented_name": "log_min_messages",
+      "match_type": "exact-heading"
+    },
+    "log_parameter_max_length": {
+      "title": "QHB 1.5.3: log_parameter_max_length",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_parameter_max_length-integer",
+      "documented_name": "log_parameter_max_length",
+      "match_type": "exact-heading"
+    },
+    "log_parameter_max_length_on_error": {
+      "title": "QHB 1.5.3: log_parameter_max_length_on_error",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_parameter_max_length_on_error-integer",
+      "documented_name": "log_parameter_max_length_on_error",
+      "match_type": "exact-heading"
+    },
+    "log_parser_stats": {
+      "title": "QHB 1.5.3: log_parser_stats",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#log_parser_stats-boolean",
+      "documented_name": "log_parser_stats",
+      "match_type": "exact-heading"
+    },
+    "log_planner_stats": {
+      "title": "QHB 1.5.3: log_planner_stats",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#log_planner_stats-boolean",
+      "documented_name": "log_planner_stats",
+      "match_type": "exact-heading"
+    },
+    "log_recovery_conflict_waits": {
+      "title": "QHB 1.5.3: log_recovery_conflict_waits",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_recovery_conflict_waits-boolean",
+      "documented_name": "log_recovery_conflict_waits",
+      "match_type": "exact-heading"
+    },
+    "log_replication_commands": {
+      "title": "QHB 1.5.3: log_replication_commands",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_replication_commands-boolean",
+      "documented_name": "log_replication_commands",
+      "match_type": "exact-heading"
+    },
+    "log_rotation_age": {
+      "title": "QHB 1.5.3: log_rotation_age",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_rotation_age-integer",
+      "documented_name": "log_rotation_age",
+      "match_type": "exact-heading"
+    },
+    "log_rotation_size": {
+      "title": "QHB 1.5.3: log_rotation_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_rotation_size-integer",
+      "documented_name": "log_rotation_size",
+      "match_type": "exact-heading"
+    },
+    "log_startup_progress_interval": {
+      "title": "QHB 1.5.3: log_startup_progress_interval",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_startup_progress_interval-integer",
+      "documented_name": "log_startup_progress_interval",
+      "match_type": "exact-heading"
+    },
+    "log_statement": {
+      "title": "QHB 1.5.3: log_statement",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_statement-enum",
+      "documented_name": "log_statement",
+      "match_type": "exact-heading"
+    },
+    "log_statement_sample_rate": {
+      "title": "QHB 1.5.3: log_statement_sample_rate",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_statement_sample_rate-floating-point",
+      "documented_name": "log_statement_sample_rate",
+      "match_type": "exact-heading"
+    },
+    "log_statement_stats": {
+      "title": "QHB 1.5.3: log_statement_stats",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#log_statement_stats-boolean",
+      "documented_name": "log_statement_stats",
+      "match_type": "exact-heading"
+    },
+    "log_temp_files": {
+      "title": "QHB 1.5.3: log_temp_files",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_temp_files-integer",
+      "documented_name": "log_temp_files",
+      "match_type": "exact-heading"
+    },
+    "log_timezone": {
+      "title": "QHB 1.5.3: log_timezone",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_timezone-string",
+      "documented_name": "log_timezone",
+      "match_type": "exact-heading"
+    },
+    "log_transaction_sample_rate": {
+      "title": "QHB 1.5.3: log_transaction_sample_rate",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_transaction_sample_rate-floating-point",
+      "documented_name": "log_transaction_sample_rate",
+      "match_type": "exact-heading"
+    },
+    "log_truncate_on_rotation": {
+      "title": "QHB 1.5.3: log_truncate_on_rotation",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#log_truncate_on_rotation-boolean",
+      "documented_name": "log_truncate_on_rotation",
+      "match_type": "exact-heading"
+    },
+    "logging_collector": {
+      "title": "QHB 1.5.3: logging_collector",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#logging_collector-boolean",
+      "documented_name": "logging_collector",
+      "match_type": "exact-heading"
+    },
+    "logical_decoding_work_mem": {
+      "title": "QHB 1.5.3: logical_decoding_work_mem",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#logical_decoding_work_mem-integer",
+      "documented_name": "logical_decoding_work_mem",
+      "match_type": "exact-heading"
+    },
+    "logon_jobs": {
+      "title": "QHB 1.5.3: logon_jobs",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#logon_jobs-bool",
+      "documented_name": "logon_jobs",
+      "match_type": "exact-heading"
+    },
+    "maintenance_io_concurrency": {
+      "title": "QHB 1.5.3: maintenance_io_concurrency",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#maintenance_io_concurrency-integer",
+      "documented_name": "maintenance_io_concurrency",
+      "match_type": "exact-heading"
+    },
+    "maintenance_work_mem": {
+      "title": "QHB 1.5.3: maintenance_work_mem",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#maintenance_work_mem-integer",
+      "documented_name": "maintenance_work_mem",
+      "match_type": "exact-heading"
+    },
+    "mask_pg_version": {
+      "title": "QHB 1.5.3: mask_pg_version",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#mask_pg_version-boolean",
+      "documented_name": "mask_pg_version",
+      "match_type": "exact-heading"
+    },
+    "mask_version_template": {
+      "title": "QHB 1.5.3: mask_version_template",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#mask_version_template-string",
+      "documented_name": "mask_version_template",
+      "match_type": "exact-heading"
+    },
+    "max_connections": {
+      "title": "QHB 1.5.3: max_connections",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#max_connections-integer",
+      "documented_name": "max_connections",
+      "match_type": "exact-heading"
+    },
+    "max_files_per_process": {
+      "title": "QHB 1.5.3: max_files_per_process",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#max_files_per_process-integer",
+      "documented_name": "max_files_per_process",
+      "match_type": "exact-heading"
+    },
+    "max_function_args": {
+      "title": "QHB 1.5.3: max_function_args",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#max_function_args-integer",
+      "documented_name": "max_function_args",
+      "match_type": "exact-heading"
+    },
+    "max_identifier_length": {
+      "title": "QHB 1.5.3: max_identifier_length",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#max_identifier_length-integer",
+      "documented_name": "max_identifier_length",
+      "match_type": "exact-heading"
+    },
+    "max_index_keys": {
+      "title": "QHB 1.5.3: max_index_keys",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#max_index_keys-integer",
+      "documented_name": "max_index_keys",
+      "match_type": "exact-heading"
+    },
+    "max_locks_per_transaction": {
+      "title": "QHB 1.5.3: max_locks_per_transaction",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-locks.html#max_locks_per_transaction-integer",
+      "documented_name": "max_locks_per_transaction",
+      "match_type": "exact-heading"
+    },
+    "max_logical_replication_workers": {
+      "title": "QHB 1.5.3: max_logical_replication_workers",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#max_logical_replication_workers-integer",
+      "documented_name": "max_logical_replication_workers",
+      "match_type": "exact-heading"
+    },
+    "max_parallel_apply_workers_per_subscription": {
+      "title": "QHB 1.5.3: max_parallel_apply_workers_per_subscription",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#max_parallel_apply_workers_per_subscription-integer",
+      "documented_name": "max_parallel_apply_workers_per_subscription",
+      "match_type": "exact-heading"
+    },
+    "max_parallel_maintenance_workers": {
+      "title": "QHB 1.5.3: max_parallel_maintenance_workers",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#max_parallel_maintenance_workers-integer",
+      "documented_name": "max_parallel_maintenance_workers",
+      "match_type": "exact-heading"
+    },
+    "max_parallel_workers": {
+      "title": "QHB 1.5.3: max_parallel_workers",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#max_parallel_workers-integer",
+      "documented_name": "max_parallel_workers",
+      "match_type": "exact-heading"
+    },
+    "max_parallel_workers_per_gather": {
+      "title": "QHB 1.5.3: max_parallel_workers_per_gather",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#max_parallel_workers_per_gather-integer",
+      "documented_name": "max_parallel_workers_per_gather",
+      "match_type": "exact-heading"
+    },
+    "max_pred_locks_per_page": {
+      "title": "QHB 1.5.3: max_pred_locks_per_page",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-locks.html#max_pred_locks_per_page-integer",
+      "documented_name": "max_pred_locks_per_page",
+      "match_type": "exact-heading"
+    },
+    "max_pred_locks_per_relation": {
+      "title": "QHB 1.5.3: max_pred_locks_per_relation",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-locks.html#max_pred_locks_per_relation-integer",
+      "documented_name": "max_pred_locks_per_relation",
+      "match_type": "exact-heading"
+    },
+    "max_pred_locks_per_transaction": {
+      "title": "QHB 1.5.3: max_pred_locks_per_transaction",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-locks.html#max_pred_locks_per_transaction-integer",
+      "documented_name": "max_pred_locks_per_transaction",
+      "match_type": "exact-heading"
+    },
+    "max_prepared_transactions": {
+      "title": "QHB 1.5.3: max_prepared_transactions",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#max_prepared_transactions-integer",
+      "documented_name": "max_prepared_transactions",
+      "match_type": "exact-heading"
+    },
+    "max_replication_slots": {
+      "title": "QHB 1.5.3: max_replication_slots",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#max_replication_slots-integer",
+      "documented_name": "max_replication_slots",
+      "match_type": "exact-heading"
+    },
+    "max_slot_wal_keep_size": {
+      "title": "QHB 1.5.3: max_slot_wal_keep_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#max_slot_wal_keep_size-integer",
+      "documented_name": "max_slot_wal_keep_size",
+      "match_type": "exact-heading"
+    },
+    "max_stack_depth": {
+      "title": "QHB 1.5.3: max_stack_depth",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#max_stack_depth-integer",
+      "documented_name": "max_stack_depth",
+      "match_type": "exact-heading"
+    },
+    "max_standby_archive_delay": {
+      "title": "QHB 1.5.3: max_standby_archive_delay",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#max_standby_archive_delay-integer",
+      "documented_name": "max_standby_archive_delay",
+      "match_type": "exact-heading"
+    },
+    "max_standby_streaming_delay": {
+      "title": "QHB 1.5.3: max_standby_streaming_delay",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#max_standby_streaming_delay-integer",
+      "documented_name": "max_standby_streaming_delay",
+      "match_type": "exact-heading"
+    },
+    "max_sync_workers_per_subscription": {
+      "title": "QHB 1.5.3: max_sync_workers_per_subscription",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#max_sync_workers_per_subscription-integer",
+      "documented_name": "max_sync_workers_per_subscription",
+      "match_type": "exact-heading"
+    },
+    "max_wal_senders": {
+      "title": "QHB 1.5.3: max_wal_senders",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#max_wal_senders-integer",
+      "documented_name": "max_wal_senders",
+      "match_type": "exact-heading"
+    },
+    "max_wal_size": {
+      "title": "QHB 1.5.3: max_wal_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#max_wal_size-integer",
+      "documented_name": "max_wal_size",
+      "match_type": "exact-heading"
+    },
+    "max_worker_processes": {
+      "title": "QHB 1.5.3: max_worker_processes",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#max_worker_processes-integer",
+      "documented_name": "max_worker_processes",
+      "match_type": "exact-heading"
+    },
+    "metrics_collector_path": {
+      "title": "QHB 1.5.3: metrics_collector_path",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Internal/metricsd.html#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0-%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA",
+      "documented_name": "metrics_collector_path",
+      "match_type": "reviewed-configuration-section"
+    },
+    "min_dynamic_shared_memory": {
+      "title": "QHB 1.5.3: min_dynamic_shared_memory",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#min_dynamic_shared_memory-integer",
+      "documented_name": "min_dynamic_shared_memory",
+      "match_type": "exact-heading"
+    },
+    "min_parallel_index_scan_size": {
+      "title": "QHB 1.5.3: min_parallel_index_scan_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#min_parallel_index_scan_size-integer",
+      "documented_name": "min_parallel_index_scan_size",
+      "match_type": "exact-heading"
+    },
+    "min_parallel_table_scan_size": {
+      "title": "QHB 1.5.3: min_parallel_table_scan_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#min_parallel_table_scan_size-integer",
+      "documented_name": "min_parallel_table_scan_size",
+      "match_type": "exact-heading"
+    },
+    "min_wal_size": {
+      "title": "QHB 1.5.3: min_wal_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#min_wal_size-integer",
+      "documented_name": "min_wal_size",
+      "match_type": "exact-heading"
+    },
+    "old_snapshot_threshold": {
+      "title": "QHB 1.5.3: old_snapshot_threshold",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#old_snapshot_threshold-integer",
+      "documented_name": "old_snapshot_threshold",
+      "match_type": "exact-heading"
+    },
+    "online_analyze.capacity_threshold": {
+      "title": "QHB 1.5.3: online_analyze.capacity_threshold",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#online_analyzecapacity_threshold-integer",
+      "documented_name": "online_analyze.capacity_threshold",
+      "match_type": "exact-heading"
+    },
+    "online_analyze.enable": {
+      "title": "QHB 1.5.3: online_analyze.enable",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#online_analyzeenable-boolean",
+      "documented_name": "online_analyze.enable",
+      "match_type": "exact-heading"
+    },
+    "online_analyze.exclude_tables": {
+      "title": "QHB 1.5.3: online_analyze.exclude_tables",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#online_analyzeexclude_tables-string",
+      "documented_name": "online_analyze.exclude_tables",
+      "match_type": "exact-heading"
+    },
+    "online_analyze.include_tables": {
+      "title": "QHB 1.5.3: online_analyze.include_tables",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#online_analyzeinclude_tables-string",
+      "documented_name": "online_analyze.include_tables",
+      "match_type": "exact-heading"
+    },
+    "online_analyze.local_tracking": {
+      "title": "QHB 1.5.3: online_analyze.local_tracking",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#online_analyzelocal_tracking-boolean",
+      "documented_name": "online_analyze.local_tracking",
+      "match_type": "exact-heading"
+    },
+    "online_analyze.lower_limit": {
+      "title": "QHB 1.5.3: online_analyze.lower_limit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#online_analyzelower_limit-integer",
+      "documented_name": "online_analyze.lower_limit",
+      "match_type": "exact-heading"
+    },
+    "online_analyze.min_interval": {
+      "title": "QHB 1.5.3: online_analyze.min_interval",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#online_analyzemin_interval-integer",
+      "documented_name": "online_analyze.min_interval",
+      "match_type": "exact-heading"
+    },
+    "online_analyze.scale_factor": {
+      "title": "QHB 1.5.3: online_analyze.scale_factor",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#online_analyzescale_factor-floating-point",
+      "documented_name": "online_analyze.scale_factor",
+      "match_type": "exact-heading"
+    },
+    "online_analyze.table_type": {
+      "title": "QHB 1.5.3: online_analyze.table_type",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#online_analyzetable_type-enum",
+      "documented_name": "online_analyze.table_type",
+      "match_type": "exact-heading"
+    },
+    "online_analyze.threshold": {
+      "title": "QHB 1.5.3: online_analyze.threshold",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#online_analyzethreshold-integer",
+      "documented_name": "online_analyze.threshold",
+      "match_type": "exact-heading"
+    },
+    "online_analyze.verbose": {
+      "title": "QHB 1.5.3: online_analyze.verbose",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#online_analyzeverbose-boolean",
+      "documented_name": "online_analyze.verbose",
+      "match_type": "exact-heading"
+    },
+    "parallel_leader_participation": {
+      "title": "QHB 1.5.3: parallel_leader_participation",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#parallel_leader_participation-boolean",
+      "documented_name": "parallel_leader_participation",
+      "match_type": "exact-heading"
+    },
+    "parallel_setup_cost": {
+      "title": "QHB 1.5.3: parallel_setup_cost",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#parallel_setup_cost-floating-point",
+      "documented_name": "parallel_setup_cost",
+      "match_type": "exact-heading"
+    },
+    "parallel_tuple_cost": {
+      "title": "QHB 1.5.3: parallel_tuple_cost",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#parallel_tuple_cost-floating-point",
+      "documented_name": "parallel_tuple_cost",
+      "match_type": "exact-heading"
+    },
+    "password_encryption": {
+      "title": "QHB 1.5.3: password_encryption",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#password_encryption-enum",
+      "documented_name": "password_encryption",
+      "match_type": "exact-heading"
+    },
+    "plan_cache_mode": {
+      "title": "QHB 1.5.3: plan_cache_mode",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#plan_cache_mode-enum",
+      "documented_name": "plan_cache_mode",
+      "match_type": "exact-heading"
+    },
+    "plantuner.disable_index": {
+      "title": "QHB 1.5.3: plantuner.disable_index",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#plantunerdisable_index-string",
+      "documented_name": "plantuner.disable_index",
+      "match_type": "exact-heading"
+    },
+    "plantuner.enable_index": {
+      "title": "QHB 1.5.3: plantuner.enable_index",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#plantunerenable_index-string",
+      "documented_name": "plantuner.enable_index",
+      "match_type": "exact-heading"
+    },
+    "plantuner.fix_empty_table": {
+      "title": "QHB 1.5.3: plantuner.fix_empty_table",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#plantunerfix_empty_table-boolean",
+      "documented_name": "plantuner.fix_empty_table",
+      "match_type": "exact-heading"
+    },
+    "plantuner.only_index": {
+      "title": "QHB 1.5.3: plantuner.only_index",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#plantuneronly_index-string",
+      "documented_name": "plantuner.only_index",
+      "match_type": "exact-heading"
+    },
+    "port": {
+      "title": "QHB 1.5.3: port",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#port-integer",
+      "documented_name": "port",
+      "match_type": "exact-heading"
+    },
+    "post_auth_delay": {
+      "title": "QHB 1.5.3: post_auth_delay",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#post_auth_delay-integer",
+      "documented_name": "post_auth_delay",
+      "match_type": "exact-heading"
+    },
+    "pre_auth_delay": {
+      "title": "QHB 1.5.3: pre_auth_delay",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#pre_auth_delay-integer",
+      "documented_name": "pre_auth_delay",
+      "match_type": "exact-heading"
+    },
+    "primary_conninfo": {
+      "title": "QHB 1.5.3: primary_conninfo",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#primary_conninfo-string",
+      "documented_name": "primary_conninfo",
+      "match_type": "exact-heading"
+    },
+    "primary_slot_name": {
+      "title": "QHB 1.5.3: primary_slot_name",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#primary_slot_name-string",
+      "documented_name": "primary_slot_name",
+      "match_type": "exact-heading"
+    },
+    "qcdc_registry_size": {
+      "title": "QHB 1.5.3: qcdc_registry_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/qbackup.html#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0-%D0%B1%D0%B0%D0%B7-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85",
+      "documented_name": "qcdc_registry_size",
+      "match_type": "reviewed-configuration-section"
+    },
+    "qhb_backtrace_max_age": {
+      "title": "QHB 1.5.3: qhb_backtrace_max_age",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qhb_backtrace_max_age-time",
+      "documented_name": "qhb_backtrace_max_age",
+      "match_type": "exact-heading"
+    },
+    "qhb_backtrace_max_count": {
+      "title": "QHB 1.5.3: qhb_backtrace_max_count",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qhb_backtrace_max_count-integer",
+      "documented_name": "qhb_backtrace_max_count",
+      "match_type": "exact-heading"
+    },
+    "qhb_cache_size": {
+      "title": "QHB 1.5.3: qhb_cache_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qhb_cache_size-integer",
+      "documented_name": "qhb_cache_size",
+      "match_type": "exact-heading"
+    },
+    "qhb_onlymem_cache_size": {
+      "title": "QHB 1.5.3: qhb_onlymem_cache_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qhb_onlymem_cache_size-integer",
+      "documented_name": "qhb_onlymem_cache_size",
+      "match_type": "exact-heading"
+    },
+    "qhb_os_monitoring": {
+      "title": "QHB 1.5.3: qhb_os_monitoring",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/monitoring/monitoring-qhb.html#sys",
+      "documented_name": "qhb_os_monitoring",
+      "match_type": "reviewed-configuration-section"
+    },
+    "qhb_os_stat_period": {
+      "title": "QHB 1.5.3: qhb_os_stat_period",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/monitoring/monitoring-qhb.html#sys",
+      "documented_name": "qhb_os_stat_period",
+      "match_type": "reviewed-configuration-section"
+    },
+    "qhb_plan_cache_size": {
+      "title": "QHB 1.5.3: qhb_plan_cache_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Internal/qhb-plan-cache.html#%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D1%8F%D0%B5%D0%BC%D0%BE%D0%B3%D0%BE-%D0%BA%D0%B5%D1%88%D0%B0-%D0%B2-qhbconf",
+      "documented_name": "qhb_plan_cache_size",
+      "match_type": "reviewed-configuration-section"
+    },
+    "qhb_possible_buffers_size": {
+      "title": "QHB 1.5.3: qhb_possible_buffers_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qhb_possible_buffers_size-integer",
+      "documented_name": "qhb_possible_buffers_size",
+      "match_type": "exact-heading"
+    },
+    "qsched_log_rotation_adjustment_period": {
+      "title": "QHB 1.5.3: qsched_log_rotation_adjustment_period",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qsched_log_rotation_adjustment_period-integer",
+      "documented_name": "qsched_log_rotation_adjustment_period",
+      "match_type": "exact-heading"
+    },
+    "qsched_log_rotation_max_entries": {
+      "title": "QHB 1.5.3: qsched_log_rotation_max_entries",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qsched_log_rotation_max_entries-string",
+      "documented_name": "qsched_log_rotation_max_entries",
+      "match_type": "exact-heading"
+    },
+    "qsched_log_rotation_max_lifetime": {
+      "title": "QHB 1.5.3: qsched_log_rotation_max_lifetime",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qsched_log_rotation_max_lifetime-string",
+      "documented_name": "qsched_log_rotation_max_lifetime",
+      "match_type": "exact-heading"
+    },
+    "qsched_log_rotation_period": {
+      "title": "QHB 1.5.3: qsched_log_rotation_period",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qsched_log_rotation_period-string",
+      "documented_name": "qsched_log_rotation_period",
+      "match_type": "exact-heading"
+    },
+    "qsched_log_rotation_strategy": {
+      "title": "QHB 1.5.3: qsched_log_rotation_strategy",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qsched_log_rotation_strategy-integer",
+      "documented_name": "qsched_log_rotation_strategy",
+      "match_type": "exact-heading"
+    },
+    "qsched_parallel_slaves": {
+      "title": "QHB 1.5.3: qsched_parallel_slaves",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Internal/qsched.html#%D0%A7%D0%B8%D1%81%D0%BB%D0%BE-%D0%B4%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%B8%D0%BC%D1%8B%D1%85-%D0%BF%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2",
+      "documented_name": "qsched_parallel_slaves",
+      "match_type": "reviewed-configuration-section"
+    },
+    "qss_encrypt_statistic": {
+      "title": "QHB 1.5.3: qss_encrypt_statistic",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qss_encrypt_statistic-bool",
+      "documented_name": "qss_encrypt_statistic",
+      "match_type": "exact-heading"
+    },
+    "qss_mode": {
+      "title": "QHB 1.5.3: qss_mode",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qss_mode-integer",
+      "documented_name": "qss_mode",
+      "match_type": "exact-heading"
+    },
+    "qss_shmem_size_cap": {
+      "title": "QHB 1.5.3: qss_shmem_size_cap",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#qss_shmem_size_cap-integer",
+      "documented_name": "qss_shmem_size_cap",
+      "match_type": "exact-heading"
+    },
+    "query_profiling": {
+      "title": "QHB 1.5.3: query_profiling",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Internal/profile.html#%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0",
+      "documented_name": "query_profiling",
+      "match_type": "reviewed-configuration-section"
+    },
+    "query_profiling_queue_size": {
+      "title": "QHB 1.5.3: query_profiling_queue_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Internal/profile.html#%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0",
+      "documented_name": "query_profiling_queue_size",
+      "match_type": "reviewed-configuration-section"
+    },
+    "queryid_auto_register": {
+      "title": "QHB 1.5.3: queryid_auto_register",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Internal/qhb_queryid.html#%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%B4%D0%BB%D1%8F-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B-%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA-queryid",
+      "documented_name": "queryid_auto_register",
+      "match_type": "reviewed-configuration-section"
+    },
+    "queryid_max_saved": {
+      "title": "QHB 1.5.3: queryid_max_saved",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Internal/qhb_queryid.html#%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%B4%D0%BB%D1%8F-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B-%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA-queryid",
+      "documented_name": "queryid_max_saved",
+      "match_type": "reviewed-configuration-section"
+    },
+    "queryid_update_threshold": {
+      "title": "QHB 1.5.3: queryid_update_threshold",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Internal/qhb_queryid.html#%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%B4%D0%BB%D1%8F-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B-%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA-queryid",
+      "documented_name": "queryid_update_threshold",
+      "match_type": "reviewed-configuration-section"
+    },
+    "quote_all_identifiers": {
+      "title": "QHB 1.5.3: quote_all_identifiers",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-compatible.html#quote_all_identifiers-boolean",
+      "documented_name": "quote_all_identifiers",
+      "match_type": "exact-heading"
+    },
+    "random_page_cost": {
+      "title": "QHB 1.5.3: random_page_cost",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#random_page_cost-floating-point",
+      "documented_name": "random_page_cost",
+      "match_type": "exact-heading"
+    },
+    "recovery_end_command": {
+      "title": "QHB 1.5.3: recovery_end_command",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#recovery_end_command-string",
+      "documented_name": "recovery_end_command",
+      "match_type": "exact-heading"
+    },
+    "recovery_init_sync_method": {
+      "title": "QHB 1.5.3: recovery_init_sync_method",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-error-handling.html#recovery_init_sync_method-enum",
+      "documented_name": "recovery_init_sync_method",
+      "match_type": "exact-heading"
+    },
+    "recovery_min_apply_delay": {
+      "title": "QHB 1.5.3: recovery_min_apply_delay",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#recovery_min_apply_delay-integer",
+      "documented_name": "recovery_min_apply_delay",
+      "match_type": "exact-heading"
+    },
+    "recovery_prefetch": {
+      "title": "QHB 1.5.3: recovery_prefetch",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#recovery_prefetch-enum",
+      "documented_name": "recovery_prefetch",
+      "match_type": "exact-heading"
+    },
+    "recovery_target": {
+      "title": "QHB 1.5.3: recovery_target",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#recovery_target--immediate",
+      "documented_name": "recovery_target",
+      "match_type": "exact-heading"
+    },
+    "recovery_target_action": {
+      "title": "QHB 1.5.3: recovery_target_action",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#recovery_target_action-enum",
+      "documented_name": "recovery_target_action",
+      "match_type": "exact-heading"
+    },
+    "recovery_target_inclusive": {
+      "title": "QHB 1.5.3: recovery_target_inclusive",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#recovery_target_inclusive-boolean",
+      "documented_name": "recovery_target_inclusive",
+      "match_type": "exact-heading"
+    },
+    "recovery_target_lsn": {
+      "title": "QHB 1.5.3: recovery_target_lsn",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#recovery_target_lsn-pg_lsn",
+      "documented_name": "recovery_target_lsn",
+      "match_type": "exact-heading"
+    },
+    "recovery_target_name": {
+      "title": "QHB 1.5.3: recovery_target_name",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#recovery_target_name-string",
+      "documented_name": "recovery_target_name",
+      "match_type": "exact-heading"
+    },
+    "recovery_target_time": {
+      "title": "QHB 1.5.3: recovery_target_time",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#recovery_target_time-timestamp",
+      "documented_name": "recovery_target_time",
+      "match_type": "exact-heading"
+    },
+    "recovery_target_timeline": {
+      "title": "QHB 1.5.3: recovery_target_timeline",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#recovery_target_timeline-string",
+      "documented_name": "recovery_target_timeline",
+      "match_type": "exact-heading"
+    },
+    "recovery_target_xid": {
+      "title": "QHB 1.5.3: recovery_target_xid",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#recovery_target_xid-string",
+      "documented_name": "recovery_target_xid",
+      "match_type": "exact-heading"
+    },
+    "recursive_worktable_factor": {
+      "title": "QHB 1.5.3: recursive_worktable_factor",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#recursive_worktable_factor-floating-point",
+      "documented_name": "recursive_worktable_factor",
+      "match_type": "exact-heading"
+    },
+    "remove_temp_files_after_crash": {
+      "title": "QHB 1.5.3: remove_temp_files_after_crash",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#remove_temp_files_after_crash-boolean",
+      "documented_name": "remove_temp_files_after_crash",
+      "match_type": "exact-heading"
+    },
+    "reserved_connections": {
+      "title": "QHB 1.5.3: reserved_connections",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#reserved_connections-integer",
+      "documented_name": "reserved_connections",
+      "match_type": "exact-heading"
+    },
+    "resource_management": {
+      "title": "QHB 1.5.3: resource_management",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/resource-groups.html#%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%B0%D0%BC%D0%B8",
+      "documented_name": "resource_management",
+      "match_type": "reviewed-configuration-section"
+    },
+    "restart_after_crash": {
+      "title": "QHB 1.5.3: restart_after_crash",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-error-handling.html#restart_after_crash-boolean",
+      "documented_name": "restart_after_crash",
+      "match_type": "exact-heading"
+    },
+    "restore_command": {
+      "title": "QHB 1.5.3: restore_command",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#restore_command-string",
+      "documented_name": "restore_command",
+      "match_type": "exact-heading"
+    },
+    "restrict_nonsystem_relation_kind": {
+      "title": "QHB 1.5.3: restrict_nonsystem_relation_kind",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#restrict_nonsystem_relation_kind-string",
+      "documented_name": "restrict_nonsystem_relation_kind",
+      "match_type": "exact-heading"
+    },
+    "row_security": {
+      "title": "QHB 1.5.3: row_security",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#row_security-boolean",
+      "documented_name": "row_security",
+      "match_type": "exact-heading"
+    },
+    "scram_iterations": {
+      "title": "QHB 1.5.3: scram_iterations",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#scram_iterations-integer",
+      "documented_name": "scram_iterations",
+      "match_type": "exact-heading"
+    },
+    "search_path": {
+      "title": "QHB 1.5.3: search_path",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#search_path-string",
+      "documented_name": "search_path",
+      "match_type": "exact-heading"
+    },
+    "segment_size": {
+      "title": "QHB 1.5.3: segment_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#segment_size-integer",
+      "documented_name": "segment_size",
+      "match_type": "exact-heading"
+    },
+    "send_abort_for_crash": {
+      "title": "QHB 1.5.3: send_abort_for_crash",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#send_abort_for_crash-boolean",
+      "documented_name": "send_abort_for_crash",
+      "match_type": "exact-heading"
+    },
+    "send_abort_for_kill": {
+      "title": "QHB 1.5.3: send_abort_for_kill",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#send_abort_for_kill-boolean",
+      "documented_name": "send_abort_for_kill",
+      "match_type": "exact-heading"
+    },
+    "seq_page_cost": {
+      "title": "QHB 1.5.3: seq_page_cost",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-query.html#seq_page_cost-floating-point",
+      "documented_name": "seq_page_cost",
+      "match_type": "exact-heading"
+    },
+    "server_encoding": {
+      "title": "QHB 1.5.3: server_encoding",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#server_encoding-string",
+      "documented_name": "server_encoding",
+      "match_type": "exact-heading"
+    },
+    "server_version": {
+      "title": "QHB 1.5.3: server_version",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#server_version-string",
+      "documented_name": "server_version",
+      "match_type": "exact-heading"
+    },
+    "server_version_num": {
+      "title": "QHB 1.5.3: server_version_num",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#server_version_num-integer",
+      "documented_name": "server_version_num",
+      "match_type": "exact-heading"
+    },
+    "session_preload_libraries": {
+      "title": "QHB 1.5.3: session_preload_libraries",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#session_preload_libraries-string",
+      "documented_name": "session_preload_libraries",
+      "match_type": "exact-heading"
+    },
+    "session_replication_role": {
+      "title": "QHB 1.5.3: session_replication_role",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#session_replication_role-enum",
+      "documented_name": "session_replication_role",
+      "match_type": "exact-heading"
+    },
+    "shared_buffers": {
+      "title": "QHB 1.5.3: shared_buffers",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#shared_buffers-integer",
+      "documented_name": "shared_buffers",
+      "match_type": "exact-heading"
+    },
+    "shared_buffers_partitions": {
+      "title": "QHB 1.5.3: shared_buffers_partitions",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#shared_buffers_partitions-integer",
+      "documented_name": "shared_buffers_partitions",
+      "match_type": "exact-heading"
+    },
+    "shared_memory_size": {
+      "title": "QHB 1.5.3: shared_memory_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#shared_memory_size-integer",
+      "documented_name": "shared_memory_size",
+      "match_type": "exact-heading"
+    },
+    "shared_memory_size_in_huge_pages": {
+      "title": "QHB 1.5.3: shared_memory_size_in_huge_pages",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#shared_memory_size_in_huge_pages-integer",
+      "documented_name": "shared_memory_size_in_huge_pages",
+      "match_type": "exact-heading"
+    },
+    "shared_memory_type": {
+      "title": "QHB 1.5.3: shared_memory_type",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#shared_memory_type-enum",
+      "documented_name": "shared_memory_type",
+      "match_type": "exact-heading"
+    },
+    "shared_preload_libraries": {
+      "title": "QHB 1.5.3: shared_preload_libraries",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#shared_preload_libraries-string",
+      "documented_name": "shared_preload_libraries",
+      "match_type": "exact-heading"
+    },
+    "ssl": {
+      "title": "QHB 1.5.3: ssl",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl-boolean",
+      "documented_name": "ssl",
+      "match_type": "exact-heading"
+    },
+    "ssl_ca_file": {
+      "title": "QHB 1.5.3: ssl_ca_file",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_ca_file-string",
+      "documented_name": "ssl_ca_file",
+      "match_type": "exact-heading"
+    },
+    "ssl_cert_file": {
+      "title": "QHB 1.5.3: ssl_cert_file",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_cert_file-string",
+      "documented_name": "ssl_cert_file",
+      "match_type": "exact-heading"
+    },
+    "ssl_ciphers": {
+      "title": "QHB 1.5.3: ssl_ciphers",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_ciphers-string",
+      "documented_name": "ssl_ciphers",
+      "match_type": "exact-heading"
+    },
+    "ssl_crl_dir": {
+      "title": "QHB 1.5.3: ssl_crl_dir",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_crl_dir-string",
+      "documented_name": "ssl_crl_dir",
+      "match_type": "exact-heading"
+    },
+    "ssl_crl_file": {
+      "title": "QHB 1.5.3: ssl_crl_file",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_crl_file-string",
+      "documented_name": "ssl_crl_file",
+      "match_type": "exact-heading"
+    },
+    "ssl_dh_params_file": {
+      "title": "QHB 1.5.3: ssl_dh_params_file",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_dh_params_file-string",
+      "documented_name": "ssl_dh_params_file",
+      "match_type": "exact-heading"
+    },
+    "ssl_ecdh_curve": {
+      "title": "QHB 1.5.3: ssl_ecdh_curve",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_ecdh_curve-string",
+      "documented_name": "ssl_ecdh_curve",
+      "match_type": "exact-heading"
+    },
+    "ssl_key_file": {
+      "title": "QHB 1.5.3: ssl_key_file",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_key_file-string",
+      "documented_name": "ssl_key_file",
+      "match_type": "exact-heading"
+    },
+    "ssl_library": {
+      "title": "QHB 1.5.3: ssl_library",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#ssl_library-string",
+      "documented_name": "ssl_library",
+      "match_type": "exact-heading"
+    },
+    "ssl_max_protocol_version": {
+      "title": "QHB 1.5.3: ssl_max_protocol_version",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_max_protocol_version-enum",
+      "documented_name": "ssl_max_protocol_version",
+      "match_type": "exact-heading"
+    },
+    "ssl_min_protocol_version": {
+      "title": "QHB 1.5.3: ssl_min_protocol_version",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_min_protocol_version-enum",
+      "documented_name": "ssl_min_protocol_version",
+      "match_type": "exact-heading"
+    },
+    "ssl_passphrase_command": {
+      "title": "QHB 1.5.3: ssl_passphrase_command",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_passphrase_command-string",
+      "documented_name": "ssl_passphrase_command",
+      "match_type": "exact-heading"
+    },
+    "ssl_passphrase_command_supports_reload": {
+      "title": "QHB 1.5.3: ssl_passphrase_command_supports_reload",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_passphrase_command_supports_reload-boolean",
+      "documented_name": "ssl_passphrase_command_supports_reload",
+      "match_type": "exact-heading"
+    },
+    "ssl_prefer_server_ciphers": {
+      "title": "QHB 1.5.3: ssl_prefer_server_ciphers",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#ssl_prefer_server_ciphers-boolean",
+      "documented_name": "ssl_prefer_server_ciphers",
+      "match_type": "exact-heading"
+    },
+    "standard_conforming_strings": {
+      "title": "QHB 1.5.3: standard_conforming_strings",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-compatible.html#standard_conforming_strings-boolean",
+      "documented_name": "standard_conforming_strings",
+      "match_type": "exact-heading"
+    },
+    "statement_timeout": {
+      "title": "QHB 1.5.3: statement_timeout",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#statement_timeout-integer",
+      "documented_name": "statement_timeout",
+      "match_type": "exact-heading"
+    },
+    "stats_fetch_consistency": {
+      "title": "QHB 1.5.3: stats_fetch_consistency",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#stats_fetch_consistency-enum",
+      "documented_name": "stats_fetch_consistency",
+      "match_type": "exact-heading"
+    },
+    "superuser_reserved_connections": {
+      "title": "QHB 1.5.3: superuser_reserved_connections",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#superuser_reserved_connections-integer",
+      "documented_name": "superuser_reserved_connections",
+      "match_type": "exact-heading"
+    },
+    "synchronize_seqscans": {
+      "title": "QHB 1.5.3: synchronize_seqscans",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-compatible.html#synchronize_seqscans-boolean",
+      "documented_name": "synchronize_seqscans",
+      "match_type": "exact-heading"
+    },
+    "synchronous_commit": {
+      "title": "QHB 1.5.3: synchronous_commit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#synchronous_commit-enum",
+      "documented_name": "synchronous_commit",
+      "match_type": "exact-heading"
+    },
+    "synchronous_standby_names": {
+      "title": "QHB 1.5.3: synchronous_standby_names",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#synchronous_standby_names-string",
+      "documented_name": "synchronous_standby_names",
+      "match_type": "exact-heading"
+    },
+    "syslog_facility": {
+      "title": "QHB 1.5.3: syslog_facility",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#syslog_facility-enum",
+      "documented_name": "syslog_facility",
+      "match_type": "exact-heading"
+    },
+    "syslog_ident": {
+      "title": "QHB 1.5.3: syslog_ident",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#syslog_ident-string",
+      "documented_name": "syslog_ident",
+      "match_type": "exact-heading"
+    },
+    "syslog_sequence_numbers": {
+      "title": "QHB 1.5.3: syslog_sequence_numbers",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#syslog_sequence_numbers-boolean",
+      "documented_name": "syslog_sequence_numbers",
+      "match_type": "exact-heading"
+    },
+    "syslog_split_messages": {
+      "title": "QHB 1.5.3: syslog_split_messages",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#syslog_split_messages-boolean",
+      "documented_name": "syslog_split_messages",
+      "match_type": "exact-heading"
+    },
+    "tcp_keepalives_count": {
+      "title": "QHB 1.5.3: tcp_keepalives_count",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#tcp_keepalives_count-integer",
+      "documented_name": "tcp_keepalives_count",
+      "match_type": "exact-heading"
+    },
+    "tcp_keepalives_idle": {
+      "title": "QHB 1.5.3: tcp_keepalives_idle",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#tcp_keepalives_idle-integer",
+      "documented_name": "tcp_keepalives_idle",
+      "match_type": "exact-heading"
+    },
+    "tcp_keepalives_interval": {
+      "title": "QHB 1.5.3: tcp_keepalives_interval",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#tcp_keepalives_interval-integer",
+      "documented_name": "tcp_keepalives_interval",
+      "match_type": "exact-heading"
+    },
+    "tcp_user_timeout": {
+      "title": "QHB 1.5.3: tcp_user_timeout",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#tcp_user_timeout-integer",
+      "documented_name": "tcp_user_timeout",
+      "match_type": "exact-heading"
+    },
+    "temp_buffers": {
+      "title": "QHB 1.5.3: temp_buffers",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#temp_buffers-integer",
+      "documented_name": "temp_buffers",
+      "match_type": "exact-heading"
+    },
+    "temp_file_limit": {
+      "title": "QHB 1.5.3: temp_file_limit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#temp_file_limit-integer",
+      "documented_name": "temp_file_limit",
+      "match_type": "exact-heading"
+    },
+    "temp_tablespaces": {
+      "title": "QHB 1.5.3: temp_tablespaces",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#temp_tablespaces-string",
+      "documented_name": "temp_tablespaces",
+      "match_type": "exact-heading"
+    },
+    "timezone_abbreviations": {
+      "title": "QHB 1.5.3: timezone_abbreviations",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#timezone_abbreviations-string",
+      "documented_name": "timezone_abbreviations",
+      "match_type": "exact-heading"
+    },
+    "trace_notify": {
+      "title": "QHB 1.5.3: trace_notify",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#trace_notify-boolean",
+      "documented_name": "trace_notify",
+      "match_type": "exact-heading"
+    },
+    "trace_recovery_messages": {
+      "title": "QHB 1.5.3: trace_recovery_messages",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#trace_recovery_messages-enum",
+      "documented_name": "trace_recovery_messages",
+      "match_type": "exact-heading"
+    },
+    "trace_sort": {
+      "title": "QHB 1.5.3: trace_sort",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#trace_sort-boolean",
+      "documented_name": "trace_sort",
+      "match_type": "exact-heading"
+    },
+    "track_activities": {
+      "title": "QHB 1.5.3: track_activities",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#track_activities-boolean",
+      "documented_name": "track_activities",
+      "match_type": "exact-heading"
+    },
+    "track_activity_query_size": {
+      "title": "QHB 1.5.3: track_activity_query_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#track_activity_query_size-integer",
+      "documented_name": "track_activity_query_size",
+      "match_type": "exact-heading"
+    },
+    "track_commit_timestamp": {
+      "title": "QHB 1.5.3: track_commit_timestamp",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#track_commit_timestamp-boolean",
+      "documented_name": "track_commit_timestamp",
+      "match_type": "exact-heading"
+    },
+    "track_counts": {
+      "title": "QHB 1.5.3: track_counts",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#track_counts-boolean",
+      "documented_name": "track_counts",
+      "match_type": "exact-heading"
+    },
+    "track_functions": {
+      "title": "QHB 1.5.3: track_functions",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#track_functions-enum",
+      "documented_name": "track_functions",
+      "match_type": "exact-heading"
+    },
+    "track_io_timing": {
+      "title": "QHB 1.5.3: track_io_timing",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#track_io_timing-boolean",
+      "documented_name": "track_io_timing",
+      "match_type": "exact-heading"
+    },
+    "track_wal_io_timing": {
+      "title": "QHB 1.5.3: track_wal_io_timing",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-statistics.html#track_wal_io_timing-boolean",
+      "documented_name": "track_wal_io_timing",
+      "match_type": "exact-heading"
+    },
+    "transaction_deferrable": {
+      "title": "QHB 1.5.3: transaction_deferrable",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#transaction_deferrable-boolean",
+      "documented_name": "transaction_deferrable",
+      "match_type": "exact-heading"
+    },
+    "transaction_isolation": {
+      "title": "QHB 1.5.3: transaction_isolation",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#transaction_isolation-enum",
+      "documented_name": "transaction_isolation",
+      "match_type": "exact-heading"
+    },
+    "transaction_read_only": {
+      "title": "QHB 1.5.3: transaction_read_only",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#transaction_read_only-boolean",
+      "documented_name": "transaction_read_only",
+      "match_type": "exact-heading"
+    },
+    "transform_null_equals": {
+      "title": "QHB 1.5.3: transform_null_equals",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-compatible.html#transform_null_equals-boolean",
+      "documented_name": "transform_null_equals",
+      "match_type": "exact-heading"
+    },
+    "unix_socket_directories": {
+      "title": "QHB 1.5.3: unix_socket_directories",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#unix_socket_directories-string",
+      "documented_name": "unix_socket_directories",
+      "match_type": "exact-heading"
+    },
+    "unix_socket_group": {
+      "title": "QHB 1.5.3: unix_socket_group",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#unix_socket_group-string",
+      "documented_name": "unix_socket_group",
+      "match_type": "exact-heading"
+    },
+    "unix_socket_permissions": {
+      "title": "QHB 1.5.3: unix_socket_permissions",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-connection.html#unix_socket_permissions-integer",
+      "documented_name": "unix_socket_permissions",
+      "match_type": "exact-heading"
+    },
+    "update_process_title": {
+      "title": "QHB 1.5.3: update_process_title",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-logging.html#update_process_title-boolean",
+      "documented_name": "update_process_title",
+      "match_type": "exact-heading"
+    },
+    "use_possible_buffer": {
+      "title": "QHB 1.5.3: use_possible_buffer",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#use_possible_buffer-boolean",
+      "documented_name": "use_possible_buffer",
+      "match_type": "exact-heading"
+    },
+    "use_qhb_cache": {
+      "title": "QHB 1.5.3: use_qhb_cache",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#use_qhb_cache-boolean",
+      "documented_name": "use_qhb_cache",
+      "match_type": "exact-heading"
+    },
+    "use_qhb_onlymem_cache": {
+      "title": "QHB 1.5.3: use_qhb_onlymem_cache",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#use_qhb_onlymem_cache-boolean",
+      "documented_name": "use_qhb_onlymem_cache",
+      "match_type": "exact-heading"
+    },
+    "vacuum_buffer_usage_limit": {
+      "title": "QHB 1.5.3: vacuum_buffer_usage_limit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#vacuum_buffer_usage_limit-integer",
+      "documented_name": "vacuum_buffer_usage_limit",
+      "match_type": "exact-heading"
+    },
+    "vacuum_cost_delay": {
+      "title": "QHB 1.5.3: vacuum_cost_delay",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#vacuum_cost_delay-floating-point",
+      "documented_name": "vacuum_cost_delay",
+      "match_type": "exact-heading"
+    },
+    "vacuum_cost_limit": {
+      "title": "QHB 1.5.3: vacuum_cost_limit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#vacuum_cost_limit-integer",
+      "documented_name": "vacuum_cost_limit",
+      "match_type": "exact-heading"
+    },
+    "vacuum_cost_page_dirty": {
+      "title": "QHB 1.5.3: vacuum_cost_page_dirty",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#vacuum_cost_page_dirty-integer",
+      "documented_name": "vacuum_cost_page_dirty",
+      "match_type": "exact-heading"
+    },
+    "vacuum_cost_page_hit": {
+      "title": "QHB 1.5.3: vacuum_cost_page_hit",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#vacuum_cost_page_hit-integer",
+      "documented_name": "vacuum_cost_page_hit",
+      "match_type": "exact-heading"
+    },
+    "vacuum_cost_page_miss": {
+      "title": "QHB 1.5.3: vacuum_cost_page_miss",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#vacuum_cost_page_miss-integer",
+      "documented_name": "vacuum_cost_page_miss",
+      "match_type": "exact-heading"
+    },
+    "vacuum_failsafe_age": {
+      "title": "QHB 1.5.3: vacuum_failsafe_age",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#vacuum_failsafe_age-integer",
+      "documented_name": "vacuum_failsafe_age",
+      "match_type": "exact-heading"
+    },
+    "vacuum_freeze_min_age": {
+      "title": "QHB 1.5.3: vacuum_freeze_min_age",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#vacuum_freeze_min_age-integer",
+      "documented_name": "vacuum_freeze_min_age",
+      "match_type": "exact-heading"
+    },
+    "vacuum_freeze_table_age": {
+      "title": "QHB 1.5.3: vacuum_freeze_table_age",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#vacuum_freeze_table_age-integer",
+      "documented_name": "vacuum_freeze_table_age",
+      "match_type": "exact-heading"
+    },
+    "vacuum_multixact_failsafe_age": {
+      "title": "QHB 1.5.3: vacuum_multixact_failsafe_age",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#vacuum_multixact_failsafe_age-integer",
+      "documented_name": "vacuum_multixact_failsafe_age",
+      "match_type": "exact-heading"
+    },
+    "vacuum_multixact_freeze_min_age": {
+      "title": "QHB 1.5.3: vacuum_multixact_freeze_min_age",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#vacuum_multixact_freeze_min_age-integer",
+      "documented_name": "vacuum_multixact_freeze_min_age",
+      "match_type": "exact-heading"
+    },
+    "vacuum_multixact_freeze_table_age": {
+      "title": "QHB 1.5.3: vacuum_multixact_freeze_table_age",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#vacuum_multixact_freeze_table_age-integer",
+      "documented_name": "vacuum_multixact_freeze_table_age",
+      "match_type": "exact-heading"
+    },
+    "wal_after_error_sleep_delay": {
+      "title": "QHB 1.5.3: wal_after_error_sleep_delay",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_after_error_sleep_delay-integer",
+      "documented_name": "wal_after_error_sleep_delay",
+      "match_type": "exact-heading"
+    },
+    "wal_block_size": {
+      "title": "QHB 1.5.3: wal_block_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#wal_block_size-integer",
+      "documented_name": "wal_block_size",
+      "match_type": "exact-heading"
+    },
+    "wal_buffers": {
+      "title": "QHB 1.5.3: wal_buffers",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_buffers-integer",
+      "documented_name": "wal_buffers",
+      "match_type": "exact-heading"
+    },
+    "wal_compression": {
+      "title": "QHB 1.5.3: wal_compression",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_compression-boolean",
+      "documented_name": "wal_compression",
+      "match_type": "exact-heading"
+    },
+    "wal_consistency_checking": {
+      "title": "QHB 1.5.3: wal_consistency_checking",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#wal_consistency_checking-string",
+      "documented_name": "wal_consistency_checking",
+      "match_type": "exact-heading"
+    },
+    "wal_decode_buffer_size": {
+      "title": "QHB 1.5.3: wal_decode_buffer_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_decode_buffer_size-integer",
+      "documented_name": "wal_decode_buffer_size",
+      "match_type": "exact-heading"
+    },
+    "wal_init_zero": {
+      "title": "QHB 1.5.3: wal_init_zero",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_init_zero-boolean",
+      "documented_name": "wal_init_zero",
+      "match_type": "exact-heading"
+    },
+    "wal_keep_size": {
+      "title": "QHB 1.5.3: wal_keep_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#wal_keep_size-integer",
+      "documented_name": "wal_keep_size",
+      "match_type": "exact-heading"
+    },
+    "wal_level": {
+      "title": "QHB 1.5.3: wal_level",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_level-enum",
+      "documented_name": "wal_level",
+      "match_type": "exact-heading"
+    },
+    "wal_log_hints": {
+      "title": "QHB 1.5.3: wal_log_hints",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_log_hints-boolean",
+      "documented_name": "wal_log_hints",
+      "match_type": "exact-heading"
+    },
+    "wal_receiver_create_temp_slot": {
+      "title": "QHB 1.5.3: wal_receiver_create_temp_slot",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#wal_receiver_create_temp_slot-boolean",
+      "documented_name": "wal_receiver_create_temp_slot",
+      "match_type": "exact-heading"
+    },
+    "wal_receiver_status_interval": {
+      "title": "QHB 1.5.3: wal_receiver_status_interval",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#wal_receiver_status_interval-integer",
+      "documented_name": "wal_receiver_status_interval",
+      "match_type": "exact-heading"
+    },
+    "wal_receiver_timeout": {
+      "title": "QHB 1.5.3: wal_receiver_timeout",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#wal_receiver_timeout-integer",
+      "documented_name": "wal_receiver_timeout",
+      "match_type": "exact-heading"
+    },
+    "wal_recycle": {
+      "title": "QHB 1.5.3: wal_recycle",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_recycle-boolean",
+      "documented_name": "wal_recycle",
+      "match_type": "exact-heading"
+    },
+    "wal_retrieve_retry_interval": {
+      "title": "QHB 1.5.3: wal_retrieve_retry_interval",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#wal_retrieve_retry_interval-integer",
+      "documented_name": "wal_retrieve_retry_interval",
+      "match_type": "exact-heading"
+    },
+    "wal_segment_size": {
+      "title": "QHB 1.5.3: wal_segment_size",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-preset.html#wal_segment_size-integer",
+      "documented_name": "wal_segment_size",
+      "match_type": "exact-heading"
+    },
+    "wal_sender_timeout": {
+      "title": "QHB 1.5.3: wal_sender_timeout",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-replication.html#wal_sender_timeout-integer",
+      "documented_name": "wal_sender_timeout",
+      "match_type": "exact-heading"
+    },
+    "wal_skip_threshold": {
+      "title": "QHB 1.5.3: wal_skip_threshold",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_skip_threshold-integer",
+      "documented_name": "wal_skip_threshold",
+      "match_type": "exact-heading"
+    },
+    "wal_sync_method": {
+      "title": "QHB 1.5.3: wal_sync_method",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_sync_method-enum",
+      "documented_name": "wal_sync_method",
+      "match_type": "exact-heading"
+    },
+    "wal_writer_delay": {
+      "title": "QHB 1.5.3: wal_writer_delay",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_writer_delay-integer",
+      "documented_name": "wal_writer_delay",
+      "match_type": "exact-heading"
+    },
+    "wal_writer_flush_after": {
+      "title": "QHB 1.5.3: wal_writer_flush_after",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-wal.html#wal_writer_flush_after-integer",
+      "documented_name": "wal_writer_flush_after",
+      "match_type": "exact-heading"
+    },
+    "wipe_file_on_delete": {
+      "title": "QHB 1.5.3: wipe_file_on_delete",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#wipe_file_on_delete-boolean",
+      "documented_name": "wipe_file_on_delete",
+      "match_type": "exact-heading"
+    },
+    "wipe_heaptuple_on_delete": {
+      "title": "QHB 1.5.3: wipe_heaptuple_on_delete",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#wipe_heaptuple_on_delete-boolean",
+      "documented_name": "wipe_heaptuple_on_delete",
+      "match_type": "exact-heading"
+    },
+    "wipe_memctx_on_free": {
+      "title": "QHB 1.5.3: wipe_memctx_on_free",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#wipe_memctx_on_free-boolean",
+      "documented_name": "wipe_memctx_on_free",
+      "match_type": "exact-heading"
+    },
+    "wipe_xlog_on_free": {
+      "title": "QHB 1.5.3: wipe_xlog_on_free",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#wipe_xlog_on_free-boolean",
+      "documented_name": "wipe_xlog_on_free",
+      "match_type": "exact-heading"
+    },
+    "with_mq_broker": {
+      "title": "QHB 1.5.3: with_mq_broker",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#with_mq_broker-string",
+      "documented_name": "with_mq_broker",
+      "match_type": "exact-heading"
+    },
+    "with_qsched": {
+      "title": "QHB 1.5.3: with_qsched",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-qhb.html#with_qsched-string",
+      "documented_name": "with_qsched",
+      "match_type": "exact-heading"
+    },
+    "work_mem": {
+      "title": "QHB 1.5.3: work_mem",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-resource.html#work_mem-integer",
+      "documented_name": "work_mem",
+      "match_type": "exact-heading"
+    },
+    "xmlbinary": {
+      "title": "QHB 1.5.3: xmlbinary",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#xmlbinary-enum",
+      "documented_name": "xmlbinary",
+      "match_type": "exact-heading"
+    },
+    "xmloption": {
+      "title": "QHB 1.5.3: xmloption",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-client.html#xmloption-enum",
+      "documented_name": "xmloption",
+      "match_type": "exact-heading"
+    },
+    "zero_damaged_pages": {
+      "title": "QHB 1.5.3: zero_damaged_pages",
+      "url": "https://repo.quantom.info/qhb/std-1/doc/1.5.3/ru/Configuration/runtime-config/runtime-config-developer.html#zero_damaged_pages-boolean",
+      "documented_name": "zero_damaged_pages",
+      "match_type": "exact-heading"
+    }
+  },
+  "parameters_without_description": [
+    "backtrace_min_messages",
+    "cluster_name",
+    "dbalias",
+    "license_warning_gap",
+    "license_warning_period",
+    "log_checkpoint_progress",
+    "onlymem_buffers",
+    "optimized_snapshots",
+    "possible_buffers",
+    "qhb_caching_while_scan",
+    "qhb_load_tzoffsets_cache_size_kb",
+    "qhb_metrics_cache_size",
+    "qhb_mq_map_size",
+    "qhb_relopt_cache_size",
+    "query_stat_mem",
+    "xml_ignore_encoding"
+  ],
+  "documented_parameters_not_in_map": [
+    "debug_deadlocks",
+    "log_btree_build_stats",
+    "tarq_cache.touch_queue_ignore",
+    "tarq_cache.touch_threshold",
+    "tarq_cache.touch_window",
+    "trace_lock_oidmin",
+    "trace_lock_table",
+    "trace_locks",
+    "trace_lwlocks",
+    "trace_userlocks",
+    "wal_debug"
+  ]
+}
