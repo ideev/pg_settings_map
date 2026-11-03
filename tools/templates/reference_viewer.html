@@ -1,0 +1,52 @@
+<dialog id="reference-viewer" aria-labelledby="reference-title">
+ <div class="reference-shell">
+  <div class="reference-toolbar">
+   <div class="reference-heading"><h2 id="reference-title"></h2><span id="reference-source"></span></div>
+   <a id="reference-external" target="_blank" rel="noopener noreferrer">Открыть во вкладке ↗</a>
+   <button id="reference-close" type="button" aria-label="Закрыть просмотр" autofocus>Закрыть ×</button>
+  </div>
+  <div id="reference-content"></div>
+  <p id="reference-note">Если страница не появилась, откройте её во вкладке. Закройте просмотр, чтобы вернуться к карте.</p>
+ </div>
+</dialog>
+<style>
+#reference-viewer{box-sizing:border-box;width:94vw;max-width:none;height:92dvh;max-height:calc(100dvh - 24px);padding:0;border:1px solid #c6d2ba;border-radius:12px;background:#fffefa;color:#29352e;box-shadow:0 16px 80px #172c3440;overflow:hidden}
+#reference-viewer::backdrop{background:#1d302b80}
+.reference-shell{display:flex;flex-direction:column;height:100%;min-height:0}
+.reference-toolbar{display:flex;align-items:center;gap:16px;padding:13px 18px;border-bottom:1px solid #dce1d8;flex-shrink:0;background:#fffefa}
+.reference-heading{flex:1;min-width:0}.reference-heading h2{font:18px Georgia,serif;overflow-wrap:anywhere;margin:0 0 4px}.reference-heading span{font-size:11px;color:#788474}
+#reference-close,#reference-external{font:12px Arial,sans-serif;white-space:nowrap;border:1px solid #c6d2ba;border-radius:6px;padding:9px 12px;background:#edf2e4;color:#435b3c;text-decoration:none}
+#reference-close:hover,#reference-external:hover{background:#dfe9d3}
+#reference-content{flex:1;min-height:0;background:#fff;position:relative}
+#reference-content iframe{display:block;border:0;width:100%;height:100%;background:white}
+#reference-note{font-size:11px;line-height:1.5;color:#788474;padding:9px 18px;margin:0;border-top:1px solid #dce1d8;flex-shrink:0}
+@media(max-width:700px){#reference-viewer{width:96vw;height:94dvh}.reference-toolbar{gap:8px;padding:10px;flex-wrap:wrap}.reference-heading{flex-basis:100%}.reference-heading h2{font-size:16px}#reference-close{margin-left:auto}#reference-note{padding:8px 10px}}
+</style>
+<script>
+{
+ const viewer=document.querySelector('#reference-viewer');
+ const content=document.querySelector('#reference-content');
+ const external=document.querySelector('#reference-external');
+ let opener=null,frame=null;
+ function removeFrame(){if(frame){frame.remove();frame=null;}}
+ function closeViewer(){viewer.close();}
+ document.querySelector('#reference-close').onclick=closeViewer;
+ viewer.addEventListener('click',event=>{if(event.target===viewer){const r=viewer.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)closeViewer();}});
+ viewer.addEventListener('close',()=>{removeFrame();if(opener?.isConnected)opener.focus({preventScroll:true});opener=null;});
+ // Handle Escape before map shortcuts, preserving the underlying details panel.
+ document.addEventListener('keydown',event=>{if(viewer.open&&event.key==='Escape'){event.preventDefault();event.stopImmediatePropagation();closeViewer();}},true);
+ document.querySelector('#details').addEventListener('click',event=>{
+  const link=event.target.closest('section a');
+  if(!link||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+  const url=new URL(link.href);
+  if(url.protocol!=='https:'||url.hostname!=='repo.quantom.info')return;
+  event.preventDefault();removeFrame();opener=link;
+  document.querySelector('#reference-title').textContent=link.textContent;
+  document.querySelector('#reference-source').textContent=url.hostname;
+  external.href=url.href;
+  frame=document.createElement('iframe');frame.title=link.textContent;
+  frame.setAttribute('sandbox','allow-scripts allow-same-origin');frame.referrerPolicy='no-referrer';frame.src=url.href;content.append(frame);
+  viewer.showModal();
+ });
+}
+</script>

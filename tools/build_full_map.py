@@ -325,7 +325,7 @@ html=html.replace(" if(n.kind==='parameter'&&blogLinks(n).length){", r'''
   const section=add('section','','documentation-reference qhb-documentation-reference');
   const heading=document.createElement('h3');heading.textContent='Документация QHB';section.append(heading);
   const a=document.createElement('a');a.href=qhbDocumentation.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=qhbDocumentation.title;
-  a.setAttribute('aria-label',qhbDocumentation.title+' (открывается в новой вкладке)');section.append(a);
+  a.setAttribute('aria-label',qhbDocumentation.title+' (просмотр поверх карты)');section.append(a);
  }
  const documentation=n.kind==='parameter'?documentationLink(n):null;
  if(documentation){
@@ -381,6 +381,8 @@ stateFile.onchange=async()=>{
 html=html.replace('</style>', '''
 .header-controls .toolbar{flex-wrap:nowrap;justify-content:flex-start;min-width:0;overflow-x:auto;max-width:100%;padding:4px;scrollbar-width:thin}.header-controls .toolbar button{flex-shrink:0;font-size:11px;padding:7px 8px}.header-controls{gap:10px}.header-controls .search-box{flex-basis:180px;min-width:140px}@media(max-width:1100px){.header-controls{flex-wrap:nowrap}}@media(max-width:700px){.header-controls{flex-wrap:wrap}.header-controls .search-box{flex:1 1 100%}.header-controls .toolbar{width:100%}}
 </style>''')
+
+html=html.replace('</body>', (root / 'tools/templates/reference_viewer.html').read_text()+'\n</body>')
 
 # The embedded JSON is data, never executable HTML. All visible fields use textContent.
 (root / 'pg_settings_full.html').write_text(html)
