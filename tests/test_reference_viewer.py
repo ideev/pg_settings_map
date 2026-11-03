@@ -78,6 +78,18 @@ with sync_playwright() as p:
     page.evaluate("document.querySelector('#search').focus()")
     assert page.evaluate("document.activeElement!==document.querySelector('#search')")
     page.locator('#reference-close').click()
+    before_hide = page.evaluate('JSON.stringify(currentState())')
+    hide = page.locator('#details-hide')
+    bounds = hide.bounding_box()
+    panel_bounds = page.locator('#details').bounding_box()
+    assert bounds['x'] > panel_bounds['x'] + panel_bounds['width']/2
+    assert bounds['y'] < panel_bounds['y'] + 60
+    hide.click()
+    assert not page.locator('#details').is_visible()
+    expect(page.locator('.node.parameter.selected')).to_be_focused()
+    assert page.evaluate('JSON.stringify(currentState())') == before_hide
+    page.locator('.node.parameter.selected').press('Enter')
+    assert hide.is_visible()
     assert not errors, errors
     browser.close()
     print('PASS: modal QHB viewer, close/Escape/focus, direct external tabs, unchanged map, narrow viewport')

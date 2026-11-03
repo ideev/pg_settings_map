@@ -30,6 +30,9 @@ with sync_playwright() as p:
       let count=0;
       for(const n of data.filter(n=>n.kind==='parameter')){
         select(n.id);
+        const labels=[...document.querySelectorAll('#details dt')].map(el=>el.textContent);
+        if(n.type==='enum'&&n.enumvals&&labels.indexOf('Допустимые значения')!==labels.indexOf('По умолчанию (boot_val)')+1)throw new Error('Enum values order: '+n.label);
+        if(n.extra_desc){const paragraphs=document.querySelectorAll('#details > p');if(paragraphs[1]?.textContent!==n.extra_desc)throw new Error('Extended description order: '+n.label);}
         const links=[...document.querySelectorAll('#details section a')];
         if(n.qhb_documentation_link){
           if(links[0]?.href!==n.qhb_documentation_link.url)throw new Error('QHB link is not first: '+n.label);
@@ -49,6 +52,16 @@ with sync_playwright() as p:
         tops = page.locator('.header-controls .toolbar button').evaluate_all('(buttons)=>buttons.map(b=>b.getBoundingClientRect().top)')
         assert max(tops) - min(tops) < 1
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+        before_panel = snapshot(page)
+        page.locator('#groups-toggle').click()
+        assert page.locator('#groups-hide').is_visible()
+        assert page.locator('#groups-panel details').get_attribute('open') is not None
+        page.locator('#groups-hide').click()
+        assert page.locator('#groups-toggle').get_attribute('aria-expanded') == 'false'
+        assert page.locator('#groups-panel').evaluate('(el)=>el.inert')
+        assert page.locator('#groups-toggle').evaluate('(el)=>document.activeElement===el')
+        assert page.locator('#groups-panel details').get_attribute('open') is not None
+        assert snapshot(page) == before_panel
     page.set_viewport_size({'width': 1280, 'height': 900})
     page.locator('#groups-toggle').click()
     for box in page.locator('#group-list input').all():
@@ -59,8 +72,8 @@ with sync_playwright() as p:
     parameter = page.locator('.node.parameter').filter(has_text='work_mem').first
     parameter.press('Enter')
     assert page.locator('#details h2 + .type').count() == 1
-    assert page.locator('#details .setting-value').count() == 1
-    assert page.locator('#details .setting-value').evaluate('(el)=>getComputedStyle(el).backgroundColor') == page.locator('#details .parameter-title > .type').evaluate('(el)=>getComputedStyle(el).backgroundColor')
+    assert page.locator('#details .setting-value').count() == 2
+    assert page.locator('#details .setting-value').first.evaluate('(el)=>getComputedStyle(el).backgroundColor') == page.locator('#details .parameter-title > .type').evaluate('(el)=>getComputedStyle(el).backgroundColor')
     page.keyboard.press('Escape')
     parameter.press('ArrowRight')
     parameter.press('ArrowDown')
@@ -86,12 +99,38 @@ with sync_playwright() as p:
         page.reload()
         assert snapshot(page) == expected
     # Export reads live coordinates, then import replaces and persists settings.
+    def accept_default_export(dialog):
+        assert dialog.type == 'prompt'
+        assert dialog.default_value == 'pg_settings_map.json'
+        dialog.accept(dialog.default_value)
+    page.once('dialog', accept_default_export)
     with page.expect_download() as download_info:
         page.locator('#export-state').click()
     download = download_info.value
     assert download.suggested_filename == 'pg_settings_map.json'
     exported = Path(download.path()).read_bytes()
     assert json.loads(exported)['version'] == 1
+    # A custom confirmed name survives a reload; cancel does not replace it.
+    page.once('dialog', lambda dialog: dialog.accept('my_qhb_layout.json'))
+    with page.expect_download() as custom_download:
+        page.locator('#export-state').click()
+    assert custom_download.value.suggested_filename == 'my_qhb_layout.json'
+    page.reload()
+    assert snapshot(page) == expected
+    downloads = []
+    page.on('download', lambda download: downloads.append(download))
+    def cancel_export(dialog):
+        assert dialog.default_value == 'my_qhb_layout.json'
+        dialog.dismiss()
+    page.once('dialog', cancel_export)
+    page.locator('#export-state').click()
+    assert downloads == []
+    assert page.evaluate("localStorage.getItem('pg_settings_map.export_filename')") == 'my_qhb_layout.json'
+    page.once('dialog', lambda dialog: dialog.accept('   '))
+    page.locator('#export-state').click()
+    assert downloads == []
+    assert page.locator('#state-status').get_attribute('data-error') == 'true'
+    assert page.evaluate("localStorage.getItem('pg_settings_map.export_filename')") == 'my_qhb_layout.json'
     page.locator('#reset').click()
     assert snapshot(page) != expected
     def import_file(contents):
@@ -181,6 +220,23 @@ with sync_playwright() as p:
         page.reload()
         assert snapshot(page) == expected_search
     assert not errors, errors
+    # Enabling a hidden group highlights and focuses its node at readable scale.
+    page.locator('#groups-toggle').click()
+    group_id = page.evaluate("data.find(n=>n.kind==='group'&&n.label==='Error Handling').id")
+    box = page.locator(f'#group-list input[data-group="{group_id}"]')
+    assert not box.is_checked()
+    page.evaluate("byId.get('root').collapsed=true;layout();render();")
+    box.check()
+    group_node = page.locator(f'.node[data-id="{group_id}"]')
+    assert group_node.is_visible()
+    assert 'selected' in group_node.get_attribute('class')
+    assert group_node.evaluate('(el)=>document.activeElement===el')
+    assert page.evaluate('zoom') >= 0.85
+    group_bounds = group_node.bounding_box()
+    canvas_bounds = page.locator('#canvas').bounding_box()
+    assert abs(group_bounds['x']+group_bounds['width']/2-canvas_bounds['x']-canvas_bounds['width']/2) < 2
+    assert page.locator('#details').is_hidden()
+    page.locator('#groups-toggle').click()
     # Bulk visibility controls preserve node state and persist across reloads.
     state_before_bulk = [{k: v for k, v in n.items() if k != 'hidden'} for n in snapshot(page)]
     page.locator('#groups-toggle').click()
@@ -211,6 +267,10 @@ with sync_playwright() as p:
         box.check()
     page.locator('#expand').click()
     assert page.locator('.node.parameter').count() == 436
+    page.once('dialog', lambda dialog: dialog.accept('offline_layout.json'))
+    with page.expect_download() as unavailable_storage_download:
+        page.locator('#export-state').click()
+    assert unavailable_storage_download.value.suggested_filename == 'offline_layout.json'
     page.wait_for_timeout(200)
     assert not errors, errors
     browser.close()

@@ -37,7 +37,7 @@ const nodeKey=n=>JSON.stringify(n.parent?[...JSON.parse(nodeKey(byId.get(n.paren
 const stateKeys=new Map(data.map(n=>[n.id,nodeKey(n)]));
 let stateReady=false,saveTimer;
 function currentState(){
- const entries=data.map(n=>[stateKeys.get(n.id),{collapsed:n.collapsed,hidden:hiddenGroups.has(n.id),dx:n.x-n.autoX,dy:n.y-n.autoY}]);
+ const entries=data.map(n=>[stateKeys.get(n.id),{collapsed:n.collapsed,hidden:hiddenGroups.has(n.id),dx:n.x-n.autoX,dy:n.y-n.autoY,...(n.kind==='group'&&n.manualSide?{side:n.manualSide}:{})}]);
  return {version:1,nodes:Object.fromEntries(entries)};
 }
 function saveState(){
@@ -55,6 +55,7 @@ function applyState(saved){
  const entries=saved?.version===1&&saved.nodes&&typeof saved.nodes==='object'?saved.nodes:{};
  hiddenGroups.clear();
  for(const n of data){
+  n.manualSide=null;
   n.collapsed=n.kind!=='root'&&n.kind!=='parameter';
   if(n.kind==='group'&&defaultHiddenGroups.has(n.label))hiddenGroups.add(n.id);
  }
@@ -62,6 +63,7 @@ function applyState(saved){
   const entry=entries[stateKeys.get(n.id)];
   if(!entry||typeof entry!=='object')continue;
   if(typeof entry.collapsed==='boolean'&&n.kind!=='parameter')n.collapsed=entry.collapsed;
+  if(n.kind==='group'&&(entry.side===-1||entry.side===1))n.manualSide=entry.side;
   if(n.kind==='group'&&typeof entry.hidden==='boolean'){
    if(entry.hidden)hiddenGroups.add(n.id);else hiddenGroups.delete(n.id);
   }
@@ -90,7 +92,22 @@ function layout(reset=false){
   if(!n.collapsed){let y=top;for(const c of children(n.id)){place(c,depth+1,side,y);y+=height(c);}}
  }
  const root=data[0];root.autoX=0;root.autoY=-nodeHeights.get(root.id)/2;root.x=offsets.get(root.id).x;root.y=root.autoY+offsets.get(root.id).y;
- if(!root.collapsed){const branches=children(root.id).filter(n=>!hiddenGroups.has(n.id));for(const side of [-1,1]){const list=branches.filter((_,i)=>(i%2===0?-1:1)===side);let y=-list.reduce((s,n)=>s+height(n),0)/2;for(const n of list){place(n,1,side,y);y+=height(n);}}}
+ if(!root.collapsed){const branches=children(root.id).filter(n=>!hiddenGroups.has(n.id));for(const side of [-1,1]){const list=branches.filter((n,i)=>(n.manualSide||(i%2===0?-1:1))===side);let y=-list.reduce((s,n)=>s+height(n),0)/2;for(const n of list){place(n,1,side,y);y+=height(n);}}}
+}
+function updateBranchSide(group){
+ const root=byId.get('root'),width=nodeWidths.get(group.id);
+ const side=group.x+width/2<root.x+nodeWidths.get(root.id)/2?-1:1;
+ if(side===group.side)return;
+ const oldGroupOffset=group.x-group.autoX;
+ const newGroupAuto=side<0?nodeWidths.get(root.id)-370-width:370;
+ const newGroupOffset=group.x-newGroupAuto;
+ for(const n of [group,...descendants(group.id)]){
+  const oldOffset=n.x-n.autoX,depth=n.id.split('/').length-1;
+  n.side=side;
+  n.autoX=side<0?nodeWidths.get(root.id)-depth*370-nodeWidths.get(n.id):depth*370;
+  n.x=n.autoX+newGroupOffset-(oldOffset-oldGroupOffset);
+ }
+ group.manualSide=side;render();saveState();
 }
 '''.replace('__DATA__',json.dumps(source,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c').replace('\u2028','\\u2028').replace('\u2029','\\u2029'))
 html=html[:start]+model+html[end:]
@@ -98,7 +115,7 @@ html=html.replace("return !n.parent||", "return !hiddenGroups.has(n.id)&&(!n.par
 html=html.replace("selected='work_mem'","selected='root'")
 html=html.replace("n.collapsed=!n.collapsed;render();","n.collapsed=!n.collapsed;layout();render();select(n.id);focusBranch(n.id);")
 html=html.replace("b.textContent=n.collapsed?'+':'−';", "b.textContent=n.collapsed?'+':'−';b.title=`${descendants(n.id).filter(v=>v.kind==='parameter').length} параметров`;")
-html=html.replace("const fields=[['По умолчанию',n.default],['Минимум',n.min],['Максимум',n.max],['Контекст',n.context]];if(n.values)fields.push(['Допустимые значения',n.values]);", "const format=v=>v===null||v===undefined?'—':v===''?'(пустая строка)':String(v);const fields=[['Значение в файле (setting)',format(n.setting)],['По умолчанию (boot_val)',format(n.boot_val)],['Единицы измерения',format(n.unit)],['Минимум',format(n.min_val)],['Максимум',format(n.max_val)],['Контекст',format(n.context)],['Источник',format(n.source)],['Ожидает перезапуска',n.pending_restart===true?'Да':n.pending_restart===false?'Нет':'—']];if(n.enumvals)fields.push(['Допустимые значения',Array.isArray(n.enumvals)?n.enumvals.join(' · '):String(n.enumvals)]);if(n.extra_desc)add('p',n.extra_desc);")
+html=html.replace("const fields=[['По умолчанию',n.default],['Минимум',n.min],['Максимум',n.max],['Контекст',n.context]];if(n.values)fields.push(['Допустимые значения',n.values]);", "const format=v=>v===null||v===undefined?'—':v===''?'(пустая строка)':String(v);const fields=[['Значение в файле (setting)',format(n.setting)],['По умолчанию (boot_val)',format(n.boot_val)],['Единицы измерения',format(n.unit)],['Минимум',format(n.min_val)],['Максимум',format(n.max_val)],['Контекст',format(n.context)],['Источник',format(n.source)],['Ожидает перезапуска',n.pending_restart===true?'Да':n.pending_restart===false?'Нет':'—']];if(n.enumvals){const values=['Допустимые значения',Array.isArray(n.enumvals)?n.enumvals.join(' · '):String(n.enumvals)];if(n.type==='enum')fields.splice(2,0,values);else fields.push(values);}")
 a=html.index("  add('div',({user:")
 b=html.index("\n}",a)
 html=html[:a]+r'''
@@ -111,7 +128,7 @@ html=html[:a]+r'''
 ''' + html[b:]
 html=html.replace('Math.max(.12,Math.min(1,','Math.max(.005,Math.min(1,').replace('Math.max(.12,Math.min(2.5,','Math.max(.005,Math.min(2.5,')
 html=html.replace("data.forEach(n=>n.collapsed=false);render();fit();", "data.forEach(n=>n.collapsed=false);layout();render();fit();")
-html=html.replace("for(const p of originals)Object.assign(byId.get(p.id),p,{collapsed:false});render();fit();", "data.forEach(n=>n.collapsed=n.kind!=='root'&&n.kind!=='parameter');layout(true);select('root');render();fit();")
+html=html.replace("for(const p of originals)Object.assign(byId.get(p.id),p,{collapsed:false});render();fit();", "data.forEach(n=>{n.collapsed=n.kind!=='root'&&n.kind!=='parameter';n.manualSide=null;});layout(true);select('root');render();fit();")
 html=html.replace('new ResizeObserver(fit).observe(canvas);render();showDetails();fit();',r'''
 const search=document.querySelector('#search'),results=document.querySelector('#results');
 function reveal(id){const branch=byId.get(id).branch;if(branch){hiddenGroups.delete(branch);const box=document.querySelector(`#group-list input[data-group="${branch}"]`);if(box)box.checked=true;updateGroupCount();}let n=byId.get(id);while(n.parent){n=byId.get(n.parent);n.collapsed=false;}layout();render();select(id);const target=byId.get(id);zoom=1;pan={x:canvas.clientWidth/2-target.x-140,y:canvas.clientHeight/2-target.y};transform();results.replaceChildren();document.querySelector(`[data-id="${id}"]`).focus({preventScroll:true});}
@@ -140,8 +157,14 @@ for(const n of children('root')){
  box.type='checkbox';box.checked=true;box.dataset.group=n.id;text.textContent=n.label;label.append(box,text);groupList.append(label);
  box.addEventListener('change',()=>{
   if(box.checked)hiddenGroups.delete(n.id);else hiddenGroups.add(n.id);
+  if(box.checked)byId.get('root').collapsed=false;
   if(isHidden(byId.get(selected)))select('root');
-  layout();render();fit();updateGroupCount();search.dispatchEvent(new Event('input'));
+  layout();render();
+  if(box.checked){
+   select(n.id);focusBranch(n.id,true);
+   nodes.querySelector(`[data-id="${n.id}"]`).focus({preventScroll:true});
+  }else{fit();}
+  updateGroupCount();search.dispatchEvent(new Event('input'));
  });
 }
 updateGroupCount();measureNodes();restoreState();new ResizeObserver(fit).observe(canvas);render();showDetails();fit();
@@ -150,11 +173,11 @@ html=html.replace('<title>pg_settings_map · живая карта PostgreSQL</t
 html=html.replace('Визуальный прототип · 01', '436 параметров · данные из JSON')
 html=html.replace('Всё связано с деталями.', 'Карта параметров PostgreSQL')
 html=html.replace('<button id="expand">', '<button id="collapse">Свернуть всё</button><button id="expand">')
-html=html.replace('<div class="topbar">','<div class="search-box"><label for="search">Поиск параметра</label><input id="search" type="search" placeholder="Например, work_mem" autocomplete="off"><div id="results" aria-live="polite"></div></div><div class="topbar">')
-html=html.replace('<main class="layout">','<main class="layout"><aside class="groups-panel" aria-label="Видимость групп"><details open><summary>Группы <span id="group-count"></span></summary><p>Отметьте ветки, которые нужны на карте.</p><div class="group-actions"><button id="groups-select-all" type="button">Выбрать все</button><button id="groups-clear-all" type="button">Отменить все</button></div><div id="group-list"></div></details></aside>')
+html=html.replace('<div class="topbar">','<div class="search-box"><label for="search">Поиск параметра</label><input id="search" type="search" autocomplete="off"><div id="results" aria-live="polite"></div></div><div class="topbar">')
+html=html.replace('<main class="layout">','<main class="layout"><aside class="groups-panel" aria-label="Видимость групп"><details open><summary><span class="groups-heading">Группы <span id="group-count"></span></span><button id="groups-hide" type="button" aria-label="Скрыть панель групп">Скрыть</button></summary><p>Отметьте ветки, которые нужны на карте.</p><div class="group-actions"><button id="groups-select-all" type="button">Выбрать все</button><button id="groups-clear-all" type="button">Отменить все</button></div><div id="group-list"></div></details></aside>')
 html=html.replace('</style>', '''
 .node{max-width:310px;white-space:normal;width:max-content;min-height:38px}.node.group{font-size:17px;max-width:280px}.node.subgroup{font-size:15px;max-width:280px}.node.parameter{font-size:14px;overflow-wrap:anywhere;min-height:30px;padding:6px 11px 4px}.node .toggle{margin-left:4px}.node.root{white-space:nowrap}.search-box{position:absolute;top:94px;left:23px;z-index:5;width:270px;background:#fffefa;border:1px solid #dce1d8;border-radius:7px;padding:9px 12px}.search-box label{font-size:10px;display:block;color:#7d8779;margin-bottom:5px}.search-box input{border:0;background:transparent;width:100%;font:13px Arial;color:#29352e;padding:3px 0;outline-offset:3px}#results{max-height:280px;overflow:auto}#results button{display:block;width:100%;text-align:left;background:transparent;border:0;border-top:1px solid #e8eadf;padding:9px 2px;font:12px monospace;overflow-wrap:anywhere;color:#43533f}#results button:hover{background:#edf2e4}.search-count{font-size:11px;color:#7d8779;padding:9px 0}.topbar .toolbar{max-width:370px}@media(max-width:800px){.search-box{left:13px;top:119px;width:225px}.topbar .toolbar{max-width:170px}}
-.layout{grid-template-columns:240px minmax(0,1fr) 310px}.groups-panel{border-left:0;border-right:1px solid #dce1d8;padding:24px 16px}.group-actions{display:flex;gap:6px;margin-bottom:10px}.group-actions button{border:1px solid #d9dfd2;background:#fffefa;border-radius:6px;padding:7px 8px;color:#53634f;font-size:11px;white-space:nowrap}.group-actions button:hover{background:#edf2e6}.groups-panel summary{font:18px Georgia,serif;cursor:pointer}.groups-panel summary span{font:11px Arial;color:#7d8779;margin-left:10px}.groups-panel p{font-size:11px;margin:15px 0;line-height:1.6}#group-list{display:grid;gap:4px}#group-list label{display:flex;gap:9px;align-items:start;padding:8px 5px;border-radius:5px;cursor:pointer;font-size:12px;line-height:1.5}#group-list label:hover{background:#edf2e4}#group-list input{accent-color:#637f48;margin:2px 0 0;flex-shrink:0}#group-list label:has(input:not(:checked)){color:#92998b}@media(max-width:1100px){.layout{grid-template-columns:200px minmax(0,1fr) 260px}.groups-panel{padding:20px 12px}.topbar{flex-wrap:wrap}.search-box{top:145px}}@media(max-width:800px){.layout{grid-template-columns:minmax(0,1fr) 260px;grid-template-rows:auto minmax(350px,1fr)}.groups-panel{grid-column:1/-1;max-height:180px;border-right:0;border-bottom:1px solid #dce1d8;padding:12px 16px}#group-list{grid-template-columns:repeat(3,minmax(0,1fr))}.groups-panel p{margin:8px 0}}@media(max-width:580px){.layout{grid-template-columns:1fr;grid-template-rows:auto minmax(400px,60dvh) auto}.groups-panel{max-height:180px}#group-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.layout{grid-template-columns:240px minmax(0,1fr) 310px}.groups-panel{border-left:0;border-right:1px solid #dce1d8;padding:24px 16px}.group-actions{display:flex;gap:6px;margin-bottom:10px}.group-actions button{border:1px solid #d9dfd2;background:#fffefa;border-radius:6px;padding:7px 8px;color:#53634f;font-size:11px;white-space:nowrap}.group-actions button:hover{background:#edf2e6}.groups-panel summary{font:18px Georgia,serif;cursor:pointer}.groups-panel summary{display:flex;align-items:center;justify-content:space-between;gap:6px}.groups-panel summary .groups-heading{font:inherit;color:inherit;margin:0}#groups-hide{border:1px solid #d9dfd2;background:#fffefa;border-radius:6px;padding:5px 7px;color:#53634f;font-size:11px}#groups-hide:hover{background:#edf2e6}.groups-panel summary span{font:11px Arial;color:#7d8779;margin-left:10px}.groups-panel summary .groups-heading{margin:0}.groups-panel p{font-size:11px;margin:15px 0;line-height:1.6}#group-list{display:grid;gap:4px}#group-list label{display:flex;gap:9px;align-items:start;padding:8px 5px;border-radius:5px;cursor:pointer;font-size:12px;line-height:1.5}#group-list label:hover{background:#edf2e4}#group-list input{accent-color:#637f48;margin:2px 0 0;flex-shrink:0}#group-list label:has(input:not(:checked)){color:#92998b}@media(max-width:1100px){.layout{grid-template-columns:200px minmax(0,1fr) 260px}.groups-panel{padding:20px 12px}.topbar{flex-wrap:wrap}.search-box{top:145px}}@media(max-width:800px){.layout{grid-template-columns:minmax(0,1fr) 260px;grid-template-rows:auto minmax(350px,1fr)}.groups-panel{grid-column:1/-1;max-height:180px;border-right:0;border-bottom:1px solid #dce1d8;padding:12px 16px}#group-list{grid-template-columns:repeat(3,minmax(0,1fr))}.groups-panel p{margin:8px 0}}@media(max-width:580px){.layout{grid-template-columns:1fr;grid-template-rows:auto minmax(400px,60dvh) auto}.groups-panel{max-height:180px}#group-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>''')
 # Optional side panels: the map keeps the full width when panels are closed.
 html=html.replace('<button id="collapse">','<button id="groups-toggle" aria-controls="groups-panel" aria-expanded="false">☰ Группы</button><button id="collapse">')
@@ -163,7 +186,7 @@ html=html.replace('<aside id="details"', '<aside id="details" hidden')
 html=html.replace('selected=id;showDetails();', "selected=id;if(byId.get(id).kind==='parameter'){showDetails();}else{closeDetails();}")
 html=html.replace("select(n.id);render();}if(['ArrowLeft'", "select(n.id);if(n.kind==='parameter')openDetails(n.id);}if(['ArrowLeft'")
 html=html.replace('canvas.setPointerCapture(e.pointerId);', '(el||canvas).setPointerCapture(e.pointerId);')
-html=html.replace("if(gesture&&gesture.id===e.pointerId){gesture=null;", "if(gesture&&gesture.id===e.pointerId){if(e.type==='pointerup'&&!gesture.items&&Math.hypot(e.clientX-gesture.x,e.clientY-gesture.y)<5)closeDetails();gesture=null;")
+html=html.replace("if(gesture&&gesture.id===e.pointerId){const moved=", "if(gesture&&gesture.id===e.pointerId){if(e.type==='pointerup'&&!gesture.items&&Math.hypot(e.clientX-gesture.x,e.clientY-gesture.y)<5)closeDetails();const moved=")
 html=html.replace("updateGroupCount();measureNodes();", r"""
 function closeDetails(){document.querySelector('#details').hidden=true;}
 function openDetails(id){select(id);document.querySelector('#details').hidden=false;}
@@ -173,6 +196,7 @@ canvas.addEventListener('dblclick',e=>{
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetails();});
 const groupsToggle=document.querySelector('#groups-toggle'),groupsPanel=document.querySelector('#groups-panel');
+document.querySelector('#groups-hide').onclick=event=>{event.preventDefault();event.stopPropagation();groupsToggle.click();groupsToggle.focus({preventScroll:true});};
 groupsToggle.onclick=()=>{
  const open=groupsToggle.getAttribute('aria-expanded')!=='true';
  groupsToggle.setAttribute('aria-expanded',String(open));groupsPanel.inert=!open;
@@ -231,7 +255,7 @@ function moveCamera(target){
  }
  cameraFrame=requestAnimationFrame(step);
 }
-function focusBranch(id){
+function focusBranch(id,ensureReadable=false){
  const n=byId.get(id),ids=new Set([id,...(n.collapsed?[]:children(id).filter(visible).map(c=>c.id))]);
  const els=[...nodes.children].filter(el=>ids.has(el.dataset.id));
  const left=Math.min(...els.map(el=>byId.get(el.dataset.id).x)),right=Math.max(...els.map(el=>byId.get(el.dataset.id).x+el.offsetWidth));
@@ -239,7 +263,7 @@ function focusBranch(id){
  const w=canvas.clientWidth,h=canvas.clientHeight;
  // Keep text readable for long lists; the background can still be dragged.
  const widthFit=Math.max(.005,(w-60)/(right-left)),heightFit=(h-100)/(bottom-top);
- const z=n.collapsed?zoom:Math.min(1.15,widthFit,Math.max(.85,heightFit));
+ const z=n.collapsed?(ensureReadable?Math.min(1.15,widthFit):zoom):Math.min(1.15,widthFit,Math.max(.85,heightFit));
  moveCamera({zoom:z,x:w/2-(left+right)/2*z,y:(h-40)/2-(top+bottom)/2*z});
 }
 function closeDetails(){""")
@@ -288,7 +312,6 @@ html=html.replace("const dot=document.createElement('span');dot.className='leaf-
 html=html.replace("\n \n\n}", r'''
  if(n.kind==='parameter'&&blogLinks(n).length){
   const section=add('section','','blog-references');
-  const heading=document.createElement('h3');heading.textContent='Из блога The Build';section.append(heading);
   for(const link of blogLinks(n)){
    const a=document.createElement('a');a.href=link.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=link.title;
    a.setAttribute('aria-label',link.title+' (открывается в новой вкладке)');section.append(a);
@@ -323,14 +346,12 @@ html=html.replace(" if(n.kind==='parameter'&&blogLinks(n).length){", r'''
  const qhbDocumentation=n.kind==='parameter'?qhbDocumentationLink(n):null;
  if(qhbDocumentation){
   const section=add('section','','documentation-reference qhb-documentation-reference');
-  const heading=document.createElement('h3');heading.textContent='Документация QHB';section.append(heading);
   const a=document.createElement('a');a.href=qhbDocumentation.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=qhbDocumentation.title;
   a.setAttribute('aria-label',qhbDocumentation.title+' (просмотр поверх карты)');section.append(a);
  }
  const documentation=n.kind==='parameter'?documentationLink(n):null;
  if(documentation){
   const section=add('section','','documentation-reference');
-  const heading=document.createElement('h3');heading.textContent='Документация PostgreSQL';section.append(heading);
   const a=document.createElement('a');a.href=documentation.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=documentation.title;
   a.setAttribute('aria-label',documentation.title+' (открывается в новой вкладке)');section.append(a);
  }
@@ -351,17 +372,28 @@ function validateState(value){
  if(!value||value.version!==1||!value.nodes||typeof value.nodes!=='object'||Array.isArray(value.nodes))throw new Error('Неверный формат или версия файла настроек.');
  const knownKeys=new Set(stateKeys.values());let matches=0;
  for(const [key,entry] of Object.entries(value.nodes)){
-  if(!entry||typeof entry!=='object'||Array.isArray(entry)||typeof entry.collapsed!=='boolean'||typeof entry.hidden!=='boolean'||!Number.isFinite(entry.dx)||!Number.isFinite(entry.dy))throw new Error('В файле некорректные настройки узлов.');
+  if(!entry||typeof entry!=='object'||Array.isArray(entry)||(entry.side!==undefined&&entry.side!==-1&&entry.side!==1)||typeof entry.collapsed!=='boolean'||typeof entry.hidden!=='boolean'||!Number.isFinite(entry.dx)||!Number.isFinite(entry.dy))throw new Error('В файле некорректные настройки узлов.');
   if(knownKeys.has(key))matches++;
  }
  if(!matches)throw new Error('В файле нет настроек для узлов этой карты.');
  return value;
 }
+const exportNameKey='pg_settings_map.export_filename';
+let lastExportName='pg_settings_map.json';
+try{const storedName=localStorage.getItem(exportNameKey);if(storedName?.trim())lastExportName=storedName;}catch{}
 document.querySelector('#export-state').onclick=()=>{
+ const entered=window.prompt('Имя файла экспорта',lastExportName);
+ if(entered===null)return;
+ const filename=entered.trim();
+ if(!filename||/[<>:"/\\|?*\u0000-\u001f]/.test(filename)||/^\.+$/.test(filename)){
+  reportState('Введите непустое имя файла без символов <>:"/\\|?*.',true);return;
+ }
+ lastExportName=filename;
+ try{localStorage.setItem(exportNameKey,filename);}catch{}
  const url=URL.createObjectURL(new Blob([JSON.stringify(currentState(),null,2)+'\n'],{type:'application/json'}));
- const link=document.createElement('a');link.href=url;link.download='pg_settings_map.json';document.body.append(link);link.click();link.remove();
+ const link=document.createElement('a');link.href=url;link.download=filename;document.body.append(link);link.click();link.remove();
  setTimeout(()=>URL.revokeObjectURL(url),1000);
- reportState('Настройки экспортированы в pg_settings_map.json.');
+ reportState('Настройки экспортированы в '+filename+'.');
 };
 document.querySelector('#import-state').onclick=()=>stateFile.click();
 stateFile.onchange=async()=>{
@@ -380,6 +412,14 @@ stateFile.onchange=async()=>{
 # Keep action buttons on a single row; narrow viewports can scroll the row.
 html=html.replace('</style>', '''
 .header-controls .toolbar{flex-wrap:nowrap;justify-content:flex-start;min-width:0;overflow-x:auto;max-width:100%;padding:4px;scrollbar-width:thin}.header-controls .toolbar button{flex-shrink:0;font-size:11px;padding:7px 8px}.header-controls{gap:10px}.header-controls .search-box{flex-basis:180px;min-width:140px}@media(max-width:1100px){.header-controls{flex-wrap:nowrap}}@media(max-width:700px){.header-controls{flex-wrap:wrap}.header-controls .search-box{flex:1 1 100%}.header-controls .toolbar{width:100%}}
+</style>''')
+
+html=html.replace('</style>', '''
+.header-controls .search-box{display:flex;align-items:center;gap:8px;flex-basis:300px;min-width:250px;padding:0;border:0;background:transparent;border-radius:0;height:30px}.header-controls .search-box label{margin:0;white-space:nowrap;font-size:11px;flex-shrink:0}.header-controls .search-box input{box-sizing:border-box;flex:1;min-width:0;height:30px;border:1px solid #d9dfd2;border-radius:6px;padding:6px 9px;background:#fffefa;font-size:12px}.header-controls .toolbar button{height:30px;line-height:14px;padding-top:7px;padding-bottom:7px}@media(max-width:700px){.header-controls .search-box{flex:1 1 100%;min-width:0}}
+</style>''')
+
+html=html.replace('</style>', '''
+#details .documentation-reference,#details .blog-references{border:0;padding:0;margin-top:8px}#details .blog-references a+a{margin-top:8px}
 </style>''')
 
 html=html.replace('</body>', (root / 'tools/templates/reference_viewer.html').read_text()+'\n</body>')
