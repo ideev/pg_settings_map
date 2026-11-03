@@ -181,6 +181,23 @@ with sync_playwright() as p:
         page.reload()
         assert snapshot(page) == expected_search
     assert not errors, errors
+    # Bulk visibility controls preserve node state and persist across reloads.
+    state_before_bulk = [{k: v for k, v in n.items() if k != 'hidden'} for n in snapshot(page)]
+    page.locator('#groups-toggle').click()
+    page.locator('#groups-clear-all').click()
+    assert page.locator('#group-list input:checked').count() == 0
+    assert page.locator('.node').count() == 1
+    assert page.locator('#group-count').text_content() == '0 / 17'
+    assert page.evaluate('selected') == 'root'
+    page.reload()
+    assert page.locator('#group-list input:checked').count() == 0
+    page.locator('#groups-toggle').click()
+    page.locator('#groups-select-all').click()
+    assert page.locator('#group-list input:checked').count() == 17
+    assert page.locator('#group-count').text_content() == '17 / 17'
+    assert [{k: v for k, v in n.items() if k != 'hidden'} for n in snapshot(page)] == state_before_bulk
+    page.reload()
+    assert page.locator('#group-list input:checked').count() == 17
     context.close()
     # Denied local storage must not break rendering or interactions.
     context = browser.new_context()
